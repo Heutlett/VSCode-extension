@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/heutlett/VSCode-Memory-Manager/Extension_Tests/build",
+  "command": "/usr/bin/g++-7    -g   -o CMakeFiles/project.dir/main.cpp.o -c /home/heutlett/VSCode-Memory-Manager/Extension_Tests/main.cpp",
+  "file": "/home/heutlett/VSCode-Memory-Manager/Extension_Tests/main.cpp"
+}
+]

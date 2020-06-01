@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+  <html lang="en">
+	  <head>
+		  <meta charset="UTF-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <title>Memory managment</title>
+  
+		  <style>
+		  table, th, td {
+			  border: 1px solid black;
+			  text-align: left;
+		  }
+		  table#t01 {
+			  width: 100%;    
+			  background-color: #ffffff;
+			  color: black;
+		  }
+		  </style>
+	  </head>
+  
+	  <body>
+  
+		  <h2>Memory managment table</h2>
+  
+		  <input type="button" value="Add" onclick="myFunction2();"/>
+  
+		  <table id="t01">
+		  <tr>
+			  <th>Data type</th>
+			  <th>Data value</th> 
+			  <th>Memory location</th>
+			  <th># references in GC</th>
+		  </tr>
+		  </table>
+  
+		  <script>
+
+		  	  function myFunction2(){
+
+					console.log('si');
+
+				}
+  
+			  function myFunction(){ 
+  
+				  var tb1 = document.getElementById("t01");
+				  var row = tb1.insertRow();
+				  var cell1 = row.insertCell();
+				  var cell2 = row.insertCell();
+				  var cell3 = row.insertCell();
+				  var cell4 = row.insertCell();
+				  cell1.innerHTML = "123";
+				  cell2.innerHTML = "123";
+				  cell3.innerHTML = "123";	
+				  cell4.innerHTML = "123";
+			  
+			  }
+  
+		  </script>
+  
+	  </body>
+  
+  </html>

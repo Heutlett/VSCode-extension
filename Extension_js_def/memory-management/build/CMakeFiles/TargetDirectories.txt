@@ -1,0 +1,2 @@
+/home/heutlett/VSCode-Memory-Manager/Extension_js_def/memory-management/build/CMakeFiles/rebuild_cache.dir
+/home/heutlett/VSCode-Memory-Manager/Extension_js_def/memory-management/build/CMakeFiles/edit_cache.dir

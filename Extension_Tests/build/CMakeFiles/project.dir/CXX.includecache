@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/heutlett/VSCode-Memory-Manager/Extension_Tests/lib/library.h
+person.h
+/home/heutlett/VSCode-Memory-Manager/Extension_Tests/lib/person.h
+
+/home/heutlett/VSCode-Memory-Manager/Extension_Tests/lib/person.h
+
+/home/heutlett/VSCode-Memory-Manager/Extension_Tests/main.cpp
+iostream
+-
+lib/library.h
+/home/heutlett/VSCode-Memory-Manager/Extension_Tests/lib/library.h
+lib/person.h
+/home/heutlett/VSCode-Memory-Manager/Extension_Tests/lib/person.h
+
