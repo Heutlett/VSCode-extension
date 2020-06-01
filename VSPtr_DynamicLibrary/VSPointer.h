@@ -49,7 +49,9 @@ public:
     ~VSPointer() {
         if(getGC()->deletePtr(id, reinterpret_cast<void**>(this))){
             free(ptr);
+
         }
+        getGC()->generarJSON();
     }
 
     // Overloading dereferncing operator

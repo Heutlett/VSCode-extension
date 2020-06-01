@@ -73,6 +73,7 @@ void garbageCollector::memoryLeakThread(){
 
         sleep(5);
         checkMemoryLeaks();
+        generarJSON();
 
     }
 }
@@ -165,6 +166,7 @@ void garbageCollector::updateReference(string id, string newId, void** address){
         transferReferences(gNewReference, newId, gOriginalReference);
 
     }
+    generarJSON();
 }
 
 void garbageCollector::transferReferences(garbageElement * gOldElement, string newId, garbageElement * gNewElement){
@@ -186,6 +188,7 @@ bool garbageCollector::deletePtr(string id, void ** address){
     garbageElement * original = getGarbageElement(id, address);
     if(original != nullptr){
         deleteGarbageElement(id, address);
+        generarJSON();
         return true;
 
     }else{
@@ -193,8 +196,10 @@ bool garbageCollector::deletePtr(string id, void ** address){
         if(reference != nullptr){
             reference->deleteReference(address);
         }
+        generarJSON();
         return false;
     }
+
 }
 
 /**

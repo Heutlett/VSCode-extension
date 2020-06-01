@@ -91,7 +91,7 @@ function activate(context) {
 
 			console.log(listaGlobal);
 
-			panel.webview.html = getWebviewContent(listaGlobal);
+			panel.webview.html = getWebviewContent();
 
 		  };
 	
@@ -127,39 +127,66 @@ function readJSON(){
 	var data = fs.readFileSync(folderPath+"/pretty.json", "utf8");
 
 	var data1 = JSON.parse(data);
+	console.log(data1);
 
 	var lista = [];
 
-	for (var i=0; i< data1.listaPunteros.length; i++){
+	if(data1.listaPunteros != null){
 
-		var listaElemento = [];
+		for (var i=0; i< data1.listaPunteros.length; i++){
 
-		listaElemento[0] = JSON.stringify(data1.listaPunteros[i].id);
-		listaElemento[1] = JSON.stringify(data1.listaPunteros[i].refAddress);
-		listaElemento[2] = JSON.stringify(data1.listaPunteros[i].refQuantity);
-		listaElemento[3] = JSON.stringify(data1.listaPunteros[i].type);
-		listaElemento[4] = JSON.stringify(data1.listaPunteros[i].value);
-		listaElemento[5] = JSON.stringify(data1.listaPunteros[i].vsptrAdress);
-
-		lista.push(listaElemento);
+			var listaElemento = [];
+	
+			listaElemento[0] = JSON.stringify(data1.listaPunteros[i].id);
+			listaElemento[1] = JSON.stringify(data1.listaPunteros[i].refAddress);
+			listaElemento[2] = JSON.stringify(data1.listaPunteros[i].refQuantity);
+			listaElemento[3] = JSON.stringify(data1.listaPunteros[i].type);
+			listaElemento[4] = JSON.stringify(data1.listaPunteros[i].value);
+			listaElemento[5] = JSON.stringify(data1.listaPunteros[i].vsptrAdress);
+	
+			lista.push(listaElemento);
+	
+		}
 
 	}
-	//console.log(lista);
+
+	
+	//
 	//
 
 	listaGlobal = lista;
 	
 }
 
-function lastTry(tabla){
+function generateTable(){
 
+	var texto = `var tb1 = document.getElementById("t01");
+	`
+	for (var i=0; i< listaGlobal.length; i++){
 
+		texto = texto + 
 
-
-
+		`
+		var row = tb1.insertRow();
+		var cell1 = row.insertCell();
+		var cell2 = row.insertCell();
+		var cell3 = row.insertCell();
+		var cell4 = row.insertCell();
+		var cell5 = row.insertCell();
+		var cell6 = row.insertCell();
+		cell1.innerHTML = ` + listaGlobal[i][0] + `;
+		cell2.innerHTML = ` + listaGlobal[i][1] + `;
+		cell3.innerHTML = ` + listaGlobal[i][2] + `;
+		cell4.innerHTML = ` + listaGlobal[i][3] + `;
+		cell5.innerHTML = ` + listaGlobal[i][4] + `;
+		cell6.innerHTML = ` + listaGlobal[i][5] + `;
+		`
+  
+	}
+	return texto;
 }
 
-function getWebviewContent(datos) {
+function getWebviewContent() {
 	return `<!DOCTYPE html>
   <html lang="en">
 	  <head>
@@ -197,33 +224,7 @@ function getWebviewContent(datos) {
   
 		  <script>
 
-				  var tb1 = document.getElementById("t01");
-
-
-				  
-				  for (var i=0; i< ${datos.length}; i++){
-
-						var row = tb1.insertRow();
-						var cell1 = row.insertCell();
-						var cell2 = row.insertCell();
-						var cell3 = row.insertCell();
-						var cell4 = row.insertCell();
-						var cell5 = row.insertCell();
-						var cell6 = row.insertCell();
-						cell1.innerHTML = ${datos[contador][0]};
-						cell2.innerHTML = ${datos[contador][1]};
-						cell3.innerHTML = ${datos[contador][2]};
-						cell4.innerHTML = ${datos[contador][3]};
-						cell5.innerHTML = ${datos[contador][4]};
-						cell6.innerHTML = ${datos[contador][5]};
-
-				
-				  }
-
-					
-					  
-					
-
+		  ` + generateTable()  + `
 				  
   
 		  </script>

@@ -52,6 +52,24 @@ int main(){
 
     cin >> i;
 
+    VSPointer<int> myPtr20 = VSPointer<int>::New( );
+    *myPtr20 = 112;
+
+    VSPointer<int> myPtr30 = VSPointer<int>::New( );
+    *myPtr30 = 132;
+
+
+    gc->generarJSON();
+
+    cin >> i;
+
+    myPtr2 = myPtr1;
+    myPtr3 = myPtr;
+
+    gc->generarJSON();
+
+    cin >> i;
+
     gc->printElements();
 
     /*
