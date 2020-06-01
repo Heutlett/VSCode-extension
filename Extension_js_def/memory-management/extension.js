@@ -40,6 +40,7 @@ var listaGlobal;
 
 var contador = 0;
 
+let folderPath;
 
 
 function activate(context) {
@@ -48,12 +49,13 @@ function activate(context) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "memory-management" is now active!');
 
-	readJSON();
-	
-	let folderName = vscode.workspace.name; // get the open folder name
-	let folderPath = vscode.workspace.rootPath; // get the open folder path
+	//copyFiles();
 
-	console.log(folderName);
+	//readJSON();
+	
+	//let folderName = vscode.workspace.name; // get the open folder name
+	folderPath = vscode.workspace.rootPath; // get the open folder path
+
 	console.log(folderPath);
 
 	// The command has been defined in the package.json file
@@ -81,14 +83,7 @@ function activate(context) {
 
 			} // Webview options. More on these later.
 		  );
-
-
-
-		       
-
-		  
 			
-
 		  const updateWebview = () => {
 
 
@@ -112,17 +107,24 @@ function activate(context) {
 
 }
 
-function getData(indice, subindice){
+function copyFiles(){
 
-	return listaGlobal[indice][subindice];
+	const fs = require('fs');
+
+	// destination will be created or overwritten by default.
+	fs.copyFile('/home/heutlett/VSCode-extension/Extension_js_def/memory-management/libraryFiles/pruebax.txt', '/home/heutlett/VSCode-extension/Extension_js_def/memory-management/libraryFiles/pruebax2.txt', (err) => {
+	if (err) throw err;
+	console.log('File was copied to destination');
+	});
 
 }
+
 
 function readJSON(){
 
 	var fs = require('fs');
 
-	var data = fs.readFileSync("/home/heutlett/VSCode-extension/Extension_Tests/json/pretty.json", "utf8");
+	var data = fs.readFileSync(folderPath+"/pretty.json", "utf8");
 
 	var data1 = JSON.parse(data);
 

@@ -56,7 +56,7 @@ void garbageCollector::generarJSON(){
 
     }
 
-    std::ofstream o("./json/pretty.json");
+    std::ofstream o("pretty.json");
     o << std::setw(4) << j << std::endl;
 
 }
