@@ -63,10 +63,10 @@ RM = /snap/cmake/372/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/heutlett/VSCode-Memory-Manager/Extension_Tests
+CMAKE_SOURCE_DIR = /home/heutlett/VSCode-extension/Extension_Tests
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build
+CMAKE_BINARY_DIR = /home/heutlett/VSCode-extension/Extension_Tests/build
 
 # Utility rule file for ExperimentalStart.
 
@@ -91,6 +91,6 @@ CMakeFiles/ExperimentalStart.dir/clean:
 .PHONY : CMakeFiles/ExperimentalStart.dir/clean
 
 CMakeFiles/ExperimentalStart.dir/depend:
-	cd /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/heutlett/VSCode-Memory-Manager/Extension_Tests /home/heutlett/VSCode-Memory-Manager/Extension_Tests /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build/CMakeFiles/ExperimentalStart.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/heutlett/VSCode-extension/Extension_Tests/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/heutlett/VSCode-extension/Extension_Tests /home/heutlett/VSCode-extension/Extension_Tests /home/heutlett/VSCode-extension/Extension_Tests/build /home/heutlett/VSCode-extension/Extension_Tests/build /home/heutlett/VSCode-extension/Extension_Tests/build/CMakeFiles/ExperimentalStart.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ExperimentalStart.dir/depend
 

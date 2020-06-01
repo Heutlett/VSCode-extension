@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/heutlett/VSCode-Memory-Manager/Extension_Tests/main.cpp" "/home/heutlett/VSCode-Memory-Manager/Extension_Tests/build/CMakeFiles/project.dir/main.cpp.o"
+  "/home/heutlett/VSCode-extension/Extension_Tests/main.cpp" "/home/heutlett/VSCode-extension/Extension_Tests/build/CMakeFiles/project.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

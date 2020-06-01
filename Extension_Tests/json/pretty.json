@@ -1,0 +1,47 @@
+{
+    "listaPunteros": [
+        {
+            "id": "id0",
+            "listOfReferences": [
+                "0x7fffffffd910",
+                "0x7fffffffd9a0",
+                "0x7fffffffd9d0"
+            ],
+            "refAddress": "0x555555771030",
+            "refQuantity": 4,
+            "type": "i",
+            "value": "5",
+            "vsptrAdress": "0x7fffffffd8e0"
+        },
+        {
+            "id": "id1",
+            "listOfReferences": [
+                "0x7fffffffda00",
+                "0x7fffffffda30"
+            ],
+            "refAddress": "0x5555557711d0",
+            "refQuantity": 3,
+            "type": "i",
+            "value": "555",
+            "vsptrAdress": "0x7fffffffd940"
+        },
+        {
+            "id": "id2",
+            "listOfReferences": null,
+            "refAddress": "0x555555771280",
+            "refQuantity": 1,
+            "type": "i",
+            "value": "666",
+            "vsptrAdress": "0x7fffffffd970"
+        },
+        {
+            "id": "id3",
+            "listOfReferences": null,
+            "refAddress": "0x555555771540",
+            "refQuantity": 1,
+            "type": "c",
+            "value": "a",
+            "vsptrAdress": "0x7fffffffda60"
+        }
+    ]
+}

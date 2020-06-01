@@ -15,9 +15,13 @@ private:
 
 public:
 
-    garbageCollector * gc = garbageCollector::getInstance();
     string id;
     bool isNew = true;
+
+    garbageCollector* getGC(){
+
+        return garbageCollector::getInstance();
+    }
 
     VSPointer() {
 
@@ -25,12 +29,13 @@ public:
     // Constructor
     VSPointer(int i) {
         ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
-        gc->garbageTotalList->push_back(ptr);
+
+        getGC()->garbageTotalList->push_back(ptr);
         string type = typeid(*ptr).name();
-        id = "id" + to_string(gc->totalPtrCount);
+        id = "id" + to_string(getGC()->totalPtrCount);
         //cout << "VSPointer: " << this << ", refTo: " << ptr <<" type: (" << type << "), Value: " << to_string(*ptr) << " has been created" << endl;
-        gc->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
-        gc->totalPtrCount++;
+        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
+        getGC()->totalPtrCount++;
     }
 
     static VSPointer New(){
@@ -41,7 +46,7 @@ public:
 
     // Destructor
     ~VSPointer() {
-        if(gc->deletePtr(id, reinterpret_cast<void**>(this))){
+        if(getGC()->deletePtr(id, reinterpret_cast<void**>(this))){
             free(ptr);
         }
     }
@@ -78,7 +83,7 @@ public:
 
         if(type.compare(type2)==0){
             ptr = other.ptr;
-            gc->updateReference(id, other.id, reinterpret_cast<void**>(this));
+            getGC()->updateReference(id, other.id, reinterpret_cast<void**>(this));
             id = other.id;
         }else{
             cout << "Operation fail, the types dont match" << endl;

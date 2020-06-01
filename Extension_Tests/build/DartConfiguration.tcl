@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/heutlett/VSCode-Memory-Manager/Extension_Tests
-BuildDirectory: /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build
+SourceDirectory: /home/heutlett/VSCode-extension/Extension_Tests
+BuildDirectory: /home/heutlett/VSCode-extension/Extension_Tests/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -14,7 +14,7 @@ CostDataFile:
 Site: heutlett-VirtualBox
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-g++-7
+BuildName: Linux-c++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/snap/cmake/372/bin/cmake" "/home/heutlett/VSCode-Memory-Manager/Extension_Tests"
+ConfigureCommand: "/snap/cmake/372/bin/cmake" "/home/heutlett/VSCode-extension/Extension_Tests"
 MakeCommand: /snap/cmake/372/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
@@ -62,7 +62,7 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: /usr/bin/g++-7
+Compiler: /usr/bin/c++
 CompilerVersion: 7.5.0
 
 # Dynamic analysis (MemCheck)

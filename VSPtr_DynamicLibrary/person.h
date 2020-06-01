@@ -6,19 +6,16 @@
 #define VSPTR_DYNAMICLIBRARY_PERSON_H
 
 class VSPTR_DYNAMICLIBRARY_PERSON_H person {
+
         public:
 
         person(int id, int otherId);
         ~person();
         static int size;
 
-        static int envio();
-
-
         private:
         int id;
         int otherId;
-
 };
 
 

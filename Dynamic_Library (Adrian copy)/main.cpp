@@ -32,6 +32,7 @@ int main()
 */
 
 garbageCollector * gc = garbageCollector::getInstance();
+/*
 void printTests(){
 
     //Test#1
@@ -61,7 +62,7 @@ void printTests(){
     gc->printElements();
 
 }
-
+*/
 int prueba(int a){
 
     return a;

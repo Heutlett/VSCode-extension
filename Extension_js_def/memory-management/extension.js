@@ -1,23 +1,22 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-
 const vscode = require('vscode');
 
 var ffi = require("ffi-napi");
-
 var ref = require('ref-napi');
+
+var $ = require('jquery');
+
 //var ffi = require('ffi');
 
 // Import math library
-
-const libVSPtr_DynamicLibrary = ffi.Library("/home/heutlett/VSCode-Memory-Manager/Extension_Tests/lib/libVSPtr_DynamicLibrary", {
+/*
+const libVSPtr_DynamicLibrary = ffi.Library("/home/heutlett/VSCode-extension/Extension_Tests/lib/libVSPtr_DynamicLibrary", {
     "CountPeople": [
         "int", []
-	],
-	"recibo": [
-		"int", []
 	]
 });
+*/
 
 //console.log(libVSPtr_DynamicLibrary.getInfo(15));
 
@@ -37,6 +36,10 @@ const libVSPtr_DynamicLibrary = ffi.Library("/home/heutlett/VSCode-Memory-Manage
  * @param {vscode.ExtensionContext} context
  */
 
+var listaGlobal;
+
+var contador = 0;
+
 
 
 function activate(context) {
@@ -45,7 +48,13 @@ function activate(context) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "memory-management" is now active!');
 
+	readJSON();
 	
+	let folderName = vscode.workspace.name; // get the open folder name
+	let folderPath = vscode.workspace.rootPath; // get the open folder path
+
+	console.log(folderName);
+	console.log(folderPath);
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
@@ -74,22 +83,28 @@ function activate(context) {
 		  );
 
 
+
+		       
+
+		  
+			
+
 		  const updateWebview = () => {
-			//const cat = iteration++ % 2 ? 'Compiling Cat' : 'Coding Cat';
-			//panel.title = cat;
-			var number = Math.random();
-			panel.webview.html = getWebviewContent(libVSPtr_DynamicLibrary.recibo());
+
+
+			readJSON();
+
+			console.log(listaGlobal);
+
+			panel.webview.html = getWebviewContent(listaGlobal);
+
 		  };
 	
 		  // Set initial content
 		  updateWebview();
 	
 		  // And schedule updates to the content every second
-		  setInterval(updateWebview, 100);
-
-			
-			
-
+		  setInterval(updateWebview, 2000);
 			
 
 		})
@@ -97,14 +112,52 @@ function activate(context) {
 
 }
 
-function foo(){
+function getData(indice, subindice){
 
-	console.log('hola');
+	return listaGlobal[indice][subindice];
 
 }
 
+function readJSON(){
 
-function getWebviewContent(number) {
+	var fs = require('fs');
+
+	var data = fs.readFileSync("/home/heutlett/VSCode-extension/Extension_Tests/json/pretty.json", "utf8");
+
+	var data1 = JSON.parse(data);
+
+	var lista = [];
+
+	for (var i=0; i< data1.listaPunteros.length; i++){
+
+		var listaElemento = [];
+
+		listaElemento[0] = JSON.stringify(data1.listaPunteros[i].id);
+		listaElemento[1] = JSON.stringify(data1.listaPunteros[i].refAddress);
+		listaElemento[2] = JSON.stringify(data1.listaPunteros[i].refQuantity);
+		listaElemento[3] = JSON.stringify(data1.listaPunteros[i].type);
+		listaElemento[4] = JSON.stringify(data1.listaPunteros[i].value);
+		listaElemento[5] = JSON.stringify(data1.listaPunteros[i].vsptrAdress);
+
+		lista.push(listaElemento);
+
+	}
+	//console.log(lista);
+	//
+
+	listaGlobal = lista;
+	
+}
+
+function lastTry(tabla){
+
+
+
+
+
+}
+
+function getWebviewContent(datos) {
 	return `<!DOCTYPE html>
   <html lang="en">
 	  <head>
@@ -129,39 +182,47 @@ function getWebviewContent(number) {
   
 		  <h2>Memory managment table</h2>
   
-		  <input type="button" value=${number} onclick="myFunction2();"/>
-  
 		  <table id="t01">
 		  <tr>
-			  <th>Data type</th>
-			  <th>Data value</th> 
-			  <th>Memory location</th>
-			  <th># references in GC</th>
+			  <th>ID</th>
+			  <th>refAddress</th> 
+			  <th>refQuantity</th>
+			  <th>Type</th>
+			  <th>Value</th>
+			  <th>VsptrAdress</th>
 		  </tr>
 		  </table>
   
 		  <script>
 
-		  	  function myFunction2(){
+				  var tb1 = document.getElementById("t01");
+
+
+				  
+				  for (var i=0; i< ${datos.length}; i++){
+
+						var row = tb1.insertRow();
+						var cell1 = row.insertCell();
+						var cell2 = row.insertCell();
+						var cell3 = row.insertCell();
+						var cell4 = row.insertCell();
+						var cell5 = row.insertCell();
+						var cell6 = row.insertCell();
+						cell1.innerHTML = ${datos[contador][0]};
+						cell2.innerHTML = ${datos[contador][1]};
+						cell3.innerHTML = ${datos[contador][2]};
+						cell4.innerHTML = ${datos[contador][3]};
+						cell5.innerHTML = ${datos[contador][4]};
+						cell6.innerHTML = ${datos[contador][5]};
+
+				
+				  }
 
 					
+					  
+					
 
-				}
-  
-			  function myFunction(){ 
-  
-				  var tb1 = document.getElementById("t01");
-				  var row = tb1.insertRow();
-				  var cell1 = row.insertCell();
-				  var cell2 = row.insertCell();
-				  var cell3 = row.insertCell();
-				  var cell4 = row.insertCell();
-				  cell1.innerHTML = "123";
-				  cell2.innerHTML = "123";
-				  cell3.innerHTML = "123";	
-				  cell4.innerHTML = "123";
-			  
-			  }
+				  
   
 		  </script>
   

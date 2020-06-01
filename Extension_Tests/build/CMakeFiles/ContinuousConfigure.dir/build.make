@@ -63,10 +63,10 @@ RM = /snap/cmake/372/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/heutlett/VSCode-Memory-Manager/Extension_Tests
+CMAKE_SOURCE_DIR = /home/heutlett/VSCode-extension/Extension_Tests
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build
+CMAKE_BINARY_DIR = /home/heutlett/VSCode-extension/Extension_Tests/build
 
 # Utility rule file for ContinuousConfigure.
 
@@ -91,6 +91,6 @@ CMakeFiles/ContinuousConfigure.dir/clean:
 .PHONY : CMakeFiles/ContinuousConfigure.dir/clean
 
 CMakeFiles/ContinuousConfigure.dir/depend:
-	cd /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/heutlett/VSCode-Memory-Manager/Extension_Tests /home/heutlett/VSCode-Memory-Manager/Extension_Tests /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build /home/heutlett/VSCode-Memory-Manager/Extension_Tests/build/CMakeFiles/ContinuousConfigure.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/heutlett/VSCode-extension/Extension_Tests/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/heutlett/VSCode-extension/Extension_Tests /home/heutlett/VSCode-extension/Extension_Tests /home/heutlett/VSCode-extension/Extension_Tests/build /home/heutlett/VSCode-extension/Extension_Tests/build /home/heutlett/VSCode-extension/Extension_Tests/build/CMakeFiles/ContinuousConfigure.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ContinuousConfigure.dir/depend
 
