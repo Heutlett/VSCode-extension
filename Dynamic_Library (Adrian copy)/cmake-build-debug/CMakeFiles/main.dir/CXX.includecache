@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/VSPointer.h
+iostream
+-
+garbageCollector.h
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/garbageCollector.h
+
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/garbageCollector.h
+vector
+-
+garbageElement.h
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/garbageElement.h
+thread
+-
+unistd.h
+-
+
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/garbageElement.h
+string
+-
+
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/main.cpp
+VSPointer.h
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/VSPointer.h
+iostream
+-
+

@@ -75,7 +75,7 @@ function activate(context) {
 		  updateWebview();
 	
 		  // And schedule updates to the content every second
-		  setInterval(updateWebview, 500);
+		  setInterval(updateWebview,1000);
 			
 
 		})

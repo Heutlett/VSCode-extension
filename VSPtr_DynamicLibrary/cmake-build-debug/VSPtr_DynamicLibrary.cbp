@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="VSPtr_DynamicLibrary"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VSPtr_DynamicLibrary">
+				<Option output="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/libVSPtr_DynamicLibrary.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 VSPtr_DynamicLibrary"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VSPtr_DynamicLibrary/fast">
+				<Option output="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/libVSPtr_DynamicLibrary.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 VSPtr_DynamicLibrary/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.cpp">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageCollector.cpp">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageCollector.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.cpp">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.cpp">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.cpp">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

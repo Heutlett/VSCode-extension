@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libVSPtr_DynamicLibrary.so -o libVSPtr_DynamicLibrary.so CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o  -pthread 
