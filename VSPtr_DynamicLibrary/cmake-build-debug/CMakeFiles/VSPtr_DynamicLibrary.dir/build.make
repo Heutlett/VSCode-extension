@@ -57,22 +57,9 @@ include CMakeFiles/VSPtr_DynamicLibrary.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/VSPtr_DynamicLibrary.dir/flags.make
 
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o: CMakeFiles/VSPtr_DynamicLibrary.dir/flags.make
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o: ../library.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o -c /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.cpp
-
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.cpp > CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.i
-
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.cpp -o CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.s
-
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o: CMakeFiles/VSPtr_DynamicLibrary.dir/flags.make
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o: ../garbageCollector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o -c /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageCollector.cpp
 
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.i: cmake_force
@@ -85,7 +72,7 @@ CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.s: cmake_force
 
 CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o: CMakeFiles/VSPtr_DynamicLibrary.dir/flags.make
 CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o: ../VSPointer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o -c /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.cpp
 
 CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.s: cmake_force
 
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o: CMakeFiles/VSPtr_DynamicLibrary.dir/flags.make
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o: ../garbageElement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o -c /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.cpp
 
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.i: cmake_force
@@ -109,38 +96,21 @@ CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.cpp -o CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.s
 
-CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o: CMakeFiles/VSPtr_DynamicLibrary.dir/flags.make
-CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o: ../person.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o -c /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.cpp
-
-CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.cpp > CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.i
-
-CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.cpp -o CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.s
-
 # Object files for target VSPtr_DynamicLibrary
 VSPtr_DynamicLibrary_OBJECTS = \
-"CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o" \
 "CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o" \
 "CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o" \
-"CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o" \
-"CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o"
+"CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o"
 
 # External object files for target VSPtr_DynamicLibrary
 VSPtr_DynamicLibrary_EXTERNAL_OBJECTS =
 
-libVSPtr_DynamicLibrary.so: CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o
 libVSPtr_DynamicLibrary.so: CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o
 libVSPtr_DynamicLibrary.so: CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o
 libVSPtr_DynamicLibrary.so: CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o
-libVSPtr_DynamicLibrary.so: CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o
 libVSPtr_DynamicLibrary.so: CMakeFiles/VSPtr_DynamicLibrary.dir/build.make
 libVSPtr_DynamicLibrary.so: CMakeFiles/VSPtr_DynamicLibrary.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library libVSPtr_DynamicLibrary.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libVSPtr_DynamicLibrary.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VSPtr_DynamicLibrary.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

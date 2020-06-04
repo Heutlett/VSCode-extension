@@ -1,8 +1,14 @@
 const vscode = require('vscode');
-
+/*
 var ref = require('ref-napi');
 
-var $ = require('jquery');
+var ffi = require('ffi-napi');
+
+var tool = ffi.Library('/home/heutlett/VSCode-extension/Extension_js_def/memory-management/libTools', {
+	'copiarArchivo': [ 
+		'int', [ 'string', 'string' ] ]
+  });
+*/
 
 /**
  * @param {vscode.ExtensionContext} context

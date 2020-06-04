@@ -7,8 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.cpp" "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o"
   "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageCollector.cpp" "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o"
   "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.cpp" "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o"
-  "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.cpp" "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o"
-  "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.cpp" "/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/cmake-build-debug/CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

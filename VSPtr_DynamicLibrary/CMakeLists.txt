@@ -3,7 +3,7 @@ project(VSPtr_DynamicLibrary)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(VSPtr_DynamicLibrary SHARED library.h library.cpp garbageCollector.cpp garbageCollector.h VSPointer.h VSPointer.cpp garbageElement.h garbageElement.cpp person.cpp person.h)
+add_library(VSPtr_DynamicLibrary SHARED garbageCollector.cpp garbageCollector.h VSPointer.h VSPointer.cpp garbageElement.h garbageElement.cpp CustomLinkedList.h Node.h)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)

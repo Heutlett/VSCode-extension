@@ -15,10 +15,3 @@ CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o
  /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.cpp
  /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.h
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o
- /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.cpp
- /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.h
- /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.h
-CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o
- /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.cpp
- /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.h

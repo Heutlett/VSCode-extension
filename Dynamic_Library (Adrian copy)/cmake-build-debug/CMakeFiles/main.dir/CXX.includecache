@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/CustomLinkedList.h
+iostream
+-
+Node.h
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/Node.h
+
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/Node.h
+
 /home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/VSPointer.h
 iostream
 -
@@ -21,6 +29,8 @@ thread
 -
 unistd.h
 -
+CustomLinkedList.h
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/CustomLinkedList.h
 
 /home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/garbageElement.h
 string
@@ -31,4 +41,6 @@ VSPointer.h
 /home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/VSPointer.h
 iostream
 -
+CustomLinkedList.h
+/home/heutlett/VSCode-extension/Dynamic_Library (Adrian copy)/CustomLinkedList.h
 

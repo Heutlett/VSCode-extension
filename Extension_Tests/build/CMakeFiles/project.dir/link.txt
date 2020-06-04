@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/project.dir/main.cpp.o  -o project -Wl,-rpath,/home/heutlett/VSCode-extension/Extension_Tests/lib ../lib/libVSPtr_DynamicLibrary.so 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/project.dir/main.cpp.o  -o project  -Wl,-rpath,/home/heutlett/VSCode-extension/Extension_Tests/lib ../lib/libVSPtr_DynamicLibrary.so 

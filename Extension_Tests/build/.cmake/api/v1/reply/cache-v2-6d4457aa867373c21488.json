@@ -1690,6 +1690,22 @@
 			"value" : "P4COMMAND-NOTFOUND"
 		},
 		{
+			"name" : "SCPCOMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to scp command, used by CTest for submitting results to a Dart server"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/scp"
+		},
+		{
 			"name" : "SITE",
 			"properties" : 
 			[

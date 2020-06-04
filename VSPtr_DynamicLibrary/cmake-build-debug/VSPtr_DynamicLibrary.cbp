@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/CustomLinkedList.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/Node.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
 		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.cpp">
 			<Option target="VSPtr_DynamicLibrary"/>
 		</Unit>
@@ -100,18 +106,6 @@
 			<Option target="VSPtr_DynamicLibrary"/>
 		</Unit>
 		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.h">
-			<Option target="VSPtr_DynamicLibrary"/>
-		</Unit>
-		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.cpp">
-			<Option target="VSPtr_DynamicLibrary"/>
-		</Unit>
-		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/library.h">
-			<Option target="VSPtr_DynamicLibrary"/>
-		</Unit>
-		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.cpp">
-			<Option target="VSPtr_DynamicLibrary"/>
-		</Unit>
-		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/person.h">
 			<Option target="VSPtr_DynamicLibrary"/>
 		</Unit>
 		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/CMakeLists.txt">

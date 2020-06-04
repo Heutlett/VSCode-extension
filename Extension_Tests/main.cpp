@@ -12,7 +12,7 @@ using namespace std;
 
 
 int main(){
-    /*
+    
     int i;
 
     VSPointer<int> myPtr = VSPointer<int>::New( );
@@ -71,8 +71,9 @@ int main(){
     cin >> i;
 
     gc->printElements();
-    */
+    
 
+    /*
     int i;
 
     VSPointer<int> myPtr = VSPointer<int>::New( );
@@ -91,5 +92,6 @@ int main(){
 
     gc->printElements();
     return 0;
+    */
 
 }

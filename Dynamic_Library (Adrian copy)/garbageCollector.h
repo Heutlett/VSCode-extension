@@ -5,6 +5,7 @@
 #include "garbageElement.h"
 #include <thread>
 #include <unistd.h>
+#include "CustomLinkedList.h"
 
 using namespace std;
 
@@ -34,8 +35,8 @@ class garbageCollector {
 
     public:
 
-          vector<garbageElement*> * garbageList;
-          vector<void*> * garbageTotalList;
+        vector<garbageElement*> * garbageList;
+        vector<void*> * garbageTotalList;
 
 
         /* Static access method. */
@@ -92,12 +93,22 @@ class garbageCollector {
 
                 cout << "si gNewReference == null" << endl;
 
+                cout << 1 << endl;
                 garbageElement * gOriginal = getGarbageElement(id);
+                cout << 2 << endl;
+                if(gOriginal== NULL){
+                    cout << "es null" << endl;
+                }
                 garbageElement * gReference = gOriginal->getGarbageReference(address);
+                cout << 3 << endl;
                 garbageElement * gNewOriginal = getGarbageElement(newId);
+                cout << 4 << endl;
                 gOriginal->deleteReference(address);
+                cout << 5 << endl;
                 gReference->id = newId;
+                cout << 6 << endl;
                 gNewOriginal->listOfReferences->push_back(gReference);
+                cout << 7 << endl;
 
                 //cout << "gOriginal:";
                 //gOriginal->toString();

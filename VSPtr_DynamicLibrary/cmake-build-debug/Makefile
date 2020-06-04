@@ -204,60 +204,6 @@ garbageElement.cpp.s:
 	$(MAKE) -f CMakeFiles/VSPtr_DynamicLibrary.dir/build.make CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.s
 .PHONY : garbageElement.cpp.s
 
-library.o: library.cpp.o
-
-.PHONY : library.o
-
-# target to build an object file
-library.cpp.o:
-	$(MAKE) -f CMakeFiles/VSPtr_DynamicLibrary.dir/build.make CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o
-.PHONY : library.cpp.o
-
-library.i: library.cpp.i
-
-.PHONY : library.i
-
-# target to preprocess a source file
-library.cpp.i:
-	$(MAKE) -f CMakeFiles/VSPtr_DynamicLibrary.dir/build.make CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.i
-.PHONY : library.cpp.i
-
-library.s: library.cpp.s
-
-.PHONY : library.s
-
-# target to generate assembly for a file
-library.cpp.s:
-	$(MAKE) -f CMakeFiles/VSPtr_DynamicLibrary.dir/build.make CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.s
-.PHONY : library.cpp.s
-
-person.o: person.cpp.o
-
-.PHONY : person.o
-
-# target to build an object file
-person.cpp.o:
-	$(MAKE) -f CMakeFiles/VSPtr_DynamicLibrary.dir/build.make CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o
-.PHONY : person.cpp.o
-
-person.i: person.cpp.i
-
-.PHONY : person.i
-
-# target to preprocess a source file
-person.cpp.i:
-	$(MAKE) -f CMakeFiles/VSPtr_DynamicLibrary.dir/build.make CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.i
-.PHONY : person.cpp.i
-
-person.s: person.cpp.s
-
-.PHONY : person.s
-
-# target to generate assembly for a file
-person.cpp.s:
-	$(MAKE) -f CMakeFiles/VSPtr_DynamicLibrary.dir/build.make CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.s
-.PHONY : person.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -276,12 +222,6 @@ help:
 	@echo "... garbageElement.o"
 	@echo "... garbageElement.i"
 	@echo "... garbageElement.s"
-	@echo "... library.o"
-	@echo "... library.i"
-	@echo "... library.s"
-	@echo "... person.o"
-	@echo "... person.i"
-	@echo "... person.s"
 .PHONY : help
 
 

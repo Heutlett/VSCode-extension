@@ -15,10 +15,3 @@ CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o: ../json.hpp
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o: ../garbageElement.cpp
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o: ../garbageElement.h
 
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o: ../library.cpp
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o: ../library.h
-CMakeFiles/VSPtr_DynamicLibrary.dir/library.cpp.o: ../person.h
-
-CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o: ../person.cpp
-CMakeFiles/VSPtr_DynamicLibrary.dir/person.cpp.o: ../person.h
-

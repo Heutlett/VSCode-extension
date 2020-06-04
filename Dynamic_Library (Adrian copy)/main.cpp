@@ -3,6 +3,7 @@
 //
 #include "VSPointer.h"
 #include <iostream>
+#include "CustomLinkedList.h"
 
 using namespace std;
 /*
@@ -32,7 +33,7 @@ int main()
 */
 
 garbageCollector * gc = garbageCollector::getInstance();
-/*
+
 void printTests(){
 
     //Test#1
@@ -48,7 +49,7 @@ void printTests(){
     //Test#3
     cout << "Test #3:" << endl;
     int a = &myPtr;
-    cout << "The value of a: " << a << endl;
+    cout << "The value of a: " << a << endl << endl;
 
     //Test#4
     cout << "Test #4:" << endl;
@@ -61,8 +62,26 @@ void printTests(){
     myPtr = 6;
     gc->printElements();
 
+
+    //Test#6: Prueba del thread en el GC
+    cout << "Test #6: Prueba del thread en el GC" << endl;
+    int i;
+    VSPointer<int> myPtr3 = VSPointer<int>::New( );
+    *myPtr3 = 555;
+
+    VSPointer<int> myPtr4 = VSPointer<int>::New( );
+    *myPtr4 = 6666;
+
+    gc->printElements();
+
+    myPtr3 = myPtr4;
+
+    cin >> i;
+
+    gc->printElements();
+
 }
-*/
+
 int prueba(int a){
 
     return a;
@@ -71,14 +90,25 @@ int prueba(int a){
 
 int main()
 {
+    /*
+    CustomLinkedList<int> firstList;
 
+    firstList.push_back(32);
+    firstList.push_back(33);
+    firstList.push_back(1233);
+    firstList.push_back(3523);
+    firstList.push_back(3123);
+
+    firstList.printlist();
+*/
+/*
     int i;
 
     VSPointer<int> myPtr = VSPointer<int>::New( );
-    *myPtr = 'A';
+    *myPtr = 5;
 
     VSPointer<int> myPtr1 = VSPointer<int>::New( );
-    *myPtr1 = 'b';
+    *myPtr1 = 6;
 
     gc->printElements();
 
@@ -87,6 +117,9 @@ int main()
     cin >> i;
 
     gc->printElements();
+*/
+
+    printTests();
 
     return 0;
 }
