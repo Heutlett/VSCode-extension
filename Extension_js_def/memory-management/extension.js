@@ -10,27 +10,6 @@ var $ = require('jquery');
 //var ffi = require('ffi');
 
 // Import math library
-/*
-const libVSPtr_DynamicLibrary = ffi.Library("/home/heutlett/VSCode-extension/Extension_Tests/lib/libVSPtr_DynamicLibrary", {
-    "CountPeople": [
-        "int", []
-	]
-});
-*/
-
-//console.log(libVSPtr_DynamicLibrary.getInfo(15));
-
-//var buffer = new Buffer(32); // allocate 32 bytes for the output data, an imaginary MD5 hex string.
-//mathLibrary.get_md5_string(buffer);
-//var actualString = ref.readCString(buffer, 0);
-
-//console.log(actualString);
-
-
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
-
-
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -56,7 +35,6 @@ function activate(context) {
 	//let folderName = vscode.workspace.name; // get the open folder name
 	folderPath = vscode.workspace.rootPath; // get the open folder path
 
-	console.log(folderPath);
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
@@ -89,8 +67,6 @@ function activate(context) {
 
 			readJSON();
 
-			console.log(listaGlobal);
-
 			panel.webview.html = getWebviewContent();
 
 		  };
@@ -99,7 +75,7 @@ function activate(context) {
 		  updateWebview();
 	
 		  // And schedule updates to the content every second
-		  setInterval(updateWebview, 2000);
+		  setInterval(updateWebview, 500);
 			
 
 		})
@@ -127,7 +103,6 @@ function readJSON(){
 	var data = fs.readFileSync(folderPath+"/pretty.json", "utf8");
 
 	var data1 = JSON.parse(data);
-	console.log(data1);
 
 	var lista = [];
 
@@ -149,10 +124,6 @@ function readJSON(){
 		}
 
 	}
-
-	
-	//
-	//
 
 	listaGlobal = lista;
 	

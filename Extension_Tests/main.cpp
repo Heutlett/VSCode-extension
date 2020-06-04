@@ -12,7 +12,7 @@ using namespace std;
 
 
 int main(){
-
+    /*
     int i;
 
     VSPointer<int> myPtr = VSPointer<int>::New( );
@@ -71,32 +71,25 @@ int main(){
     cin >> i;
 
     gc->printElements();
-
-    /*
-    int a;
-     
-    std::cout << VSPTR_DYNAMICLIBRARY_LIBRARY_H::CountPeople() << std::endl;
-    person *p1 = new person(1,2);
-    person *p2 = new person(3,4);
-    person *p3 = new person(3,4);
-    person *p19 = new person(3,4);
-    person *p20 = new person(3,4);
-    person *p22 = new person(3,4);
-    person *p23 = new person(3,4);
-
-    std::cout << "Cantidad de personas: " << VSPTR_DYNAMICLIBRARY_LIBRARY_H::CountPeople() << std::endl;
-    cin >> a;
-    
-    
-    delete(p1);
-    delete(p2);
-    std::cout << VSPTR_DYNAMICLIBRARY_LIBRARY_H::CountPeople() << std::endl;
     */
-    //char arr[5] = { 'a', 'b', 'c', 'd', 'e' };
-    //Array<char> a(arr, 5);
-    //a.print();
-    //return 0;
-    //vsp
+
+    int i;
+
+    VSPointer<int> myPtr = VSPointer<int>::New( );
+    *myPtr = 15;
+
+    VSPointer<int> myPtr1 = VSPointer<int>::New( );
+    *myPtr1 = 22;
+
+    gc->printElements();
+
+    cin >> i;
+
+    myPtr = myPtr1;
+
+    cin >> i;
+
+    gc->printElements();
     return 0;
 
 }
