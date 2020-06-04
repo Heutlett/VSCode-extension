@@ -1,48 +1,25 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-var ffi = require("ffi-napi");
 var ref = require('ref-napi');
 
 var $ = require('jquery');
-
-//var ffi = require('ffi');
-
-// Import math library
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 
-var listaGlobal;
-
-var contador = 0;
-
+var listaGlobal = {};
 let folderPath;
-
 
 function activate(context) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "memory-management" is now active!');
 
-	//copyFiles();
+	folderPath = vscode.workspace.rootPath; 
+	clearJSON();
 
-	//readJSON();
-	
-	//let folderName = vscode.workspace.name; // get the open folder name
-	folderPath = vscode.workspace.rootPath; // get the open folder path
-
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('memory-management.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
+		
 		vscode.window.showInformationMessage('Hello World from Memory_management!');
 	});
 
@@ -50,36 +27,41 @@ function activate(context) {
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('memory-management.memoryManagment', () => {
-		  // Create and show a new webview
+		  
 		  const panel = vscode.window.createWebviewPanel(
-			'memoryManagment', // Identifies the type of the webview. Used internally
-			'Memory managment', // Title of the panel displayed to the user
-			vscode.ViewColumn.One, // Editor column to show the new webview panel in.
+			'memoryManagment', 
+			'Memory managment', 
+			vscode.ViewColumn.One, 
 			{
-
 				enableScripts: true
-
-			} // Webview options. More on these later.
+			} 
 		  );
 			
 		  const updateWebview = () => {
 
-
 			readJSON();
-
 			panel.webview.html = getWebviewContent();
 
 		  };
 	
-		  // Set initial content
 		  updateWebview();
-	
-		  // And schedule updates to the content every second
-		  setInterval(updateWebview,1000);
+		  setInterval(updateWebview,500);
 			
-
 		})
 	  );
+
+}
+
+function clearJSON(){
+
+	var fs = require('fs');
+
+	fs.writeFile(folderPath+"/pretty.json", "", function(err) {
+	  if (err) {
+		return console.log(err);
+	  }
+	  console.log("El archivo fue creado correctamente");
+	});
 
 }
 
@@ -87,7 +69,6 @@ function copyFiles(){
 
 	const fs = require('fs');
 
-	// destination will be created or overwritten by default.
 	fs.copyFile('/home/heutlett/VSCode-extension/Extension_js_def/memory-management/libraryFiles/pruebax.txt', '/home/heutlett/VSCode-extension/Extension_js_def/memory-management/libraryFiles/pruebax2.txt', (err) => {
 	if (err) throw err;
 	console.log('File was copied to destination');
@@ -95,15 +76,11 @@ function copyFiles(){
 
 }
 
-
-function readJSON(){
+function readJSONAux(){
 
 	var fs = require('fs');
-
 	var data = fs.readFileSync(folderPath+"/pretty.json", "utf8");
-
 	var data1 = JSON.parse(data);
-
 	var lista = [];
 
 	if(data1.listaPunteros != null){
@@ -122,10 +99,28 @@ function readJSON(){
 			lista.push(listaElemento);
 	
 		}
-
 	}
-
 	listaGlobal = lista;
+}
+
+
+function readJSON(){
+
+	var fs = require('fs');
+
+	fs.readFile(folderPath+"/pretty.json", 'utf8', function(err, data) {
+		if (err) {
+			return console.log(err);
+		}
+		if(data==""){
+			return console.log("no se encuentra cargado el json");
+		}
+
+		console.log("llego");
+	  
+		readJSONAux();
+
+	});
 	
 }
 
@@ -181,7 +176,10 @@ function getWebviewContent() {
 	  <body>
   
 		  <h2>Memory managment table</h2>
-  
+
+		  <input type="button" value="Activar remote memory">
+		  <label for="Name">Memoria en uso: local</label>
+
 		  <table id="t01">
 		  <tr>
 			  <th>ID</th>

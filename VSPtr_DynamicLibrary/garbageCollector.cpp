@@ -71,7 +71,7 @@ garbageCollector::garbageCollector() {
 void garbageCollector::memoryLeakThread(){
     while(1) {
 
-        sleep(5);
+        sleep(1);
         checkMemoryLeaks();
         generarJSON();
 
