@@ -23,6 +23,7 @@ function activate(context) {
 
 	folderPath = vscode.workspace.rootPath; 
 	clearJSON();
+	changeRemoteMemoryStatus();
 
 	let disposable = vscode.commands.registerCommand('memory-management.helloWorld', function () {
 		
@@ -122,12 +123,23 @@ function readJSON(){
 			return console.log("no se encuentra cargado el json");
 		}
 
-		console.log("llego");
-	  
+
 		readJSONAux();
 
 	});
 	
+}
+
+function changeRemoteMemoryStatus(){
+
+	var fs = require('fs');
+
+	fs.writeFile(folderPath+"/remote_memory_conf.txt", "1", function(err) {
+	  if (err) {
+		return console.log(err);
+	  }
+	});
+
 }
 
 function generateTable(){
@@ -183,7 +195,7 @@ function getWebviewContent() {
   
 		  <h2>Memory managment table</h2>
 
-		  <input type="button" value="Activar remote memory">
+		  <input id="btn1" type="button" value="Activar remote memory" onclick="prueba()">
 		  <label for="Name">Memoria en uso: local</label>
 
 		  <table id="t01">

@@ -8,6 +8,18 @@
 
 using json = nlohmann::json;
 
+void garbageCollector::checkRemoteMemoryConf(){
+
+    char cadena[128];
+
+    ifstream fe("remote_memory_conf");
+    cout << "El estado de la remote memory es: ";
+    fe >> cadena;
+    cout << cadena << endl;
+    fe.close();
+
+}
+
 void garbageCollector::generarJSON(){
 
     json j;
@@ -74,6 +86,7 @@ void garbageCollector::memoryLeakThread(){
         sleep(1);
         checkMemoryLeaks();
         generarJSON();
+        checkRemoteMemoryConf();
 
     }
 }

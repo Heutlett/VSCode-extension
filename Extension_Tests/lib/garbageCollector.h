@@ -22,6 +22,7 @@ private:
     static garbageCollector* instance;
     garbageCollector();
     void memoryLeakThread();
+    bool remoteMemoryIsActive;
 
 public:
 
@@ -38,6 +39,7 @@ public:
     bool deletePtr(string id, void ** address);
     void checkMemoryLeaks();
     void generarJSON();
+    void checkRemoteMemoryConf();
 
     static int prueba(int a){
         return a;
