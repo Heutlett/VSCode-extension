@@ -10,9 +10,9 @@ using json = nlohmann::json;
 
 void garbageCollector::checkRemoteMemoryConf(){
 
-    char cadena[128];
+    char cadena[128];{}
 
-    ifstream fe("remote_memory_conf");
+    ifstream fe("remote_memory_conf.txt");
     cout << "El estado de la remote memory es: ";
     fe >> cadena;
     cout << cadena << endl;

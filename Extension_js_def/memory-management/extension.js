@@ -16,18 +16,21 @@ var tool = ffi.Library('/home/heutlett/VSCode-extension/Extension_js_def/memory-
 
 var listaGlobal = {};
 let folderPath;
+var remoteMemoryValue;
 
 function activate(context) {
 
 	console.log('Congratulations, your extension "memory-management" is now active!');
 
 	folderPath = vscode.workspace.rootPath; 
+	console.log(folderPath);
 	clearJSON();
-	changeRemoteMemoryStatus();
 
-	let disposable = vscode.commands.registerCommand('memory-management.helloWorld', function () {
+	let disposable = vscode.commands.registerCommand('memory-management.remoteMemory', function () {
 		
-		vscode.window.showInformationMessage('Hello World from Memory_management!');
+		vscode.window.showInformationMessage('The remote memory has been actived!');
+		changeRemoteMemoryStatus();
+
 	});
 
 	context.subscriptions.push(disposable);
@@ -46,6 +49,8 @@ function activate(context) {
 			
 		  const updateWebview = () => {
 
+			getRemoteMemoryValue();
+			console.log("el valor de remoteMemoryValue es: " + remoteMemoryValue);
 			readJSON();
 			panel.webview.html = getWebviewContent();
 
@@ -120,7 +125,7 @@ function readJSON(){
 			return console.log(err);
 		}
 		if(data==""){
-			return console.log("no se encuentra cargado el json");
+			return 
 		}
 
 
@@ -130,16 +135,53 @@ function readJSON(){
 	
 }
 
+function getRemoteMemoryValue(){
+
+	var fs = require('fs');
+
+	fs.readFile(folderPath+"/remote_memory_conf.txt", 'utf8', function(err, data) {
+	if (err) {
+		return "0";
+	}
+
+	console.log("el valor de data es: " + data);
+
+	remoteMemoryValue = data;
+	
+	});
+
+}
+
 function changeRemoteMemoryStatus(){
 
 	var fs = require('fs');
 
-	fs.writeFile(folderPath+"/remote_memory_conf.txt", "1", function(err) {
-	  if (err) {
-		return console.log(err);
-	  }
-	});
+	fs.readFile(folderPath+"/remote_memory_conf.txt", 'utf8', function(err, data) {
+	if (err) {
+		return "0";
+	}
 
+	console.log("el valor de data es: " + data);
+
+	if(data == '1'){
+
+		fs.writeFile(folderPath+"/remote_memory_conf.txt", "0", function(err) {
+			if (err) {
+			  return console.log(err);
+			}
+		  });
+
+	}else{
+
+		fs.writeFile(folderPath+"/remote_memory_conf.txt", "1", function(err) {
+			if (err) {
+			  return console.log(err);
+			}
+		  });
+	}
+
+	});
+	return ""
 }
 
 function generateTable(){
@@ -176,7 +218,7 @@ function getWebviewContent() {
 	  <head>
 		  <meta charset="UTF-8">
 		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		  <title>Memory managment</title>
+		  <title>Memory management</title>
   
 		  <style>
 		  table, th, td {
@@ -193,10 +235,9 @@ function getWebviewContent() {
   
 	  <body>
   
-		  <h2>Memory managment table</h2>
+		  <h2>Memory management table</h2>
 
-		  <input id="btn1" type="button" value="Activar remote memory" onclick="prueba()">
-		  <label for="Name">Memoria en uso: local</label>
+		  <label id="lbl1" for="Name">Memoria en uso: local</label>
 
 		  <table id="t01">
 		  <tr>
@@ -211,7 +252,15 @@ function getWebviewContent() {
   
 		  <script>
 
-		  ` + generateTable()  + `
+		  if(${remoteMemoryValue}=="1"){
+			document.getElementById("lbl1").innerHTML= 'Memoria en uso: remota';
+		  }
+		  if(${remoteMemoryValue}=="0"){
+			document.getElementById("lbl1").innerHTML= 'Memoria en uso: local';
+		  }
+		  
+
+		  ` + generateTable() + `
 				  
   
 		  </script>
