@@ -1,6 +1,4 @@
 #include <iostream>
-#include "lib/library.h"
-#include "lib/person.h"
 #include "lib/VSPointer.h"
 #include "lib/garbageCollector.h"
 
@@ -9,7 +7,6 @@ garbageCollector * gc = garbageCollector::getInstance();
 using namespace std;
 
 //target_link_libraries(project ${CMAKE_SOURCE_DIR}/lib/libVSPtr_DynamicLibrary)
-
 
 int main(){
     

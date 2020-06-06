@@ -366,21 +366,9 @@ limits
 type_traits
 -
 
-/home/heutlett/VSCode-extension/Extension_Tests/lib/library.h
-person.h
-/home/heutlett/VSCode-extension/Extension_Tests/lib/person.h
-string
--
-
-/home/heutlett/VSCode-extension/Extension_Tests/lib/person.h
-
 /home/heutlett/VSCode-extension/Extension_Tests/main.cpp
 iostream
 -
-lib/library.h
-/home/heutlett/VSCode-extension/Extension_Tests/lib/library.h
-lib/person.h
-/home/heutlett/VSCode-extension/Extension_Tests/lib/person.h
 lib/VSPointer.h
 /home/heutlett/VSCode-extension/Extension_Tests/lib/VSPointer.h
 lib/garbageCollector.h

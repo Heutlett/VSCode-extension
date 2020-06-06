@@ -13,9 +13,7 @@ void garbageCollector::checkRemoteMemoryConf(){
     char cadena[128];{}
 
     ifstream fe("remote_memory_conf.txt");
-    cout << "El estado de la remote memory es: ";
     fe >> cadena;
-    cout << cadena << endl;
     fe.close();
 
 }
@@ -77,17 +75,24 @@ garbageCollector::garbageCollector() {
     garbageList = new vector<garbageElement*>();
     garbageTotalList = new vector<void*>() ;
     thread(&garbageCollector::memoryLeakThread, this).detach();
+    thread(&garbageCollector::checkRemoteThread, this).detach();
 }
 
 
-void garbageCollector::memoryLeakThread(){
-    while(1) {
+void garbageCollector::checkRemoteThread(){
 
+    while(1) {
         sleep(1);
-        checkMemoryLeaks();
         generarJSON();
         checkRemoteMemoryConf();
+    }
 
+}
+
+void garbageCollector::memoryLeakThread(){
+    while(1) {
+        sleep(5);
+        checkMemoryLeaks();
     }
 }
 

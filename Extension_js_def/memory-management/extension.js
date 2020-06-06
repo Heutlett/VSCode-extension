@@ -28,8 +28,12 @@ function activate(context) {
 
 	let disposable = vscode.commands.registerCommand('memory-management.remoteMemory', function () {
 		
-		vscode.window.showInformationMessage('The remote memory has been actived!');
+		
 		changeRemoteMemoryStatus();
+		vscode.window.showInformationMessage('The memory used has been changed!');
+
+
+		
 
 	});
 

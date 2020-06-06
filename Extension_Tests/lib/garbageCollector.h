@@ -40,6 +40,7 @@ public:
     void checkMemoryLeaks();
     void generarJSON();
     void checkRemoteMemoryConf();
+    void checkRemoteThread();
 
     static int prueba(int a){
         return a;
