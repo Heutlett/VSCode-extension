@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/heutlett/VSCode-extension/Extension_Tests"
+ConfigureCommand: "/snap/cmake/372/bin/cmake" "/home/heutlett/VSCode-extension/Extension_Tests"
 MakeCommand: /snap/cmake/372/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
@@ -63,12 +63,14 @@ UpdateType:
 
 # Compiler info
 Compiler: /usr/bin/c++
-CompilerVersion: 9.3.0
+CompilerVersion: 7.5.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
 ValgrindCommand: 
 ValgrindCommandOptions: 
+DrMemoryCommand: 
+DrMemoryCommandOptions: 
 MemoryCheckType: 
 MemoryCheckSanitizerOptions: 
 MemoryCheckCommand: MEMORYCHECK_COMMAND-NOTFOUND
