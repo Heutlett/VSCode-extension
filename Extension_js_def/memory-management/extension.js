@@ -26,19 +26,6 @@ function activate(context) {
 	console.log(folderPath);
 	clearJSON();
 
-	let disposable = vscode.commands.registerCommand('memory-management.remoteMemory', function () {
-		
-		
-		changeRemoteMemoryStatus();
-		vscode.window.showInformationMessage('The memory used has been changed!');
-
-
-		
-
-	});
-
-	context.subscriptions.push(disposable);
-
 	context.subscriptions.push(
 		vscode.commands.registerCommand('memory-management.memoryManagment', () => {
 		  
@@ -54,7 +41,6 @@ function activate(context) {
 		  const updateWebview = () => {
 
 			getRemoteMemoryValue();
-			console.log("el valor de remoteMemoryValue es: " + remoteMemoryValue);
 			readJSON();
 			panel.webview.html = getWebviewContent();
 
@@ -62,9 +48,143 @@ function activate(context) {
 	
 		  updateWebview();
 		  setInterval(updateWebview,500);
+
+
+		  // Handle messages from the webview
+		  panel.webview.onDidReceiveMessage(
+			message => {
+
+
+			  switch (message.command) {
+
+				case 'memory':
+					changeRemoteMemoryStatus();
+					
+					vscode.window.showInformationMessage("The memory used has been changed to: " + getMemoryInUse() + " memory");
+
+					return;
+			  }
+
+
+			},
+			undefined,
+			context.subscriptions
+		  );
 			
 		})
+
+		
+
+
 	  );
+
+}
+
+
+function getWebviewContent() {
+	return `<!DOCTYPE html>
+  <html lang="en">
+	  <head>
+		  <meta charset="UTF-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <title>Memory management</title>
+  
+		  <style>
+		  table, th, td {
+			  border: 1px solid black;
+			  text-align: left;
+		  }
+		  table#t01 {
+			  width: 100%;    
+			  background-color: #ffffff;
+			  color: black;
+		  }
+		  </style>
+	  </head>
+  
+	  <body>
+
+	  	
+		  <h1>Memory management table</h1>
+
+		  <h2>Memoria en uso: ` + getMemoryInUse() +  ` </h2>
+
+		  <h2>Data to log in to remote memory</h2>
+
+			<form action="/action_page.php">
+
+			<label id="lblIP" for="fname">IP:</label>
+			<input id="inIP" type="text" name="fname"><br><br>
+
+			<label id="lblPass" for="lname">Password:</label>
+			<input id="inPass" type="text" name="lname"><br><br>
+
+			<label id="lblPo
+			Port: rt" for="lname">Port:    </label>
+			<input id="inPort" type="text" name="lname"><br><br>
+
+			<label id="lblUser" for="lname">User:    </label>
+			<input id="inUser" type="text" name="lname"><br><br>
+
+			<button id="btnRemote" type="button" onclick=changeMemory()>Connect to remote memory</button>
+			<button id="btnLocal" type="button" onclick=changeMemory()>Change to local memory</button>
+			  
+			<br><br>
+
+			</form>
+
+		  <table id="t01">
+		  <tr>
+			  <th>ID</th>
+			  <th>refAddress</th> 
+			  <th>refQuantity</th>
+			  <th>Type</th>
+			  <th>Value</th>
+			  <th>VsptrAdress</th>
+		  </tr>
+		  </table>
+  
+		  <script>
+
+			function changeMemory(){
+
+				const vscode = acquireVsCodeApi();
+
+				vscode.postMessage({
+					command: 'memory',
+					text: 'The memory has been changed'
+				})
+
+			}
+
+
+
+		  ` + generateTable() + `
+				  
+  
+		  </script>
+  
+	  </body>
+  
+  </html>`;
+}
+
+exports.activate = activate;
+
+// this method is called when your extension is deactivated
+function deactivate() {}
+
+module.exports = {
+	activate,
+	deactivate
+}
+
+
+function writeLogInInfo(){
+
+
+
+	
 
 }
 
@@ -188,10 +308,46 @@ function changeRemoteMemoryStatus(){
 	return ""
 }
 
+function disableRemoteInputs(){
+
+	return `
+
+	document.getElementById("inIP").disabled = true;
+	document.getElementById("inPass").disabled = true;
+	document.getElementById("inPort").disabled = true;
+	document.getElementById("inUser").disabled = true;
+	document.getElementById("btnRemote").hidden = true;
+	document.getElementById("btnLocal").hidden = false;
+
+	`
+
+}
+
+function enableRemoteInputs(){
+
+	return `
+
+	document.getElementById("inIP").disabled = false;
+	document.getElementById("inPass").disabled = false;
+	document.getElementById("inPort").disabled = false;
+	document.getElementById("inUser").disabled = false;
+	document.getElementById("btnRemote").hidden = false;
+	document.getElementById("btnLocal").hidden = true;
+
+	`
+
+}
+
 function generateTable(){
 
-	var texto = `var tb1 = document.getElementById("t01");
-	`
+
+	if(remoteMemoryValue == 1){
+		var texto = `var tb1 = document.getElementById("t01"); ` + disableRemoteInputs();
+	}else{
+		var texto = `var tb1 = document.getElementById("t01"); ` + enableRemoteInputs();
+	}
+	
+
 	for (var i=0; i< listaGlobal.length; i++){
 
 		texto = texto + 
@@ -216,70 +372,13 @@ function generateTable(){
 	return texto;
 }
 
-function getWebviewContent() {
-	return `<!DOCTYPE html>
-  <html lang="en">
-	  <head>
-		  <meta charset="UTF-8">
-		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		  <title>Memory management</title>
-  
-		  <style>
-		  table, th, td {
-			  border: 1px solid black;
-			  text-align: left;
-		  }
-		  table#t01 {
-			  width: 100%;    
-			  background-color: #ffffff;
-			  color: black;
-		  }
-		  </style>
-	  </head>
-  
-	  <body>
-  
-		  <h2>Memory management table</h2>
+function getMemoryInUse(){
 
-		  <label id="lbl1" for="Name">Memoria en uso: local</label>
+	if(remoteMemoryValue=="1"){
+		return ' remota';
+	}
+	if(remoteMemoryValue=="0"){
+		return ' local';
+	}
 
-		  <table id="t01">
-		  <tr>
-			  <th>ID</th>
-			  <th>refAddress</th> 
-			  <th>refQuantity</th>
-			  <th>Type</th>
-			  <th>Value</th>
-			  <th>VsptrAdress</th>
-		  </tr>
-		  </table>
-  
-		  <script>
-
-		  if(${remoteMemoryValue}=="1"){
-			document.getElementById("lbl1").innerHTML= 'Memoria en uso: remota';
-		  }
-		  if(${remoteMemoryValue}=="0"){
-			document.getElementById("lbl1").innerHTML= 'Memoria en uso: local';
-		  }
-		  
-
-		  ` + generateTable() + `
-				  
-  
-		  </script>
-  
-	  </body>
-  
-  </html>`;
-}
-
-exports.activate = activate;
-
-// this method is called when your extension is deactivated
-function deactivate() {}
-
-module.exports = {
-	activate,
-	deactivate
 }

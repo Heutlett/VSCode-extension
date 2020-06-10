@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/VSPtr_Server.dir/main.cpp.o  -o VSPtr_Server 

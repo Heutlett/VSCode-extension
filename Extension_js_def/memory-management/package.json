@@ -10,17 +10,11 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:memory-management.remoteMemory",
 		"onCommand:memory-management.memoryManagment"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "memory-management.remoteMemory",
-				"title": "Remote memory",
-				"category": "VSPtrExtension"
-			},
 			{
 				"command": "memory-management.memoryManagment",
 				"title": "Memory Management",
