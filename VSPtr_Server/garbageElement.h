@@ -2,8 +2,8 @@
 // Created by heutlett on 14/5/20.
 //
 
-#ifndef VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H
-#define VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H
+#ifndef VSPTR_SERVER_GARBAGEELEMENT_H
+#define VSPTR_SERVER_GARBAGEELEMENT_H
 
 #include <iostream>
 #include <string>
@@ -11,7 +11,7 @@
 using namespace std;
 
 //template <class T>
-class VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H garbageElement{
+class garbageElement{
 
 public:
 

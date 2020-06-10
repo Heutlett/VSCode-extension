@@ -1,0 +1,2 @@
+/usr/bin/ar qc libVSPtr_DynamicLibrary.a  CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o CMakeFiles/VSPtr_DynamicLibrary.dir/garbageElement.cpp.o
+/usr/bin/ranlib libVSPtr_DynamicLibrary.a

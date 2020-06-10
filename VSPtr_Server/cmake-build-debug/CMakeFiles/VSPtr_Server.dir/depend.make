@@ -6,4 +6,5 @@ CMakeFiles/VSPtr_Server.dir/main.cpp.o: ../garbageCollector.h
 CMakeFiles/VSPtr_Server.dir/main.cpp.o: ../garbageElement.h
 CMakeFiles/VSPtr_Server.dir/main.cpp.o: ../json.hpp
 CMakeFiles/VSPtr_Server.dir/main.cpp.o: ../main.cpp
+CMakeFiles/VSPtr_Server.dir/main.cpp.o: ../server.h
 

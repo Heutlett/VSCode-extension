@@ -79,6 +79,7 @@ VSPtr_Server_EXTERNAL_OBJECTS =
 
 VSPtr_Server: CMakeFiles/VSPtr_Server.dir/main.cpp.o
 VSPtr_Server: CMakeFiles/VSPtr_Server.dir/build.make
+VSPtr_Server: ../libVSPtr_DynamicLibrary.so
 VSPtr_Server: CMakeFiles/VSPtr_Server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable VSPtr_Server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VSPtr_Server.dir/link.txt --verbose=$(VERBOSE)

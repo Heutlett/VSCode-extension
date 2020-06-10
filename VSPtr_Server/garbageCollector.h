@@ -2,8 +2,8 @@
 // Created by heutlett on 14/5/20.
 //
 
-#ifndef VSPTR_DYNAMICLIBRARY_GARBAGECOLLECTOR_H
-#define VSPTR_DYNAMICLIBRARY_GARBAGECOLLECTOR_H
+#ifndef VSPTR_SERVER_GARBAGECOLLECTOR_H
+#define VSPTR_SERVER_GARBAGECOLLECTOR_H
 
 #include <vector>
 #include "garbageElement.h"
@@ -15,7 +15,7 @@
 
 using namespace std;
 
-class VSPTR_DYNAMICLIBRARY_GARBAGECOLLECTOR_H garbageCollector {
+class  garbageCollector {
 
 private:
 

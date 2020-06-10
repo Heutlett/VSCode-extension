@@ -1,5 +1,5 @@
-#ifndef VSPTR_DYNAMICLIBRARY_VSPOINTER_H
-#define VSPTR_DYNAMICLIBRARY_VSPOINTER_H
+#ifndef VSPTR_SERVER_VSPOINTER_H
+#define VSPTR_SERVER_VSPOINTER_H
 
 
 #include <iostream>
@@ -8,7 +8,7 @@ using namespace std;
 
 // A generic smart pointer class
 template <class T>
-class VSPTR_DYNAMICLIBRARY_VSPOINTER_H VSPointer {
+class VSPointer {
 
 private:
 

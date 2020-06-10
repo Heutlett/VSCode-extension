@@ -1,16 +1,4 @@
 /snap/clion/114/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/heutlett/VSCode-extension/VSPtr_Server
--- Looking for pthread.h
--- Looking for pthread.h - found
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
--- Check if compiler accepts -pthread
--- Check if compiler accepts -pthread - yes
--- Found Threads: TRUE  
-CMake Error at CMakeLists.txt:10 (target_link_libraries):
-  Cannot specify link libraries for target "main" which is not built by this
-  project.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "/home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug/CMakeFiles/CMakeError.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug
