@@ -57,11 +57,20 @@ function activate(context) {
 
 			  switch (message.command) {
 
-				case 'memory':
+				case 'remoteMemory':
 					changeRemoteMemoryStatus();
 					
 					vscode.window.showInformationMessage("The memory used has been changed to: " + getMemoryInUse() + " memory");
+					
+					createLoginJSON(message.text);
 
+					return;
+
+				case 'localMemory':
+					changeRemoteMemoryStatus();
+					
+					vscode.window.showInformationMessage("The memory used has been changed to: " + getMemoryInUse() + " memory");
+					
 					return;
 			  }
 
@@ -73,10 +82,29 @@ function activate(context) {
 			
 		})
 
-		
-
-
 	  );
+
+}
+
+function createLoginJSON(text){
+
+	var data = text.split(" ");
+
+	const fs = require('fs');
+     
+	let objectToSave = {
+						ip:data[0],
+						password:data[1],
+						port:data[2],
+						user:data[3]
+					   }
+	 
+	console.log(objectToSave);
+
+    fs.writeFile(folderPath + '/conexion.json', JSON.stringify(objectToSave),'utf8', (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+    });
 
 }
 
@@ -99,6 +127,7 @@ function getWebviewContent() {
 			  background-color: #ffffff;
 			  color: black;
 		  }
+
 		  </style>
 	  </head>
   
@@ -119,15 +148,14 @@ function getWebviewContent() {
 			<label id="lblPass" for="lname">Password:</label>
 			<input id="inPass" type="text" name="lname"><br><br>
 
-			<label id="lblPo
-			Port: rt" for="lname">Port:    </label>
+			<label id="lblPort" for="lname">Port:    </label>
 			<input id="inPort" type="text" name="lname"><br><br>
 
 			<label id="lblUser" for="lname">User:    </label>
 			<input id="inUser" type="text" name="lname"><br><br>
 
-			<button id="btnRemote" type="button" onclick=changeMemory()>Connect to remote memory</button>
-			<button id="btnLocal" type="button" onclick=changeMemory()>Change to local memory</button>
+			<button id="btnRemote" type="button" onclick=changeMemoryRemote()>Connect to remote memory</button>
+			<button id="btnLocal" type="button" onclick=changeMemoryLocal()>Change to local memory</button>
 			  
 			<br><br>
 
@@ -146,18 +174,38 @@ function getWebviewContent() {
   
 		  <script>
 
-			function changeMemory(){
+		  	function changeMemoryLocal(){
 
 				const vscode = acquireVsCodeApi();
 
+				var texto = "";
+
 				vscode.postMessage({
-					command: 'memory',
-					text: 'The memory has been changed'
+					command: 'localMemory',
+					text: texto
+				})
+				
+
+			  }
+
+
+			function changeMemoryRemote(){
+
+				const vscode = acquireVsCodeApi();
+
+				var texto = "";
+
+				texto += document.getElementById("inIP").value + " ";
+				texto += document.getElementById("inPass").value + " ";
+				texto += document.getElementById("inPort").value + " ";
+				texto += document.getElementById("inUser").value;
+
+				vscode.postMessage({
+					command: 'remoteMemory',
+					text: texto
 				})
 
 			}
-
-
 
 		  ` + generateTable() + `
 				  
@@ -251,10 +299,7 @@ function readJSON(){
 		if(data==""){
 			return 
 		}
-
-
 		readJSONAux();
-
 	});
 	
 }
@@ -267,8 +312,6 @@ function getRemoteMemoryValue(){
 	if (err) {
 		return "0";
 	}
-
-	console.log("el valor de data es: " + data);
 
 	remoteMemoryValue = data;
 	
@@ -312,10 +355,14 @@ function disableRemoteInputs(){
 
 	return `
 
-	document.getElementById("inIP").disabled = true;
-	document.getElementById("inPass").disabled = true;
-	document.getElementById("inPort").disabled = true;
-	document.getElementById("inUser").disabled = true;
+	document.getElementById("lblIP").hidden = true;
+	document.getElementById("lblPass").hidden = true;
+	document.getElementById("lblPort").hidden = true;
+	document.getElementById("lblUser").hidden = true;
+	document.getElementById("inIP").hidden = true;
+	document.getElementById("inPass").hidden = true;
+	document.getElementById("inPort").hidden = true;
+	document.getElementById("inUser").hidden = true;
 	document.getElementById("btnRemote").hidden = true;
 	document.getElementById("btnLocal").hidden = false;
 
@@ -327,10 +374,6 @@ function enableRemoteInputs(){
 
 	return `
 
-	document.getElementById("inIP").disabled = false;
-	document.getElementById("inPass").disabled = false;
-	document.getElementById("inPort").disabled = false;
-	document.getElementById("inUser").disabled = false;
 	document.getElementById("btnRemote").hidden = false;
 	document.getElementById("btnLocal").hidden = true;
 
