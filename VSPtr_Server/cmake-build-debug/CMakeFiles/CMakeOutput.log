@@ -463,3 +463,17 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2cfe4/fast && /usr/bin/make -f CMakeFiles/cmTC_2cfe4.dir/build.make CMakeFiles/cmTC_2cfe4.dir/build
+make[1]: Entering directory '/home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2cfe4.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2cfe4.dir/CheckIncludeFile.c.o   -c /home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2cfe4
+/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2cfe4.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_2cfe4.dir/CheckIncludeFile.c.o  -o cmTC_2cfe4 
+make[1]: Leaving directory '/home/heutlett/VSCode-extension/VSPtr_Server/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+

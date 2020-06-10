@@ -164,7 +164,7 @@ void garbageCollector::updateReference(string id, string newId, void** address){
         gNewOriginal->listOfReferences->push_back(gReference);
 
     }else{
-
+        
         deleteGarbageElement(id, address);
         garbageElement * gOriginalReference = getGarbageElement(newId);
         gNewReference->id = newId;

@@ -98,8 +98,6 @@ function createLoginJSON(text){
 						port:data[2],
 						user:data[3]
 					   }
-	 
-	console.log(objectToSave);
 
     fs.writeFile(folderPath + '/conexion.json', JSON.stringify(objectToSave),'utf8', (err) => {
       if (err) throw err;
@@ -146,7 +144,7 @@ function getWebviewContent() {
 			<input id="inIP" type="text" name="fname"><br><br>
 
 			<label id="lblPass" for="lname">Password:</label>
-			<input id="inPass" type="text" name="lname"><br><br>
+			<input id="inPass" type="password" name="lname"><br><br>
 
 			<label id="lblPort" for="lname">Port:    </label>
 			<input id="inPort" type="text" name="lname"><br><br>
