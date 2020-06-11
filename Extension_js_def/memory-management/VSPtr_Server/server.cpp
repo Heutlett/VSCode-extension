@@ -146,9 +146,7 @@ int main(int argc, char const *argv[])
 
         if(!fork()){
 
-
             recibir();
-
 
             if(strcmp(buffer, "1") == 0){ //1
 
