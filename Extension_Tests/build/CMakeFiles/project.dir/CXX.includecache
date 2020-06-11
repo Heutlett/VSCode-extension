@@ -11,10 +11,6 @@ iostream
 -
 garbageCollector.h
 /home/heutlett/VSCode-extension/Extension_Tests/lib/garbageCollector.h
-iostream
--
-garbageCollector.h
-/home/heutlett/VSCode-extension/Extension_Tests/lib/garbageCollector.h
 
 /home/heutlett/VSCode-extension/Extension_Tests/lib/garbageCollector.h
 vector

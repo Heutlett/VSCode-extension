@@ -102,7 +102,16 @@ function createLoginJSON(text){
 						user:data[3]
 					   }
 
-    fs.writeFile(folderPath + '/conexion.json', JSON.stringify(objectToSave),'utf8', (err) => {
+	var fecha = new Date();
+	var fechaF = ""+fecha.getDate()+"-"+(fecha.getMonth()+1)+"-"+fecha.getFullYear() + "_"+fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds();
+	//console.log(""+fecha.getDate()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear());
+	//console.log(" "+fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds());
+
+	var texto = folderPath + "/conexion_" + fechaF + ".json";
+
+	console.log(texto);
+
+    fs.writeFile(texto, JSON.stringify(objectToSave),'utf8', (err) => {
       if (err) throw err;
       console.log('The file has been saved!');
     });

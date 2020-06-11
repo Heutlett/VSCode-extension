@@ -49,7 +49,21 @@ public:
         return VSPointer(1);
     }
 
-    T operator &(){return *ptr;}
+    T operator &(){
+
+        if(garbageCollector::getInstance()->remoteMemoryIsActive){
+
+            cout << "No se sobrecarga el operador & porque remote activa" << endl;
+
+        }else{
+
+            return *ptr;
+
+        }
+
+
+
+    }
 
     // Destructor
     ~VSPointer() {
@@ -77,7 +91,9 @@ public:
 
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            return NULL;
+
+            cout << "no se sobrecarga el operador * porque la memoria es activa " << endl;
+            //return nullptr;
 
         }else{
             return *ptr;
@@ -90,7 +106,7 @@ public:
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
             cout << "no se sobrecarga -> porque remote es activa" << endl;
-            return NULL;
+            //return nullptr;
 
         }else{
 
