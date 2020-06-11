@@ -26,7 +26,7 @@ void garbageCollector::checkRemoteMemoryConf(){
 
 }
 
-string garbageCollector::generateStringJSON(){
+json garbageCollector::JsonGenerator(){
 
     json j;
 
@@ -73,59 +73,27 @@ string garbageCollector::generateStringJSON(){
         j["listaPunteros"][i] = j2;
 
     }
+    return j;
+}
 
-    std::ofstream o("sendServer.txt");
+string garbageCollector::generateStringJSON(){
+
+    json j = JsonGenerator();
+
+    std::ofstream o("sendServer.json");
     o << std::setw(4) << j << std::endl;
+
+    ifstream file("sendServer.json");
+    ostringstream tmp;
+    tmp<<file.rdbuf();
+    string s = tmp.str();
+    cout<<s<<std::endl;
 
 }
 
 void garbageCollector::generarJSON(){
 
-    json j;
-
-    j["listaPunteros"] = {};
-
-    for(int i = 0; i < garbageList->size(); i++){
-
-        json j2;
-
-        string a;
-
-        j2["id"] = garbageList->at(i)->id;
-
-        ostringstream get_the_address;
-        get_the_address << garbageList->at(i)->getAddress();
-        string address = get_the_address.str();
-        j2["refAddress"] = address;
-
-        ostringstream get_the_address2;
-        get_the_address2 << garbageList->at(i)->vsptrAdress;
-        address = get_the_address2.str();
-        j2["vsptrAdress"] = address;
-
-
-        j2["type"] = garbageList->at(i)->type;
-        j2["value"] = garbageList->at(i)->getValue();
-        j2["refQuantity"] = garbageList->at(i)->listOfReferences->size()+1;
-
-        j2["listOfReferences"] = {};
-
-        for(int e = 0; e < garbageList->at(i)->listOfReferences->size(); e++){
-
-            ostringstream get_the_address3;
-            string address3;
-            get_the_address3 << garbageList->at(i)->listOfReferences->at(e)->vsptrAdress;
-            address3 = get_the_address3.str();
-
-            j2["listOfReferences"][e] = address3;
-
-        }
-
-
-
-        j["listaPunteros"][i] = j2;
-
-    }
+    json j = JsonGenerator();
 
     std::ofstream o("pretty.json");
     o << std::setw(4) << j << std::endl;

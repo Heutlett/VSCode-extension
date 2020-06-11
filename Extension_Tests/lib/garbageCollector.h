@@ -13,6 +13,7 @@
 #include <iomanip>
 #include "json.hpp"
 
+using json = nlohmann::json;
 using namespace std;
 
 class VSPTR_DYNAMICLIBRARY_GARBAGECOLLECTOR_H garbageCollector {
@@ -42,6 +43,7 @@ public:
     void checkRemoteMemoryConf();
     void checkRemoteThread();
     string generateStringJSON();
+    json JsonGenerator();
 
 };
 
