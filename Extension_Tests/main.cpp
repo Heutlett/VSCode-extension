@@ -38,7 +38,7 @@ int main(){
     VSPointer<int> myPtr7 = VSPointer<int>::New( );
     myPtr7 = myPtr6;
 
-    garbageCollector::getInstance()->generateStringJSON();
+    cout << garbageCollector::getInstance()->generateStringJSON();
 
     cin >> i;
 

@@ -96,6 +96,9 @@
 		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.h">
 			<Option target="VSPtr_DynamicLibrary"/>
 		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/client.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
 		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageCollector.cpp">
 			<Option target="VSPtr_DynamicLibrary"/>
 		</Unit>

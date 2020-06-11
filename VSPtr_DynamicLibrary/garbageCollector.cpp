@@ -68,8 +68,6 @@ json garbageCollector::JsonGenerator(){
 
         }
 
-
-
         j["listaPunteros"][i] = j2;
 
     }
@@ -78,16 +76,12 @@ json garbageCollector::JsonGenerator(){
 
 string garbageCollector::generateStringJSON(){
 
-    json j = JsonGenerator();
-
-    std::ofstream o("sendServer.json");
-    o << std::setw(4) << j << std::endl;
-
-    ifstream file("sendServer.json");
+    ifstream file("pretty.json");
     ostringstream tmp;
     tmp<<file.rdbuf();
     string s = tmp.str();
-    cout<<s<<std::endl;
+
+    return s;
 
 }
 
