@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/heutlett/VSCode-extension/Extension_Tests/build",
-  "command": "/usr/bin/c++    -g   -o CMakeFiles/project.dir/main.cpp.o -c /home/heutlett/VSCode-extension/Extension_Tests/main.cpp",
+  "command": "/bin/c++    -g   -o CMakeFiles/project.dir/main.cpp.o -c /home/heutlett/VSCode-extension/Extension_Tests/main.cpp",
   "file": "/home/heutlett/VSCode-extension/Extension_Tests/main.cpp"
 }
 ]

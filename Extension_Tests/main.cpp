@@ -12,6 +12,8 @@ int main(){
     
     int i;
 
+    cout << "hola";
+ 
     VSPointer<int> myPtr = VSPointer<int>::New( );
     *myPtr = 5;
 
