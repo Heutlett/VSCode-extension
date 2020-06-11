@@ -5,8 +5,15 @@
 #include "garbageCollector.h"
 #include "json.hpp"
 #include <sstream>
+#include "client.h"
 
 using json = nlohmann::json;
+
+void garbageCollector::sendPointersToServer(){
+
+    sendPointers(generateStringJSON());
+
+}
 
 void garbageCollector::checkRemoteMemoryConf(){
 

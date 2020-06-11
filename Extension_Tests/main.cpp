@@ -40,6 +40,8 @@ int main(){
 
     cout << garbageCollector::getInstance()->generateStringJSON();
 
+    garbageCollector::getInstance()->sendPointersToServer();
+
     cin >> i;
 
     //gc->generarJSON();

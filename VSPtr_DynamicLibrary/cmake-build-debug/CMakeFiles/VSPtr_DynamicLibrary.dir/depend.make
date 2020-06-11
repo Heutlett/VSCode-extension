@@ -7,6 +7,7 @@ CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o: ../garbageCollector.h
 CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o: ../garbageElement.h
 CMakeFiles/VSPtr_DynamicLibrary.dir/VSPointer.cpp.o: ../json.hpp
 
+CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o: ../client.h
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o: ../garbageCollector.cpp
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o: ../garbageCollector.h
 CMakeFiles/VSPtr_DynamicLibrary.dir/garbageCollector.cpp.o: ../garbageElement.h

@@ -2,7 +2,7 @@
 // Created by heutlett on 14/5/20.
 //
 
-#ifndef VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H __attribute__((visibility("default")));
+#ifndef VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H
 #define VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H
 
 #include <iostream>

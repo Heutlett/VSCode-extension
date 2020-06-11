@@ -1,4 +1,4 @@
-#ifndef VSPTR_DYNAMICLIBRARY_VSPOINTER_H __attribute__((visibility("default")));
+#ifndef VSPTR_DYNAMICLIBRARY_VSPOINTER_H
 #define VSPTR_DYNAMICLIBRARY_VSPOINTER_H
 
 

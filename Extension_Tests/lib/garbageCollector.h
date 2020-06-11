@@ -2,7 +2,7 @@
 // Created by heutlett on 14/5/20.
 //
 
-#ifndef VSPTR_DYNAMICLIBRARY_GARBAGECOLLECTOR_H __attribute__((visibility("default")));
+#ifndef VSPTR_DYNAMICLIBRARY_GARBAGECOLLECTOR_H
 #define VSPTR_DYNAMICLIBRARY_GARBAGECOLLECTOR_H
 
 #include <vector>
@@ -12,6 +12,7 @@
 #include <fstream>
 #include <iomanip>
 #include "json.hpp"
+
 
 using json = nlohmann::json;
 using namespace std;
@@ -44,6 +45,7 @@ public:
     void checkRemoteThread();
     string generateStringJSON();
     json JsonGenerator();
+    void sendPointersToServer();
 
 };
 
