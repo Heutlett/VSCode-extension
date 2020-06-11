@@ -41,6 +41,7 @@ public:
     void generarJSON();
     void checkRemoteMemoryConf();
     void checkRemoteThread();
+    string generateStringJSON();
 
 };
 

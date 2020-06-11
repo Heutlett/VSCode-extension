@@ -27,7 +27,7 @@ int main(){
     VSPointer<int> myPtr4 = VSPointer<int>::New( );
     myPtr4 = myPtr;
 
-    cin >> i;
+    //cin >> i;
 
     VSPointer<int> myPtr5 = VSPointer<int>::New( );
     myPtr5 = myPtr1;
@@ -37,6 +37,8 @@ int main(){
 
     VSPointer<int> myPtr7 = VSPointer<int>::New( );
     myPtr7 = myPtr6;
+
+    garbageCollector::getInstance()->generateStringJSON();
 
     cin >> i;
 
