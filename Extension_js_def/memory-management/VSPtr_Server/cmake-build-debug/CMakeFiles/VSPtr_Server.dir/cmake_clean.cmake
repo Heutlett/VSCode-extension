@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/VSPtr_Server.dir/main.cpp.o"
+  "CMakeFiles/VSPtr_Server.dir/server.cpp.o"
   "VSPtr_Server"
   "VSPtr_Server.pdb"
 )

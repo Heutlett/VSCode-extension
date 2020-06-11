@@ -1,3 +1,24 @@
 {
-    "listaPunteros": null
+    "listaPunteros": [
+        {
+            "id": "id0",
+            "listOfReferences": [
+                "0x7ffd65b8aa70"
+            ],
+            "refAddress": "0x562daf6ffe70",
+            "refQuantity": 2,
+            "type": "i",
+            "value": "5",
+            "vsptrAdress": "0x7ffd65b8aa10"
+        },
+        {
+            "id": "id1",
+            "listOfReferences": null,
+            "refAddress": "0x562daf700270",
+            "refQuantity": 1,
+            "type": "i",
+            "value": "51",
+            "vsptrAdress": "0x7ffd65b8aa40"
+        }
+    ]
 }

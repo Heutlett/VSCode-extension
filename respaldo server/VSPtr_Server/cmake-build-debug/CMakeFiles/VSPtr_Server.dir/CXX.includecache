@@ -366,21 +366,15 @@ limits
 type_traits
 -
 
-/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.cpp
+/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/main.cpp
 iostream
 -
 VSPointer.h
 /home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/VSPointer.h
-unistd.h
--
-stdio.h
--
-sys/socket.h
--
-stdlib.h
--
-netinet/in.h
--
-string.h
--
+server.h
+/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.h
+
+/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.h
+VSPointer.h
+/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/VSPointer.h
 

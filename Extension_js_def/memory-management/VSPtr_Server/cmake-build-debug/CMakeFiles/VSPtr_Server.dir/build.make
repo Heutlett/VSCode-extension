@@ -57,27 +57,27 @@ include CMakeFiles/VSPtr_Server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/VSPtr_Server.dir/flags.make
 
-CMakeFiles/VSPtr_Server.dir/main.cpp.o: CMakeFiles/VSPtr_Server.dir/flags.make
-CMakeFiles/VSPtr_Server.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VSPtr_Server.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSPtr_Server.dir/main.cpp.o -c /home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/main.cpp
+CMakeFiles/VSPtr_Server.dir/server.cpp.o: CMakeFiles/VSPtr_Server.dir/flags.make
+CMakeFiles/VSPtr_Server.dir/server.cpp.o: ../server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VSPtr_Server.dir/server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VSPtr_Server.dir/server.cpp.o -c /home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.cpp
 
-CMakeFiles/VSPtr_Server.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VSPtr_Server.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/main.cpp > CMakeFiles/VSPtr_Server.dir/main.cpp.i
+CMakeFiles/VSPtr_Server.dir/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VSPtr_Server.dir/server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.cpp > CMakeFiles/VSPtr_Server.dir/server.cpp.i
 
-CMakeFiles/VSPtr_Server.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSPtr_Server.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/main.cpp -o CMakeFiles/VSPtr_Server.dir/main.cpp.s
+CMakeFiles/VSPtr_Server.dir/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VSPtr_Server.dir/server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.cpp -o CMakeFiles/VSPtr_Server.dir/server.cpp.s
 
 # Object files for target VSPtr_Server
 VSPtr_Server_OBJECTS = \
-"CMakeFiles/VSPtr_Server.dir/main.cpp.o"
+"CMakeFiles/VSPtr_Server.dir/server.cpp.o"
 
 # External object files for target VSPtr_Server
 VSPtr_Server_EXTERNAL_OBJECTS =
 
-VSPtr_Server: CMakeFiles/VSPtr_Server.dir/main.cpp.o
+VSPtr_Server: CMakeFiles/VSPtr_Server.dir/server.cpp.o
 VSPtr_Server: CMakeFiles/VSPtr_Server.dir/build.make
 VSPtr_Server: CMakeFiles/VSPtr_Server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable VSPtr_Server"

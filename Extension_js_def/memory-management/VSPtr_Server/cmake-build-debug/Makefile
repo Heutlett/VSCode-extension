@@ -123,32 +123,32 @@ VSPtr_Server/fast:
 	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/build
 .PHONY : VSPtr_Server/fast
 
-main.o: main.cpp.o
+server.o: server.cpp.o
 
-.PHONY : main.o
+.PHONY : server.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/main.cpp.o
-.PHONY : main.cpp.o
+server.cpp.o:
+	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/server.cpp.o
+.PHONY : server.cpp.o
 
-main.i: main.cpp.i
+server.i: server.cpp.i
 
-.PHONY : main.i
+.PHONY : server.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/main.cpp.i
-.PHONY : main.cpp.i
+server.cpp.i:
+	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/server.cpp.i
+.PHONY : server.cpp.i
 
-main.s: main.cpp.s
+server.s: server.cpp.s
 
-.PHONY : main.s
+.PHONY : server.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/main.cpp.s
-.PHONY : main.cpp.s
+server.cpp.s:
+	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/server.cpp.s
+.PHONY : server.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... VSPtr_Server"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... server.o"
+	@echo "... server.i"
+	@echo "... server.s"
 .PHONY : help
 
 
