@@ -1,4 +1,5 @@
 const vscode = require('vscode');
+
 /*
 var ref = require('ref-napi');
 
@@ -91,6 +92,8 @@ function createLoginJSON(text){
 	var data = text.split(" ");
 
 	const fs = require('fs');
+
+	//var md5 = $.md5('value');
      
 	let objectToSave = {
 						ip:data[0],

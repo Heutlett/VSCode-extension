@@ -22,10 +22,10 @@ private:
     static garbageCollector* instance;
     garbageCollector();
     void memoryLeakThread();
-    bool remoteMemoryIsActive;
+
 
 public:
-
+    bool remoteMemoryIsActive;
     vector<garbageElement*> * garbageList;
     vector<void*> * garbageTotalList;
     static int totalPtrCount;
@@ -41,10 +41,6 @@ public:
     void generarJSON();
     void checkRemoteMemoryConf();
     void checkRemoteThread();
-
-    static int prueba(int a){
-        return a;
-    }
 
 };
 

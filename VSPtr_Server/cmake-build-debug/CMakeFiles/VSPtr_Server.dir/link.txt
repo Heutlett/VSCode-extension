@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/VSPtr_Server.dir/main.cpp.o  -o VSPtr_Server  -Wl,-rpath,/home/heutlett/VSCode-extension/VSPtr_Server ../libVSPtr_DynamicLibrary.so 

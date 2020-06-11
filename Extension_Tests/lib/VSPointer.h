@@ -17,8 +17,7 @@ private:
 public:
 
     string id;
-    bool isNew = true;
-
+    string idRemote;
     garbageCollector* getGC(){
 
         return garbageCollector::getInstance();
@@ -29,14 +28,22 @@ public:
     }
     // Constructor
     VSPointer(int i) {
-        ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
 
-        getGC()->garbageTotalList->push_back(ptr);
-        string type = typeid(*ptr).name();
-        id = "id" + to_string(getGC()->totalPtrCount);
-        //cout << "VSPointer: " << this << ", refTo: " << ptr <<" type: (" << type << "), Value: " << to_string(*ptr) << " has been created" << endl;
-        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
-        getGC()->totalPtrCount++;
+        if(garbageCollector::getInstance()->remoteMemoryIsActive){
+
+            cout << "No se crea nada porque la remote esta activada" << endl;
+
+        }else{
+
+            ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
+            getGC()->garbageTotalList->push_back(ptr);
+            string type = typeid(*ptr).name();
+            id = "id" + to_string(getGC()->totalPtrCount);
+            //cout << "VSPointer: " << this << ", refTo: " << ptr <<" type: (" << type << "), Value: " << to_string(*ptr) << " has been created" << endl;
+            getGC()->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
+            getGC()->totalPtrCount++;
+
+        }
     }
 
     static VSPointer New(){
@@ -56,7 +63,6 @@ public:
 
     // Overloading dereferncing operator
     T& operator*() {
-        isNew = false;
         return *ptr;
     }
 
@@ -66,7 +72,6 @@ public:
         string type2 = typeid(ptr).name();
         if(type.compare(type2) == 0){
             *ptr = newValue;
-            isNew = false;
         }else{
             cout << "Operation failed, the types dont match" << endl;
         }

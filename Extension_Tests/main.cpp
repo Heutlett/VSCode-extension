@@ -24,10 +24,10 @@ int main(){
     VSPointer<int> myPtr3 = VSPointer<int>::New( );
     *myPtr3 = 666;
 
-
     VSPointer<int> myPtr4 = VSPointer<int>::New( );
     myPtr4 = myPtr;
 
+    cin >> i;
 
     VSPointer<int> myPtr5 = VSPointer<int>::New( );
     myPtr5 = myPtr1;
@@ -38,36 +38,35 @@ int main(){
     VSPointer<int> myPtr7 = VSPointer<int>::New( );
     myPtr7 = myPtr6;
 
-    VSPointer<char> myPtr8 = VSPointer<char>::New( );
-    *myPtr8 = 'a';
+    cin >> i;
 
-    gc->generarJSON();
+    //gc->generarJSON();
 
-    gc->printElements();
+    //gc->printElements();
 
     //myPtr = myPtr1;
 
-    cin >> i;
+    
 
-    VSPointer<int> myPtr20 = VSPointer<int>::New( );
-    *myPtr20 = 112;
+    //VSPointer<int> myPtr20 = VSPointer<int>::New( );
+    //*myPtr20 = 112;
 
-    VSPointer<int> myPtr30 = VSPointer<int>::New( );
-    *myPtr30 = 132;
+    //VSPointer<int> myPtr30 = VSPointer<int>::New( );
+    //*myPtr30 = 132;
 
 
-    gc->generarJSON();
+    //gc->generarJSON();
 
-    cin >> i;
+    //cin >> i;
 
-    myPtr2 = myPtr1;
-    myPtr3 = myPtr;
+    //myPtr2 = myPtr1;
+    //myPtr3 = myPtr;
 
-    gc->generarJSON();
+   // gc->generarJSON();
 
-    cin >> i;
+    //cin >> i;
 
-    gc->printElements();
+    //gc->printElements();
     
 
     /*

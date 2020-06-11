@@ -14,6 +14,14 @@ void garbageCollector::checkRemoteMemoryConf(){
 
     ifstream fe("remote_memory_conf.txt");
     fe >> cadena;
+    if(cadena[0]=='1'){
+        //cout << "cadena es 1" << endl;
+        this->remoteMemoryIsActive = true;
+    }else{
+        this->remoteMemoryIsActive = false;
+        //cout << "cadena es 0" << endl;
+    }
+    cout << "la memoria remota es: " << cadena << endl;
     fe.close();
 
 }
