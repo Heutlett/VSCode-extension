@@ -30,7 +30,7 @@ public:
      * @param pId
      * @param pVsptrAdress
      */
-    garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress);
+    garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress, int remoteId);
     /**
      * Returns the value of the pointer in string
      * @return string
@@ -52,14 +52,13 @@ public:
 
 int garbageElement::countRemoteId = 0;
 
-garbageElement::garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress){
+garbageElement::garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress, int pRemoteId){
     ptrData = dataPtr;
     listOfReferences = new vector<garbageElement*>;
     type = pType;
     id = pId;
     vsptrAdress = pVsptrAdress;
-    remoteId = countRemoteId;
-    countRemoteId++;
+    remoteId = pRemoteId;
 
 
     //cout << "GarbageElement has been created, VSPointerAddress: " << vsptrAdress << ", Value: " << getValue() << ", refTo: " << ptrData << endl <<endl;
@@ -163,7 +162,7 @@ void garbageElement::toString(){
 
     for(int i = 0; i < listOfReferences->size(); i++){
 
-        cout << i+1 << ": " << listOfReferences->at(i)->vsptrAdress << endl;
+        cout << i+1 << ": " << listOfReferences->at(i)->vsptrAdress << " | " << remoteId << endl;
 
     }
 

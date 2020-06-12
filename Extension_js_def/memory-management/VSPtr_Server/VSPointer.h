@@ -36,7 +36,7 @@ public:
         return p;
     }
 
-    VSPointer(string pId) {
+    VSPointer(string pId, int remoteId) {
         ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
         getGC()->garbageTotalList->push_back(ptr);
         string type = typeid(*ptr).name();
@@ -47,13 +47,13 @@ public:
         get_the_address3 << (void**)this;
         address3 = get_the_address3.str();
 
-        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, address3));
+        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, address3, remoteId));
         getGC()->totalPtrCount++;
     }
 
 
     // Constructor
-    VSPointer(int i) {
+    VSPointer(int i, int remoteId) {
         ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
         getGC()->garbageTotalList->push_back(ptr);
         string type = typeid(*ptr).name();
@@ -64,7 +64,7 @@ public:
         get_the_address3 << (void**)this;
         address3 = get_the_address3.str();
 
-        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, address3));
+        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, address3, remoteId));
         getGC()->totalPtrCount++;
     }
 

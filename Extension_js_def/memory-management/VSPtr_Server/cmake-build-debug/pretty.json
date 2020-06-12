@@ -5,52 +5,52 @@
             "idRemote": 0,
             "listOfReferences": [
                 {
-                    "address": "0x5569f9479f20",
+                    "address": "0x562698095f10",
                     "idRemote": 1
                 },
                 {
-                    "address": "0x5569f947bdd0",
-                    "idRemote": 2
+                    "address": "0x562698097aa0",
+                    "idRemote": 4
                 },
                 {
-                    "address": "0x5569f947baa0",
-                    "idRemote": 3
+                    "address": "0x562698097e60",
+                    "idRemote": 5
                 }
             ],
-            "refAddress": "0x5569f947a280",
+            "refAddress": "0x562698096260",
             "refQuantity": 4,
-            "type": "i",
-            "value": "5",
-            "vsptrAdress": "0x5569f947a4d0"
+            "type": "c",
+            "value": "a",
+            "vsptrAdress": "0x5626980964b0"
         },
         {
             "id": "id1",
-            "idRemote": 4,
+            "idRemote": 2,
             "listOfReferences": [
                 {
-                    "address": "0x5569f947a0b0",
-                    "idRemote": 5
+                    "address": "0x562698097dd0",
+                    "idRemote": 6
                 },
                 {
-                    "address": "0x5569f947c710",
-                    "idRemote": 6
+                    "address": "0x5626980979f0",
+                    "idRemote": 7
                 }
             ],
-            "refAddress": "0x5569f947bd20",
+            "refAddress": "0x562698097d20",
             "refQuantity": 3,
-            "type": "i",
-            "value": "555",
-            "vsptrAdress": "0x5569f947be60"
+            "type": "c",
+            "value": "b",
+            "vsptrAdress": "0x562698096140"
         },
         {
             "id": "id2",
-            "idRemote": 7,
+            "idRemote": 3,
             "listOfReferences": null,
-            "refAddress": "0x5569f9479ee0",
+            "refAddress": "0x562698095ed0",
             "refQuantity": 1,
-            "type": "i",
-            "value": "666",
-            "vsptrAdress": "0x5569f947d530"
+            "type": "c",
+            "value": "x",
+            "vsptrAdress": "0x562698099520"
         }
     ]
 }
