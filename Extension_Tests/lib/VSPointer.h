@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "garbageCollector.h"
+//#include "client.h"
 using namespace std;
 
 // A generic smart pointer class
@@ -17,6 +18,7 @@ private:
 public:
 
     string id;
+    int remoteId;
     garbageCollector* getGC(){
 
         return garbageCollector::getInstance();
@@ -28,18 +30,24 @@ public:
     // Constructor
     VSPointer(int i) {
 
+        string type = typeid(*ptr).name();
+
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            cout << "No se crea nada porque la remote esta activada" << endl;
+            remoteId = garbageCollector::getInstance()->SERVER_vsptrConstructor(type);
+
+            //cout << "No se crea nada porque la remote esta activada" << endl;
 
         }else{
 
             ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
             getGC()->garbageTotalList->push_back(ptr);
-            string type = typeid(*ptr).name();
+            //string type = typeid(*ptr).name();
             id = "id" + to_string(getGC()->totalPtrCount);
             getGC()->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
             getGC()->totalPtrCount++;
+            garbageElement * copia = getGC()->getGarbageElement(id, (void**)this);
+            remoteId = copia->remoteId;
 
         }
     }

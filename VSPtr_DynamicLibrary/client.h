@@ -14,10 +14,11 @@
 using namespace std;
 
 #define PORT 8080
+#define SIZE 100000
 //
 int sock = 0, valread;
 struct sockaddr_in serv_addr;
-char buffer[10000] = {0};
+char buffer[SIZE] = {0};
 
 /**
  * @brief
@@ -29,7 +30,7 @@ void iniciarCliente();
  */
 void limpiarBuffer(){
 
-    for(int i = 0; i < 10000; i++){
+    for(int i = 0; i < SIZE; i++){
 
         buffer[i] = NULL;
 
@@ -41,7 +42,7 @@ void limpiarBuffer(){
  */
 void recibir(){
 
-    valread = read( sock , buffer, 1024);
+    valread = read( sock , buffer, SIZE);
     printf("Recibido: %s\n",buffer );
 
 }
@@ -79,21 +80,21 @@ void sendPointers(string pointers){
  * @param string que contiene el numero del vertice que se quiere analizar la ruta mas corta
  * @return Devuelve la ruta mas corta del vertice pasado por parametro
  */
-void opcion2(){
+int createVSPTR(string type){
 
     limpiarBuffer();
-
     iniciarCliente();
+
     enviar("2"); //1
     recibir(); //2
-    //enviar("hola");//3
 
-    //recibir(); //4
+    enviar(type);//3
 
-    //enviar(msg); //5
+    recibir();//4
 
-    //recibir();//6
     close(sock);
+
+    return stoi(buffer);
 
 }
 /**

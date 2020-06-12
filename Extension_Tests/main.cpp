@@ -48,6 +48,13 @@ int main(){
 
     cin >> i;
 
+    VSPointer<int> myPtr8 = VSPointer<int>::New( );
+    //*myPtr8 = 500;
+
+    garbageCollector::getInstance()->printElements();
+
+    cin >> i;
+
     //gc->generarJSON();
 
     //gc->printElements();

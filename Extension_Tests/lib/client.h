@@ -79,21 +79,21 @@ void sendPointers(string pointers){
  * @param string que contiene el numero del vertice que se quiere analizar la ruta mas corta
  * @return Devuelve la ruta mas corta del vertice pasado por parametro
  */
-void opcion2(){
+int createVSPTR(string type){
 
     limpiarBuffer();
-
     iniciarCliente();
+
     enviar("2"); //1
     recibir(); //2
-    //enviar("hola");//3
 
-    //recibir(); //4
+    enviar(type);//3
 
-    //enviar(msg); //5
+    recibir();//4
 
-    //recibir();//6
     close(sock);
+
+    return stoi(buffer);
 
 }
 /**

@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.cpp
+VSPointer.h
+/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.h
+
+/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.h
+iostream
+-
+garbageCollector.h
+/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageCollector.h
+
 /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/client.h
 sys/socket.h
 -

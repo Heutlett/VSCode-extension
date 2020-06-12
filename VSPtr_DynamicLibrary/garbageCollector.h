@@ -46,6 +46,10 @@ public:
     string generateStringJSON();
     json JsonGenerator();
     void sendPointersToServer();
+    void clearGC();
+    bool gcIsClear();
+
+    int SERVER_vsptrConstructor(string type);
 
 };
 

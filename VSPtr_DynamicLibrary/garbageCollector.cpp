@@ -9,9 +9,35 @@
 
 using json = nlohmann::json;
 
+
+
+int garbageCollector::SERVER_vsptrConstructor(string type){
+
+    createVSPTR(type);
+
+}
+
+void garbageCollector::clearGC(){
+
+    garbageList = new vector<garbageElement*>();
+    garbageTotalList = new vector<void*>() ;
+    totalPtrCount = 0;
+    garbageElement::countRemoteId = 0;
+
+}
+
+bool garbageCollector::gcIsClear(){
+
+    if(garbageList->empty() && garbageTotalList->empty()){
+        return true;
+    }
+    return false;
+}
+
 void garbageCollector::sendPointersToServer(){
 
     sendPointers(generateStringJSON());
+    clearGC();
 
 }
 
@@ -24,7 +50,10 @@ void garbageCollector::checkRemoteMemoryConf(){
     if(cadena[0]=='1'){
         //cout << "cadena es 1" << endl;
         this->remoteMemoryIsActive = true;
-        this->sendPointersToServer();
+        if(!gcIsClear()){
+            this->sendPointersToServer();
+        }
+
     }else{
         this->remoteMemoryIsActive = false;
         //cout << "cadena es 0" << endl;

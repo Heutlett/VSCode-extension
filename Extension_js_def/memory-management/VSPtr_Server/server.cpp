@@ -8,18 +8,20 @@
 #include "garbageCollector.h"
 #include "pointerParser.h"
 #define PORT 8080
-
+#define SIZE 100000
 using namespace std;
+
+
 
 int server_fd, new_socket, valread;
 struct sockaddr_in address;
 int opt = 1;
 int addrlen = sizeof(address);
-char buffer[10000] = {0};
+char buffer[SIZE] = {0};
 
 void limpiarBuffer(){
 
-    for(int i = 0; i < 10000; i++){
+    for(int i = 0; i < SIZE; i++){
 
         buffer[i] = NULL;
 
@@ -91,7 +93,7 @@ void accept(){
 
 void recibir(){
 
-    valread = read( new_socket , buffer, 10000);
+    valread = read( new_socket , buffer, SIZE);
     printf("Recibi: %s\n",buffer );
 
 }
@@ -100,6 +102,40 @@ void enviar(string e){
 
     send(new_socket , e.data() , e.size() , 0 );
     printf("Mensaje enviado: %s\n",e.c_str());
+
+}
+
+int createVSPTR(string type){
+
+    if(type.compare("i")==0){
+        VSPointer<int> * ptr = new VSPointer<int>(1);
+        return ptr->remoteId;
+
+    }
+    if(type.compare("b")==0){
+
+    }
+    if(type.compare("c")==0){
+
+    }
+    if(type.compare("s")==0){
+
+    }
+    if(type.compare("l")==0){
+
+    }
+    if(type.compare("x")==0){
+
+    }
+    if(type.compare("f")==0){
+
+    }
+    if(type.compare("d")==0){
+
+    }
+    if(type.compare("e")==0){
+
+    }
 
 }
 
@@ -121,10 +157,10 @@ int main(int argc, char const *argv[])
     while(1){
 
         cout << "waiting for a client..." << endl << endl;
-        close(new_socket);
+        //close(new_socket);
         accept();
 
-        if(!fork()){
+        //if(!fork()){
 
             recibir();
 
@@ -139,21 +175,28 @@ int main(int argc, char const *argv[])
                 garbageCollector::getInstance()->printElements();
                 enviar("Server: The pointers has been reicived"); //4
                 cout << endl << "generating json" << endl;
-                garbageCollector::getInstance()->generarJSON();
-
-
-            }
-
-            if(strcmp(buffer, "2") == 0){
-
-                cout << "opcion 2" << endl;
-                enviar("recibido2");
+                cout << "el ultimo remote id sera: " << garbageElement::countRemoteId <<  endl;
+                //garbageCollector::getInstance()->generarJSON();
 
             }
 
-        }
+            if(strcmp(buffer, "2") == 0){ //1
+                garbageCollector::getInstance()->printElements();
 
-        close(new_socket);
+                cout << "Recibiendo tipo" << endl;
+                enviar("recibido2"); //2
+
+                recibir();//3
+                int remoteId = createVSPTR(buffer);
+
+                string s = to_string(remoteId);
+                enviar(s);//4
+
+            }
+
+        //}
+
+        //close(new_socket);
         limpiarBuffer();
 
     }

@@ -22,7 +22,7 @@ private:
     static garbageCollector* instance;
     garbageCollector();
     void memoryLeakThread();
-    bool remoteMemoryIsActive;
+    //bool remoteMemoryIsActive;
 
 public:
 
@@ -39,9 +39,9 @@ public:
     bool deletePtr(string id, string address);
     void checkMemoryLeaks();
     void generarJSON();
-    void checkRemoteMemoryConf();
     void checkRemoteThread();
     void clearGC();
+    string generateStringJSON();
 
 };
 
@@ -51,13 +51,14 @@ void garbageCollector::clearGC(){
     garbageTotalList = new vector<void*>() ;
 }
 
-void garbageCollector::checkRemoteMemoryConf(){
+string garbageCollector::generateStringJSON(){
 
-    char cadena[128];{}
+    ifstream file("/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/pretty.json");
+    ostringstream tmp;
+    tmp<<file.rdbuf();
+    string s = tmp.str();
 
-    ifstream fe("remote_memory_conf.txt");
-    fe >> cadena;
-    fe.close();
+    return s;
 
 }
 
@@ -117,6 +118,7 @@ void garbageCollector::generarJSON(){
 
     std::ofstream o("/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/pretty.json");
     o << std::setw(4) << j << std::endl;
+    //cout << generateStringJSON();
 
 }
 
@@ -131,9 +133,8 @@ garbageCollector::garbageCollector() {
 void garbageCollector::checkRemoteThread(){
 
     while(1) {
-        sleep(1);
+        sleep(2);
         generarJSON();
-        checkRemoteMemoryConf();
     }
 
 }
@@ -221,7 +222,6 @@ void garbageCollector::updateReference(string id, string newId, string address){
         transferReferences(gNewReference, newId, gOriginalReference);
 
     }
-    generarJSON();
 }
 
 void garbageCollector::transferReferences(garbageElement * gOldElement, string newId, garbageElement * gNewElement){
@@ -243,7 +243,6 @@ bool garbageCollector::deletePtr(string id, string address){
     garbageElement * original = getGarbageElement(id, address);
     if(original != nullptr){
         deleteGarbageElement(id, address);
-        generarJSON();
         return true;
 
     }else{
@@ -251,7 +250,6 @@ bool garbageCollector::deletePtr(string id, string address){
         if(reference != nullptr){
             reference->deleteReference(address);
         }
-        generarJSON();
         return false;
     }
 
