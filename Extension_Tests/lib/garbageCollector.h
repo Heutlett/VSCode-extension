@@ -53,6 +53,7 @@ public:
     void SERVER_vsptrUpdateReference(int thisRemoteId, int otherRemoteId);
     void SERVER_vsptrOverloadAssign(string newValueType, string newValue, int thisIdRemote);
 
+    void getPointersFromServer();
 };
 
 

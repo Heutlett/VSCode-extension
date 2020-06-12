@@ -111,6 +111,9 @@
 		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.h">
 			<Option target="VSPtr_DynamicLibrary"/>
 		</Unit>
+		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/pointerParser.h">
+			<Option target="VSPtr_DynamicLibrary"/>
+		</Unit>
 		<Unit filename="/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

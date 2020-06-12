@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <cstdio>
 #include <string>
+#include "pointerParser.h"
 
 using namespace std;
 
@@ -155,7 +156,27 @@ void updateAssign(string type, string value, int remoteId){
 
 
 
+
 }
+/*
+void getPointers(){
+
+    limpiarBuffer();
+    iniciarCliente();
+
+    enviar("6");//1
+    recibir();//2
+
+    enviar("preparado");//3
+    recibir();//4
+
+    string json = buffer;
+
+    importPointerFromString(json);
+
+}
+*/
+
 
 /**
  * @brief Crea el socket del cliente

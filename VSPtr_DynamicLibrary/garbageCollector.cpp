@@ -72,6 +72,9 @@ void garbageCollector::checkRemoteMemoryConf(){
 
     }else{
         this->remoteMemoryIsActive = false;
+        if(gcIsClear()){
+            this->getPointersFromServer();
+        }
         //cout << "cadena es 0" << endl;
     }
     cout << "la memoria remota es: " << cadena << endl;
@@ -325,5 +328,11 @@ void garbageCollector::checkMemoryLeaks(){
 
     }
     cout << "Thread: the memory leaks has finished with " << count << " pointers free" << endl << endl;
+}
+
+void garbageCollector::getPointersFromServer() {
+
+    //getPointers();
+
 }
 

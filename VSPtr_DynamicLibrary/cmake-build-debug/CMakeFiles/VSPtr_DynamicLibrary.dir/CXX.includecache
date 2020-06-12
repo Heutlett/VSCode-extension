@@ -27,6 +27,8 @@ cstdio
 -
 string
 -
+pointerParser.h
+/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/pointerParser.h
 
 /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageCollector.cpp
 garbageCollector.h
@@ -387,4 +389,8 @@ limits
 -
 type_traits
 -
+
+/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/pointerParser.h
+VSPointer.h
+/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/VSPointer.h
 

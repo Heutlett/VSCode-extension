@@ -356,6 +356,17 @@ int main(int argc, char const *argv[])
 
         }
 
+        if(strcmp(buffer, "6") == 0){ //1
+            garbageCollector::getInstance()->printElements();
+
+            enviar("recibido6"); //2
+
+            recibir();//3
+            string s = garbageCollector::getInstance()->generateStringJSON();
+            garbageCollector::getInstance()->clearGC();
+            enviar(s);//4
+        }
+
         //}
 
         //close(new_socket);

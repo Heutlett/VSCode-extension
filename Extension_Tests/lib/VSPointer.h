@@ -13,17 +13,56 @@ class VSPTR_DYNAMICLIBRARY_VSPOINTER_H VSPointer {
 
 private:
 
-    T* ptr; // Actual pointer
+
 
 public:
-
+    T* ptr; // Actual pointer
     string id;
     int remoteId;
     garbageCollector* getGC(){
 
         return garbageCollector::getInstance();
     }
+    /*
+    void * operator new(size_t size)
+    {
+        void * p = ::new VSPointer<int>();
+        //void * p = malloc(size); will also work fine
 
+        return p;
+    }
+
+    VSPointer(string pId, int remoteId) {
+        ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
+        garbageCollector::getInstance()->garbageTotalList->push_back(ptr);
+        string type = typeid(*ptr).name();
+        id = pId;
+
+        ostringstream get_the_address3;
+        string address3;
+        get_the_address3 << (void**)this;
+        address3 = get_the_address3.str();
+
+        garbageCollector::getInstance()->garbageList->push_back(new garbageElement(ptr, type, id, address3, remoteId));
+        garbageCollector::getInstance()->totalPtrCount++;
+    }
+
+    VSPointer(int i, int remoteId) {
+        ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
+        garbageCollector::getInstance()->garbageTotalList->push_back(ptr);
+        string type = typeid(*ptr).name();
+        id = "id" + to_string(garbageCollector::getInstance()->totalPtrCount);
+
+        ostringstream get_the_address3;
+        string address3;
+        get_the_address3 << (void**)this;
+        address3 = get_the_address3.str();
+
+        garbageCollector::getInstance()->garbageList->push_back(new garbageElement(ptr, type, id, address3, remoteId));
+        garbageCollector::getInstance()->totalPtrCount++;
+    }
+
+    */
     VSPointer() {
 
     }
@@ -110,8 +149,6 @@ public:
 
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            cout << "no se invoca destructor porque remote es activa" << endl;
-
 
         }else{
 
@@ -129,7 +166,6 @@ public:
 
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            cout << "no se sobrecarga el operador * porque la memoria es activa " << endl;
             return *ptr;
 
         }else{
