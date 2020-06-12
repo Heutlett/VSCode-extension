@@ -15,7 +15,7 @@ VSPointer<int>* createVSPTRint(string pId, string pValue, int remoteId){
 
 VSPointer<bool>* createVSPTRbool(string pId, string pValue, int remoteId){
     VSPointer<bool> * ptr = new VSPointer<bool>(pId, remoteId);
-    if(pValue.compare("1")){
+    if(pValue.compare("1") == 0){
         *ptr = true;
     }else{
         *ptr = false;
@@ -39,14 +39,14 @@ VSPointer<short>* createVSPTRshort(string pId, string pValue, int remoteId){
 
 VSPointer<long>* createVSPTRlong(string pId, string pValue, int remoteId){
     VSPointer<long> * ptr = new VSPointer<long>(pId, remoteId);
-    long a = stoi(pValue);
+    long a = stol(pValue);
     *ptr = a;
     return ptr;
 }
 
 VSPointer<long long>* createVSPTRlonglong(string pId, string pValue, int remoteId){
     VSPointer<long long> * ptr = new VSPointer<long long>(pId, remoteId);
-    long long a = stoi(pValue);
+    long long a = stoll(pValue);
     *ptr = a;
     return ptr;
 }
@@ -65,7 +65,7 @@ VSPointer<double>* createVSPTRdouble(string pId, string pValue, int remoteId){
 
 VSPointer<long double>* createVSPTRlongdouble(string pId, string pValue, int remoteId){
     VSPointer<long double> * ptr = new VSPointer<long double>(pId, remoteId);
-    *ptr =stod(pValue);
+    *ptr =stold(pValue);
     return ptr;
 }
 

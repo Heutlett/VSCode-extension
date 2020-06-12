@@ -49,6 +49,7 @@ public:
     bool gcIsClear();
 
     int SERVER_vsptrConstructor(string type);
+    string SERVER_vsptrGetValue(int remoteID);
 
 };
 

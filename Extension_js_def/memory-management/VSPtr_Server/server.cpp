@@ -145,6 +145,12 @@ int createVSPTR(string type){
 
 }
 
+string getValue(int remoteID){
+
+    return garbageCollector::getInstance()->getValue(remoteID);
+
+}
+
 int main(int argc, char const *argv[])
 {
     int i;
@@ -198,6 +204,18 @@ int main(int argc, char const *argv[])
             string s = to_string(remoteId);
             enviar(s);//4
 
+        }
+
+        if(strcmp(buffer, "3") == 0){ //1
+            garbageCollector::getInstance()->printElements();
+
+            cout << "Recibiendo tipo" << endl;
+            enviar("recibido3"); //2
+
+            recibir();//3
+            string s = getValue(stoi(buffer));
+
+            enviar(s);//4
         }
 
         //}

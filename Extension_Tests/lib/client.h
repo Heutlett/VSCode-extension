@@ -44,7 +44,7 @@ void recibir(){
 
     limpiarBuffer();
     valread = read( sock , buffer, SIZE);
-    printf("Recibido: %s\n",buffer );
+    //printf("Recibido: %s\n",buffer );
 
 }
 /**
@@ -55,7 +55,7 @@ void enviar(string msg){
 
     limpiarBuffer();
     send(sock , msg.data() , msg.size() , 0 );
-    printf("Enviado: %s\n",msg.c_str());
+    //printf("Enviado: %s\n",msg.c_str());
 
 }
 /**
@@ -99,6 +99,21 @@ int createVSPTR(string type){
     int ia = buffer[0] - '0';
 
     return ia;
+
+}
+
+string getValue(int remoteID){
+
+    limpiarBuffer();
+    iniciarCliente();
+
+    enviar("3"); //1
+    recibir(); //2
+
+    enviar(to_string(remoteID));//3
+    recibir();//4
+
+    return buffer;
 
 }
 /**

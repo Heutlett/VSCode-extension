@@ -9,7 +9,11 @@
 
 using json = nlohmann::json;
 
+string garbageCollector::SERVER_vsptrGetValue(int remoteID){
 
+    return getValue(remoteID);
+
+}
 
 int garbageCollector::SERVER_vsptrConstructor(string type){
 

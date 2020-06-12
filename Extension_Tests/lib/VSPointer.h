@@ -33,10 +33,9 @@ public:
         string type = typeid(*ptr).name();
 
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
-
+            ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
             remoteId = garbageCollector::getInstance()->SERVER_vsptrConstructor(type);
-            cout << "Mi remote id es "<<remoteId << endl;
-
+            id = "";
             //cout << "No se crea nada porque la remote esta activada" << endl;
 
         }else{
@@ -61,7 +60,46 @@ public:
 
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            cout << "No se sobrecarga el operador & porque remote activa" << endl;
+            string type = typeid(*ptr).name();
+
+            string valor =garbageCollector::getInstance()->SERVER_vsptrGetValue(remoteId);
+
+            cout << "EL VALOR ES: " << valor << endl;
+            cout << "EL tipo ES: " << type << endl;
+            
+            if(type.compare("i")==0){
+                *ptr = stoi(valor);
+            }
+            if(type.compare("b")==0){
+                if(valor.compare("1")==0){
+                    *ptr = true;
+                }else{
+                    *ptr = false;
+                }
+            }
+            if(type.compare("c")==0){
+
+            }
+            if(type.compare("s")==0){
+                *ptr = stoi(valor);
+            }
+            if(type.compare("l")==0){
+                *ptr = stol(valor);
+            }
+            if(type.compare("x")==0){
+                *ptr = stoll(valor);
+            }
+            if(type.compare("f")==0){
+                *ptr = stof(valor);
+            }
+            if(type.compare("d")==0){
+                *ptr = stod(valor);
+            }
+            if(type.compare("e")==0){
+                *ptr = stold(valor);
+            }
+
+            return *ptr;
 
         }else{
 
@@ -99,9 +137,8 @@ public:
 
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-
             cout << "no se sobrecarga el operador * porque la memoria es activa " << endl;
-            //return nullptr;
+            return *ptr;
 
         }else{
             return *ptr;
