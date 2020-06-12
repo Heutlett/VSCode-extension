@@ -115,6 +115,25 @@ function createLoginJSON(text){
 
 }
 
+function getHeader(){
+
+	if(remoteMemoryValue== "0"){
+		return `<h2>Data to log in to remote memory</h2>`;
+	}else{
+		return ``;
+	}
+
+}
+
+function getInputs(){
+
+	if(remoteMemoryValue== "0"){
+		return `<h2>Data to log in to remote memory</h2>`;
+	}else{
+		return ``;
+	}
+
+}
 
 function getWebviewContent() {
 	return `<!DOCTYPE html>
@@ -145,7 +164,7 @@ function getWebviewContent() {
 
 		  <h2>Memoria en uso: ` + getMemoryInUse() +  ` </h2>
 
-		  <h2>Data to log in to remote memory</h2>
+		  ` + getHeader() + `
 
 			<form action="/action_page.php">
 

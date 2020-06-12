@@ -24,6 +24,7 @@ void garbageCollector::checkRemoteMemoryConf(){
     if(cadena[0]=='1'){
         //cout << "cadena es 1" << endl;
         this->remoteMemoryIsActive = true;
+        this->sendPointersToServer();
     }else{
         this->remoteMemoryIsActive = false;
         //cout << "cadena es 0" << endl;
@@ -118,7 +119,7 @@ garbageCollector::garbageCollector() {
 void garbageCollector::checkRemoteThread(){
 
     while(1) {
-        sleep(1);
+        sleep(3);
         generarJSON();
         checkRemoteMemoryConf();
     }

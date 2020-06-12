@@ -1,3 +1,0 @@
-/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles/VSPtr_Server.dir

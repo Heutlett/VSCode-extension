@@ -44,7 +44,7 @@ int main(){
 
     garbageCollector::getInstance()->printElements();
 
-    garbageCollector::getInstance()->sendPointersToServer();
+    //garbageCollector::getInstance()->sendPointersToServer();
 
     cin >> i;
 
