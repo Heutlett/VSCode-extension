@@ -134,6 +134,29 @@ void updateReferenceServer(int thisRemoteId, int otherRemoteId){
     close(sock);
 
 }
+
+void updateAssign(string type, string value, int remoteId){
+
+    limpiarBuffer();
+    iniciarCliente();
+
+    enviar("5");//1
+    recibir(); //2
+
+    enviar(type);//3
+
+    recibir();//4
+
+    enviar(value); //5
+
+    recibir();//6
+
+    enviar(to_string(remoteId));//7
+
+
+
+}
+
 /**
  * @brief Crea el socket del cliente
  */

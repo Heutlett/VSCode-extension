@@ -155,21 +155,30 @@ public:
 
     void validateType(string type, T newValue){
 
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
+        string type2 = typeid(ptr).name();
 
-            cout << "no se valida el tipo porque remote memory es activa" << endl;
+        if(type.compare(type2) == 0){
 
-        }else{
+            if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            string type2 = typeid(ptr).name();
-            if(type.compare(type2) == 0){
-                *ptr = newValue;
+                cout << "el tipo es: " << type << endl;
+
+                string a = to_string(newValue);
+
+                char b = stoi(a);
+
+                cout << "el valor es: " << a << endl;
+                cout << "el valor del char es: " << b << endl;
+
+                garbageCollector::getInstance()->SERVER_vsptrOverloadAssign(type, a, remoteId);
+
             }else{
-                cout << "Operation failed, the types dont match" << endl;
+                    *ptr = newValue;
+                }
             }
-
+        else{
+            cout << "Operation failed, the types dont match" << endl;
         }
-
     }
 
     VSPointer& operator=(VSPointer<T> other){
@@ -180,11 +189,6 @@ public:
         if(type.compare(type2)==0){
 
             if(garbageCollector::getInstance()->remoteMemoryIsActive){
-
-                //cout << "sobrecarga romota de = para dos vspointers" << endl;
-
-                //cout << "this remote id: " << remoteId << endl;
-                //cout << "other remote id: " << other.remoteId << endl;
 
                 garbageCollector::getInstance()->SERVER_vsptrUpdateReference(remoteId, other.remoteId);
 
@@ -203,84 +207,39 @@ public:
 
 
     VSPointer& operator=(int newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(bool newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(char newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(short newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(long newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(long long newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(float newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(double newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
     VSPointer& operator=(long double newValue){
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
-            cout << "no se sobrecarga = porque remote es activa" << endl;
-        }else{
-            validateType(typeid(&newValue).name(), newValue);
-        }
-
+        validateType(typeid(&newValue).name(), newValue);
     }
 
 };

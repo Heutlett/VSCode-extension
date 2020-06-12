@@ -15,7 +15,7 @@ int main(){
     cout << "hola";
  
     VSPointer<int> myPtr = VSPointer<int>::New( );
-    *myPtr = 666;
+    myPtr = 666;
 
     VSPointer<int> myPtr1 = VSPointer<int>::New( );
     myPtr1 = myPtr;
@@ -42,11 +42,7 @@ int main(){
     VSPointer<char> myPtr7 = VSPointer<char>::New( );
     *myPtr7 = 'a';
 
-    //cout << garbageCollector::getInstance()->generateStringJSON();
-
     garbageCollector::getInstance()->printElements();
-
-    //garbageCollector::getInstance()->sendPointersToServer();
 
     cin >> i;
 
@@ -56,10 +52,14 @@ int main(){
     garbageCollector::getInstance()->printElements();
     cout << "el valor de myPtr7 es " << &myPtr7 << endl;
 
+    VSPointer<char> myPtr9 = VSPointer<char>::New( );
+    //myPtr9 = 222;
 
     cin >> i;
 
+    myPtr9 = 'b';
 
+    cin >> i;
 
     //gc->generarJSON();
 

@@ -145,6 +145,93 @@ int createVSPTR(string type){
 
 }
 
+
+void updateAssignAux(char type, string newValue, int remoteId){
+
+    garbageElement * g = garbageCollector::getInstance()->getGarbageElement(remoteId);
+    garbageCollector::getInstance()->deletePtrTotalList(g->ptrData);
+
+    if(type == 'i'){
+
+        int *a = (int*)malloc(sizeof(int));
+        *a = stoi(newValue);
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+
+    if(type == 'b'){
+        if(newValue.compare("1")==0){
+
+            bool * a = (bool*)malloc(sizeof(bool));
+            *a = true;
+
+            g->ptrData = (void*)a;
+            garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+
+        }else{
+
+            bool * a = (bool*)malloc(sizeof(bool));
+            *a = false;
+
+            g->ptrData = (void*)a;
+            garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+        }
+    }
+    if(type == 'c'){
+        char * a = (char*)malloc(sizeof(char));
+        char b = stoi(newValue);
+        *a = b;
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+    if(type == 's'){
+
+        short *a = (short*)malloc(sizeof(short));
+        *a = stoi(newValue);
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+    if(type == 'l'){
+        long *a = (long*)malloc(sizeof(long));
+        *a = stol(newValue);
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+    if(type == 'x'){
+        long long *a = (long long*)malloc(sizeof(long long));
+        *a = stoll(newValue);
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+    if(type == 'f'){
+        float *a = (float*)malloc(sizeof(float));
+        *a = stof(newValue);
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+    if(type == 'd'){
+        double *a = (double*)malloc(sizeof(double));
+        *a = stod(newValue);
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+    if(type == 'e'){
+        long double *a = (long double*)malloc(sizeof(long double));
+        *a = stold(newValue);
+
+        g->ptrData = (void*)a;
+        garbageCollector::getInstance()->garbageTotalList->push_back(g->ptrData);
+    }
+
+}
+
 string getValue(int remoteID){
 
     return garbageCollector::getInstance()->getValue(remoteID);
@@ -241,6 +328,32 @@ int main(int argc, char const *argv[])
             enviar("listo");//4
 
             garbageCollector::getInstance()->printElements();
+        }
+
+        if(strcmp(buffer, "5") == 0){ //1
+            garbageCollector::getInstance()->printElements();
+
+            enviar("recibido5"); //2
+
+            recibir();//3
+
+            string type = buffer;
+
+            enviar("listo"); //4
+
+            recibir();//5
+
+            string value = buffer;
+
+            enviar("listo");//6
+
+            recibir();//7
+
+
+            int remoteId = stoi(buffer);
+
+            updateAssignAux(type.at(1), value, remoteId);
+
         }
 
         //}

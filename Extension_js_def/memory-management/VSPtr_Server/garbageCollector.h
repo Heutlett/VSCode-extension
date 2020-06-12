@@ -44,8 +44,33 @@ public:
     string generateStringJSON();
     string getValue(int remoteId);
     garbageElement * getGarbageElement(int remoteId);
+    void deletePtrTotalList(void * ptr);
 
 };
+
+void garbageCollector::deletePtrTotalList(void * ptr){
+
+    for(int i = 0; i < garbageTotalList->size(); i++){
+
+        ostringstream get_the_address3;
+        string address3;
+        get_the_address3 << ptr;
+        address3 = get_the_address3.str();
+
+        ostringstream get_the_address4;
+        string address4;
+        get_the_address4 << garbageTotalList->at(i);
+        address4 = get_the_address4.str();
+
+        if(address3.compare(address4) == 0){
+
+            garbageTotalList->erase(garbageTotalList->begin() + i);
+
+        }
+
+    }
+
+}
 
 garbageElement * garbageCollector::getGarbageElement(int remoteId){
 
