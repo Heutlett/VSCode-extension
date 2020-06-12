@@ -14,33 +14,35 @@ int main(){
 
     cout << "hola";
  
-    VSPointer<char> myPtr = VSPointer<char>::New( );
-    *myPtr = 'a';
+    VSPointer<int> myPtr = VSPointer<int>::New( );
+    *myPtr = 666;
 
-    VSPointer<char> myPtr1 = VSPointer<char>::New( );
+    VSPointer<int> myPtr1 = VSPointer<int>::New( );
     myPtr1 = myPtr;
 
-    VSPointer<char> myPtr2 = VSPointer<char>::New( );
-    *myPtr2 = 'b';
+    VSPointer<int> myPtr2 = VSPointer<int>::New( );
+    *myPtr2 = 777;
 
-    VSPointer<char> myPtr3 = VSPointer<char>::New( );
-    *myPtr3 = 'x';
+    VSPointer<int> myPtr3 = VSPointer<int>::New( );
+    *myPtr3 = 888;
 
-    VSPointer<char> myPtr4 = VSPointer<char>::New( );
+    VSPointer<int> myPtr4 = VSPointer<int>::New( );
     myPtr4 = myPtr;
 
     //cin >> i;
 
-    VSPointer<char> myPtr5 = VSPointer<char>::New( );
+    VSPointer<int> myPtr5 = VSPointer<int>::New( );
     myPtr5 = myPtr1;
 
-    VSPointer<char> myPtr6 = VSPointer<char>::New( );
+    VSPointer<int> myPtr6 = VSPointer<int>::New( );
     myPtr6 = myPtr2;
 
-    VSPointer<char> myPtr7 = VSPointer<char>::New( );
+    VSPointer<int> myPtr7 = VSPointer<int>::New( );
     myPtr7 = myPtr6;
 
-    cout << garbageCollector::getInstance()->generateStringJSON();
+    //cout << garbageCollector::getInstance()->generateStringJSON();
+
+    garbageCollector::getInstance()->printElements();
 
     garbageCollector::getInstance()->sendPointersToServer();
 

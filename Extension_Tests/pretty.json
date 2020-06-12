@@ -19,8 +19,8 @@
             ],
             "refAddress": "0x5555555735e0",
             "refQuantity": 4,
-            "type": "c",
-            "value": "a",
+            "type": "i",
+            "value": "666",
             "vsptrAdress": "0x7fffffffd950"
         },
         {
@@ -38,8 +38,8 @@
             ],
             "refAddress": "0x5555555741a0",
             "refQuantity": 3,
-            "type": "c",
-            "value": "b",
+            "type": "i",
+            "value": "777",
             "vsptrAdress": "0x7fffffffd9b0"
         },
         {
@@ -48,8 +48,8 @@
             "listOfReferences": null,
             "refAddress": "0x555555573f10",
             "refQuantity": 1,
-            "type": "c",
-            "value": "x",
+            "type": "i",
+            "value": "888",
             "vsptrAdress": "0x7fffffffd9e0"
         }
     ]

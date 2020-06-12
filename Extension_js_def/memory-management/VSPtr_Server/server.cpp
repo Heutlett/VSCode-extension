@@ -115,15 +115,7 @@ int main(int argc, char const *argv[])
     attributes();
     socketName();
     listen();
-/*
-    VSPointer<int> myPtr = VSPointer<int>::New( );
-    *myPtr = 5;
 
-    VSPointer<int> myPtr1 = VSPointer<int>::New( );
-    myPtr1 = myPtr;
-
-    garbageCollector::getInstance()->printElements();
-*/
     char *valor;
 
     while(1){
@@ -143,9 +135,11 @@ int main(int argc, char const *argv[])
 
                 recibir(); //3
                 importPointerFromString(buffer);
-                cout << "printing al imported vspointers" << endl;
+                cout << endl <<"Printing al imported vspointers" << endl << endl;
                 garbageCollector::getInstance()->printElements();
                 enviar("Server: The pointers has been reicived"); //4
+                cout << endl << "generating json" << endl;
+                garbageCollector::getInstance()->generarJSON();
 
 
             }

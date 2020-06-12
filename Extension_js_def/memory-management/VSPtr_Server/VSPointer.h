@@ -70,7 +70,7 @@ public:
 
 
     static VSPointer New(){
-        return VSPointer(1);
+        return VSPointer(1,0);
     }
 
     T operator &(){return *ptr;}

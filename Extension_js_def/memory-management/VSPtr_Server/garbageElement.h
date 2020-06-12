@@ -158,11 +158,11 @@ void garbageElement::toString(){
 
     cout << "id: " << id << " | " << "refAddress: " << getAddress() << " | Type: " << type << " | Value: " << getValue()  << " | refQuantity: " << listOfReferences->size()+1 << endl;
 
-    cout << 0 << ": " << vsptrAdress << endl;
+    cout << 0 << ": " << vsptrAdress  << " | remoteId: " << remoteId << endl;
 
     for(int i = 0; i < listOfReferences->size(); i++){
 
-        cout << i+1 << ": " << listOfReferences->at(i)->vsptrAdress << " | " << remoteId << endl;
+        cout << i+1 << ": " << listOfReferences->at(i)->vsptrAdress << " | remoteId: " << listOfReferences->at(i)->remoteId << endl;
 
     }
 

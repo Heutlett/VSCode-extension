@@ -5,52 +5,52 @@
             "idRemote": 0,
             "listOfReferences": [
                 {
-                    "address": "0x562698095f10",
+                    "address": "0x55b97ed65f20",
                     "idRemote": 1
                 },
                 {
-                    "address": "0x562698097aa0",
+                    "address": "0x55b97ed67dd0",
                     "idRemote": 4
                 },
                 {
-                    "address": "0x562698097e60",
+                    "address": "0x55b97ed67aa0",
                     "idRemote": 5
                 }
             ],
-            "refAddress": "0x562698096260",
+            "refAddress": "0x55b97ed66280",
             "refQuantity": 4,
-            "type": "c",
-            "value": "a",
-            "vsptrAdress": "0x5626980964b0"
+            "type": "i",
+            "value": "666",
+            "vsptrAdress": "0x55b97ed664d0"
         },
         {
             "id": "id1",
             "idRemote": 2,
             "listOfReferences": [
                 {
-                    "address": "0x562698097dd0",
+                    "address": "0x55b97ed660b0",
                     "idRemote": 6
                 },
                 {
-                    "address": "0x5626980979f0",
+                    "address": "0x55b97ed68710",
                     "idRemote": 7
                 }
             ],
-            "refAddress": "0x562698097d20",
+            "refAddress": "0x55b97ed67d20",
             "refQuantity": 3,
-            "type": "c",
-            "value": "b",
-            "vsptrAdress": "0x562698096140"
+            "type": "i",
+            "value": "777",
+            "vsptrAdress": "0x55b97ed67e60"
         },
         {
             "id": "id2",
             "idRemote": 3,
             "listOfReferences": null,
-            "refAddress": "0x562698095ed0",
+            "refAddress": "0x55b97ed65ee0",
             "refQuantity": 1,
-            "type": "c",
-            "value": "x",
-            "vsptrAdress": "0x562698099520"
+            "type": "i",
+            "value": "888",
+            "vsptrAdress": "0x55b97ed69530"
         }
     ]
 }

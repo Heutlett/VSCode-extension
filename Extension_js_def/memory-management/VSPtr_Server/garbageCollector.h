@@ -115,7 +115,7 @@ void garbageCollector::generarJSON(){
 
     }
 
-    std::ofstream o("pretty.json");
+    std::ofstream o("/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/pretty.json");
     o << std::setw(4) << j << std::endl;
 
 }

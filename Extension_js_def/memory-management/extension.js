@@ -1,4 +1,5 @@
 const vscode = require('vscode');
+const { Console } = require('console');
 
 /*
 var ref = require('ref-napi');
@@ -269,8 +270,22 @@ function copyFiles(){
 function readJSONAux(){
 
 	var fs = require('fs');
-	var data = fs.readFileSync(folderPath+"/pretty.json", "utf8");
+
+	if(remoteMemoryValue == "0"){
+		console.log("LEYENDO EL JSON DE LOCAL");
+		var data = fs.readFileSync(folderPath+"/pretty.json", "utf8");
+	}
+	if(remoteMemoryValue == "1"){
+		console.log("LEYENDO EL JSON DE REMOTE");
+		var data = fs.readFileSync("/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/pretty.json", "utf8");
+	}
+	
+
+
 	var data1 = JSON.parse(data);
+
+	console.log(data1);
+
 	var lista = [];
 
 	if(data1.listaPunteros != null){
@@ -298,15 +313,35 @@ function readJSON(){
 
 	var fs = require('fs');
 
-	fs.readFile(folderPath+"/pretty.json", 'utf8', function(err, data) {
-		if (err) {
-			return console.log(err);
-		}
-		if(data==""){
-			return 
-		}
-		readJSONAux();
-	});
+	if(remoteMemoryValue == "0"){
+
+
+		fs.readFile(folderPath+"/pretty.json", 'utf8', function(err, data) {
+			if (err) {
+				return console.log(err);
+			}
+			if(data==""){
+				return 
+			}
+			readJSONAux();
+		});
+
+	}
+	if(remoteMemoryValue == "1"){
+
+
+		fs.readFile("/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server"+"/pretty.json", 'utf8', function(err, data) {
+			if (err) {
+				return console.log(err);
+			}
+			if(data==""){
+				return 
+			}
+			readJSONAux();
+		});
+
+	}
+
 	
 }
 
@@ -390,7 +425,7 @@ function enableRemoteInputs(){
 function generateTable(){
 
 
-	if(remoteMemoryValue == 1){
+	if(remoteMemoryValue == "1"){
 		var texto = `var tb1 = document.getElementById("t01"); ` + disableRemoteInputs();
 	}else{
 		var texto = `var tb1 = document.getElementById("t01"); ` + enableRemoteInputs();
