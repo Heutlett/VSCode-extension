@@ -2,37 +2,55 @@
     "listaPunteros": [
         {
             "id": "id0",
+            "idRemote": 0,
             "listOfReferences": [
-                "0x7fffffffd880",
-                "0x7fffffffd970",
-                "0x7fffffffd9c0"
+                {
+                    "address": "0x7fffffffd980",
+                    "idRemote": 1
+                },
+                {
+                    "address": "0x7fffffffda10",
+                    "idRemote": 4
+                },
+                {
+                    "address": "0x7fffffffda40",
+                    "idRemote": 5
+                }
             ],
             "refAddress": "0x5555555735e0",
             "refQuantity": 4,
             "type": "i",
             "value": "5",
-            "vsptrAdress": "0x7fffffffd830"
+            "vsptrAdress": "0x7fffffffd950"
         },
         {
             "id": "id1",
+            "idRemote": 2,
             "listOfReferences": [
-                "0x7fffffffda10",
-                "0x7fffffffda60"
+                {
+                    "address": "0x7fffffffda70",
+                    "idRemote": 6
+                },
+                {
+                    "address": "0x7fffffffdaa0",
+                    "idRemote": 7
+                }
             ],
-            "refAddress": "0x555555574050",
+            "refAddress": "0x5555555741a0",
             "refQuantity": 3,
             "type": "i",
             "value": "555",
-            "vsptrAdress": "0x7fffffffd8d0"
+            "vsptrAdress": "0x7fffffffd9b0"
         },
         {
             "id": "id2",
+            "idRemote": 3,
             "listOfReferences": null,
-            "refAddress": "0x555555573c60",
+            "refAddress": "0x555555573f10",
             "refQuantity": 1,
             "type": "i",
             "value": "666",
-            "vsptrAdress": "0x7fffffffd920"
+            "vsptrAdress": "0x7fffffffd9e0"
         }
     ]
 }

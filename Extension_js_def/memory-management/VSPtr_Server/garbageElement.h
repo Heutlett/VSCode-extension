@@ -19,6 +19,8 @@ public:
     string vsptrAdress;
     vector<garbageElement*> * listOfReferences;
     string id;
+    int remoteId;
+    static int countRemoteId;
     string type;
 
     /**
@@ -47,12 +49,18 @@ public:
 
     void toString();
 };
+
+int garbageElement::countRemoteId = 0;
+
 garbageElement::garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress){
     ptrData = dataPtr;
     listOfReferences = new vector<garbageElement*>;
     type = pType;
     id = pId;
     vsptrAdress = pVsptrAdress;
+    remoteId = countRemoteId;
+    countRemoteId++;
+
 
     //cout << "GarbageElement has been created, VSPointerAddress: " << vsptrAdress << ", Value: " << getValue() << ", refTo: " << ptrData << endl <<endl;
 }

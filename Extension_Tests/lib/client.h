@@ -17,7 +17,7 @@ using namespace std;
 //
 int sock = 0, valread;
 struct sockaddr_in serv_addr;
-char buffer[999999] = {0};
+char buffer[10000] = {0};
 
 /**
  * @brief
@@ -29,7 +29,7 @@ void iniciarCliente();
  */
 void limpiarBuffer(){
 
-    for(int i = 0; i < 999999; i++){
+    for(int i = 0; i < 10000; i++){
 
         buffer[i] = NULL;
 

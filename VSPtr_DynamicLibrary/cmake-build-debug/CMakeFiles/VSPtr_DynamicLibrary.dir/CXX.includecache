@@ -54,10 +54,6 @@ iomanip
 json.hpp
 /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/json.hpp
 
-/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.cpp
-garbageElement.h
-/home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.h
-
 /home/heutlett/VSCode-extension/VSPtr_DynamicLibrary/garbageElement.h
 iostream
 -

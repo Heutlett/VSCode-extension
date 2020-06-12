@@ -1,3 +1,56 @@
 {
-    "listaPunteros": null
+    "listaPunteros": [
+        {
+            "id": "id0",
+            "idRemote": 0,
+            "listOfReferences": [
+                {
+                    "address": "0x5569f9479f20",
+                    "idRemote": 1
+                },
+                {
+                    "address": "0x5569f947bdd0",
+                    "idRemote": 2
+                },
+                {
+                    "address": "0x5569f947baa0",
+                    "idRemote": 3
+                }
+            ],
+            "refAddress": "0x5569f947a280",
+            "refQuantity": 4,
+            "type": "i",
+            "value": "5",
+            "vsptrAdress": "0x5569f947a4d0"
+        },
+        {
+            "id": "id1",
+            "idRemote": 4,
+            "listOfReferences": [
+                {
+                    "address": "0x5569f947a0b0",
+                    "idRemote": 5
+                },
+                {
+                    "address": "0x5569f947c710",
+                    "idRemote": 6
+                }
+            ],
+            "refAddress": "0x5569f947bd20",
+            "refQuantity": 3,
+            "type": "i",
+            "value": "555",
+            "vsptrAdress": "0x5569f947be60"
+        },
+        {
+            "id": "id2",
+            "idRemote": 7,
+            "listOfReferences": null,
+            "refAddress": "0x5569f9479ee0",
+            "refQuantity": 1,
+            "type": "i",
+            "value": "666",
+            "vsptrAdress": "0x5569f947d530"
+        }
+    ]
 }

@@ -17,7 +17,6 @@ private:
 public:
 
     string id;
-    string idRemote;
     garbageCollector* getGC(){
 
         return garbageCollector::getInstance();
@@ -142,6 +141,8 @@ public:
             cout << "no se sobrecarga el operador = porque remote es activa" << endl;
 
         }else{
+
+            cout << "CREO REFERENCIAS" << endl;
 
             string type = typeid(*ptr).name();
             string type2 = typeid(T).name();

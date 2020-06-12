@@ -15,11 +15,11 @@ int server_fd, new_socket, valread;
 struct sockaddr_in address;
 int opt = 1;
 int addrlen = sizeof(address);
-char buffer[999999] = {0};
+char buffer[10000] = {0};
 
 void limpiarBuffer(){
 
-    for(int i = 0; i < 999999; i++){
+    for(int i = 0; i < 10000; i++){
 
         buffer[i] = NULL;
 
@@ -91,7 +91,7 @@ void accept(){
 
 void recibir(){
 
-    valread = read( new_socket , buffer, 1024);
+    valread = read( new_socket , buffer, 10000);
     printf("Recibi: %s\n",buffer );
 
 }
@@ -115,22 +115,15 @@ int main(int argc, char const *argv[])
     attributes();
     socketName();
     listen();
+/*
+    VSPointer<int> myPtr = VSPointer<int>::New( );
+    *myPtr = 5;
 
-    //createVSPTR("id0", "i", "555");
-    //createVSPTR("id1", "i", "666");
-    //createVSPTR("id2", "i", "777");
-
-    /*
-    VSPointer<int>  ptr =  VSPointer<int>::New("id0");
-    *ptr = 55;
-    VSPointer<int> * ptr1 = new VSPointer<int>("id1");
-    *ptr1 = 66;
-    VSPointer<int> * ptr2 = new VSPointer<int>("id2");
-    *ptr2 = 77;
-*/
+    VSPointer<int> myPtr1 = VSPointer<int>::New( );
+    myPtr1 = myPtr;
 
     garbageCollector::getInstance()->printElements();
-
+*/
     char *valor;
 
     while(1){

@@ -8,6 +8,21 @@
 #include "VSPointer.h"
 
 
+VSPointer<int>* createVSPTR(string pId, string pValue){
+
+    VSPointer<int> * ptr = new VSPointer<int>(pId);
+    *ptr = stoi(pValue);
+
+    //cout << "el valor de ptr es " << **ptr << endl;
+
+    //garbageCollector::getInstance()->printElements();
+
+    //cout << "mi address es " << ptr << endl;
+
+    return ptr;
+
+}
+
 void createVSPTR(string pId, string type, string pValue){
 
 
@@ -76,20 +91,70 @@ void importPointerFromString(string pointers){
     //cout << jsonObj["listaPunteros"].at(0) << endl;
 
     for(int i = 0; i < jsonObj["listaPunteros"].size(); i++){
-        /*
-        ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
-        getGC()->garbageTotalList->push_back(ptr);
-        string type = typeid(*ptr).name();
-        id = "id" + to_string(getGC()->totalPtrCount);
-        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
-        getGC()->totalPtrCount++;
-        */
+
         cout << "parseando: " << jsonObj["listaPunteros"].at(i)["id"] << " " << jsonObj["listaPunteros"].at(i)["type"] << " " <<  jsonObj["listaPunteros"].at(i)["value"] << endl;
 
-        createVSPTR(jsonObj["listaPunteros"].at(i)["id"], jsonObj["listaPunteros"].at(i)["type"], jsonObj["listaPunteros"].at(i)["value"]);
+        string type = jsonObj["listaPunteros"].at(i)["type"];
+        string id = jsonObj["listaPunteros"].at(i)["id"];
+        string value = jsonObj["listaPunteros"].at(i)["value"];
+        VSPointer<int> * ptr;
+
+        if(type.compare("i")==0){
+
+            ptr = createVSPTR(id, value);
+
+        }
+
+        garbageCollector::getInstance()->printElements();
+
+        cout << "helo" << endl;
+
+        //createVSPTR(jsonObj["listaPunteros"].at(i)["id"], jsonObj["listaPunteros"].at(i)["type"], jsonObj["listaPunteros"].at(i)["value"]);
+
+        for(int e = 0; e < jsonObj["listaPunteros"].at(i)["listOfReferences"].size(); e++){
+
+            VSPointer<int> * nuevo = new VSPointer<int>(1);
+
+            garbageCollector::getInstance()->printElements();
+
+            ostringstream get_the_address3;
+            string address3;
+            get_the_address3 << nuevo;
+            address3 = get_the_address3.str();
+
+            cout << "address de nuevo es " << address3 << endl;
+
+            nuevo->ptr = ptr->ptr;
+
+            cout << "nuevo->ptr = " << nuevo->ptr << endl;
+            cout << "ptr->ptr = " << ptr->ptr << endl;
+
+            garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
+            nuevo->id = ptr->id;
+
+            garbageCollector::getInstance()->printElements();
+
+        }
+
     }
 
 }
+
+/*
+ VSPointer& operator=(VSPointer<T> *other){
+
+
+            ostringstream get_the_address3;
+            string address3;
+            get_the_address3 << (void**)this;
+            address3 = get_the_address3.str();
+
+            ptr = other->ptr;
+            getGC()->updateReference(id, other->id, address3);
+            id = other->id;
+
+    }
+ */
 
 
 #endif //VSPTR_SERVER_POINTERPARSER_H

@@ -12,10 +12,11 @@ class VSPointer {
 
 private:
 
-    T* ptr; // Actual pointer
+
 
 public:
 
+    T* ptr; // Actual pointer
     string id;
 
     garbageCollector* getGC(){
@@ -29,7 +30,6 @@ public:
 
     void * operator new(size_t size)
     {
-        cout<< "Overloading new operator with size: " << size << endl;
         void * p = ::new VSPointer<int>();
         //void * p = malloc(size); will also work fine
 
@@ -51,20 +51,26 @@ public:
         getGC()->totalPtrCount++;
     }
 
-    /*
+
     // Constructor
     VSPointer(int i) {
         ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
         getGC()->garbageTotalList->push_back(ptr);
         string type = typeid(*ptr).name();
         id = "id" + to_string(getGC()->totalPtrCount);
-        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
+
+        ostringstream get_the_address3;
+        string address3;
+        get_the_address3 << (void**)this;
+        address3 = get_the_address3.str();
+
+        getGC()->garbageList->push_back(new garbageElement(ptr, type, id, address3));
         getGC()->totalPtrCount++;
     }
-     */
 
-    static VSPointer New(string id){
-        return VSPointer(id);
+
+    static VSPointer New(){
+        return VSPointer(1);
     }
 
     T operator &(){return *ptr;}
@@ -93,6 +99,9 @@ public:
 
     void validateType(string type, T newValue){
         string type2 = typeid(ptr).name();
+
+        //cout << "el tipo mio es: " << type << " el tipo parametro es: " << type2 << endl;
+
         if(type.compare(type2) == 0){
             *ptr = newValue;
         }else{
@@ -102,15 +111,8 @@ public:
 
     VSPointer& operator=(VSPointer<T> other){
 
-        //cout << "other data" << endl;
-        //cout << "id: " << other.id << " ptr: " << *other.ptr << " is new: " << isNew << endl;
-
         string type = typeid(*ptr).name();
         string type2 = typeid(T).name();
-
-        //if(other.isNew){
-        //    return other;
-        //}
 
         if(type.compare(type2)==0){
 

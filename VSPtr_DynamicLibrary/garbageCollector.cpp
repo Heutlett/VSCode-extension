@@ -61,17 +61,23 @@ json garbageCollector::JsonGenerator(){
         j2["type"] = garbageList->at(i)->type;
         j2["value"] = garbageList->at(i)->getValue();
         j2["refQuantity"] = garbageList->at(i)->listOfReferences->size()+1;
+        j2["idRemote"] = garbageList->at(i)->remoteId;
 
         j2["listOfReferences"] = {};
 
         for(int e = 0; e < garbageList->at(i)->listOfReferences->size(); e++){
+
+            json j3;
 
             ostringstream get_the_address3;
             string address3;
             get_the_address3 << garbageList->at(i)->listOfReferences->at(e)->vsptrAdress;
             address3 = get_the_address3.str();
 
-            j2["listOfReferences"][e] = address3;
+            j3["address"] = address3;
+            j3["idRemote"] = garbageList->at(i)->listOfReferences->at(e)->remoteId;
+
+            j2["listOfReferences"][e] = j3;
 
         }
 

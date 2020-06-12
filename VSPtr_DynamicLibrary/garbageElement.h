@@ -19,6 +19,8 @@ public:
     void* vsptrAdress;
     vector<garbageElement*> * listOfReferences;
     string id;
+    int remoteId;
+    static int countRemoteId;
     string type;
 
     /**
