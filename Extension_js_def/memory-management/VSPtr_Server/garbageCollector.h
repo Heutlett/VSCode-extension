@@ -133,7 +133,7 @@ garbageCollector::garbageCollector() {
 void garbageCollector::checkRemoteThread(){
 
     while(1) {
-        sleep(2);
+        sleep(1);
         generarJSON();
     }
 

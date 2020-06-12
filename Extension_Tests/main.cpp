@@ -51,6 +51,10 @@ int main(){
     VSPointer<int> myPtr8 = VSPointer<int>::New( );
     //*myPtr8 = 500;
 
+
+    VSPointer<int> myPtr9 = VSPointer<int>::New( );
+
+    VSPointer<int> myPtr10 = VSPointer<int>::New( );
     garbageCollector::getInstance()->printElements();
 
     cin >> i;

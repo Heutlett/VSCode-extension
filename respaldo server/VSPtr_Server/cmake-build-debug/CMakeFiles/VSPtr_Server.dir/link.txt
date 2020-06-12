@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/VSPtr_Server.dir/server.cpp.o CMakeFiles/VSPtr_Server.dir/manager.cpp.o  -o VSPtr_Server  -pthread 

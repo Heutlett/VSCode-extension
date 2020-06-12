@@ -12,7 +12,6 @@
 using namespace std;
 
 
-
 int server_fd, new_socket, valread;
 struct sockaddr_in address;
 int opt = 1;
@@ -110,31 +109,38 @@ int createVSPTR(string type){
     if(type.compare("i")==0){
         VSPointer<int> * ptr = new VSPointer<int>(1);
         return ptr->remoteId;
-
     }
     if(type.compare("b")==0){
-
+        VSPointer<bool> * ptr = new VSPointer<bool>(1);
+        return ptr->remoteId;
     }
     if(type.compare("c")==0){
-
+        VSPointer<char> * ptr = new VSPointer<char>(1);
+        return ptr->remoteId;
     }
     if(type.compare("s")==0){
-
+        VSPointer<short> * ptr = new VSPointer<short>(1);
+        return ptr->remoteId;
     }
     if(type.compare("l")==0){
-
+        VSPointer<long> * ptr = new VSPointer<long>(1);
+        return ptr->remoteId;
     }
     if(type.compare("x")==0){
-
+        VSPointer<long long> * ptr = new VSPointer<long long>(1);
+        return ptr->remoteId;
     }
     if(type.compare("f")==0){
-
+        VSPointer<float> * ptr = new VSPointer<float>(1);
+        return ptr->remoteId;
     }
     if(type.compare("d")==0){
-
+        VSPointer<double> * ptr = new VSPointer<double>(1);
+        return ptr->remoteId;
     }
     if(type.compare("e")==0){
-
+        VSPointer<long double> * ptr = new VSPointer<long double>(1);
+        return ptr->remoteId;
     }
 
 }
