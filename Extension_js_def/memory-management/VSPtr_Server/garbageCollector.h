@@ -32,22 +32,24 @@ public:
     static garbageCollector* getInstance();
     void printElements();
     garbageElement* getGarbageElement(string id);
-    garbageElement* getGarbageElement(string id, void** address);
-    void deleteGarbageElement(string id, void** address);
-    void updateReference(string id, string newId, void** address);
+    garbageElement* getGarbageElement(string id, string address);
+    void deleteGarbageElement(string id, string address);
+    void updateReference(string id, string newId, string address);
     void transferReferences(garbageElement * gOldElement, string newId, garbageElement * gNewElement);
-    bool deletePtr(string id, void ** address);
+    bool deletePtr(string id, string address);
     void checkMemoryLeaks();
     void generarJSON();
     void checkRemoteMemoryConf();
     void checkRemoteThread();
-
-    static int prueba(int a){
-        return a;
-    }
+    void clearGC();
 
 };
 
+
+void garbageCollector::clearGC(){
+    garbageList = new vector<garbageElement*>();
+    garbageTotalList = new vector<void*>() ;
+}
 
 void garbageCollector::checkRemoteMemoryConf(){
 
@@ -170,20 +172,20 @@ garbageElement* garbageCollector::getGarbageElement(string id){
     return nullptr;
 }
 
-garbageElement* garbageCollector::getGarbageElement(string id, void** address){
+garbageElement* garbageCollector::getGarbageElement(string id, string address){
     for(int i = 0; i < garbageList->size(); i++){
 
-        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress == address){
+        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress.compare(address) == 0){
             return garbageList->at(i);
         }
     }
     return nullptr;
 }
 
-void garbageCollector::deleteGarbageElement(string id, void** address){
+void garbageCollector::deleteGarbageElement(string id, string address){
     for(int i = 0; i < garbageList->size(); i++){
 
-        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress == address){
+        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress.compare(address) == 0){
 
             garbageList->erase(garbageList->begin() + i);
             totalPtrCount--;
@@ -192,7 +194,7 @@ void garbageCollector::deleteGarbageElement(string id, void** address){
     }
 }
 
-void garbageCollector::updateReference(string id, string newId, void** address){
+void garbageCollector::updateReference(string id, string newId, string address){
     garbageElement * gNewReference = getGarbageElement(id, address);
 
     if(gNewReference == nullptr){
@@ -231,7 +233,7 @@ void garbageCollector::transferReferences(garbageElement * gOldElement, string n
 }
 
 //Si es el ptr original devuelve true, sino false
-bool garbageCollector::deletePtr(string id, void ** address){
+bool garbageCollector::deletePtr(string id, string address){
     garbageElement * original = getGarbageElement(id, address);
     if(original != nullptr){
         deleteGarbageElement(id, address);

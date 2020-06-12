@@ -16,7 +16,7 @@ class garbageElement{
 public:
 
     void* ptrData;
-    void* vsptrAdress;
+    string vsptrAdress;
     vector<garbageElement*> * listOfReferences;
     string id;
     string type;
@@ -28,16 +28,16 @@ public:
      * @param pId
      * @param pVsptrAdress
      */
-    garbageElement(void * dataPtr, string pType, string pId, void* pVsptrAdress);
+    garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress);
     /**
      * Returns the value of the pointer in string
      * @return string
      */
     string getValue();
 
-    void deleteReference(void ** address);
+    void deleteReference(string address);
 
-    garbageElement * getGarbageReference(void** address);
+    garbageElement * getGarbageReference(string address);
 
     /**
      * Return de memory address of the pointer
@@ -47,7 +47,7 @@ public:
 
     void toString();
 };
-garbageElement::garbageElement(void * dataPtr, string pType, string pId, void* pVsptrAdress){
+garbageElement::garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress){
     ptrData = dataPtr;
     listOfReferences = new vector<garbageElement*>;
     type = pType;
@@ -117,11 +117,11 @@ string garbageElement::getValue(){
     }
 }
 
-void garbageElement::deleteReference(void ** address){
+void garbageElement::deleteReference(string address){
 
     for(int i = 0; i < listOfReferences->size(); i++){
 
-        if(listOfReferences->at(i)->vsptrAdress == address){
+        if(listOfReferences->at(i)->vsptrAdress.compare(address) == 0){
 
             listOfReferences->erase(listOfReferences->begin() + i);
 
@@ -130,11 +130,11 @@ void garbageElement::deleteReference(void ** address){
 
 }
 
-garbageElement * garbageElement::getGarbageReference(void** address){
+garbageElement * garbageElement::getGarbageReference(string address){
 
     for(int i = 0; i < listOfReferences->size(); i++){
 
-        if(listOfReferences->at(i)->vsptrAdress == address){
+        if(listOfReferences->at(i)->vsptrAdress.compare(address) == 0){
 
             return listOfReferences->at(i);
 

@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/pointerParser.h">
+			<Option target="VSPtr_Server"/>
+		</Unit>
 		<Unit filename="/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.cpp">
 			<Option target="VSPtr_Server"/>
 		</Unit>

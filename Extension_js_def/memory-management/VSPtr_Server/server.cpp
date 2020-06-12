@@ -1,5 +1,4 @@
 #include <iostream>
-#include "VSPointer.h"
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/socket.h>
@@ -7,6 +6,7 @@
 #include <netinet/in.h>
 #include <string.h>
 #include "garbageCollector.h"
+#include "pointerParser.h"
 #define PORT 8080
 
 using namespace std;
@@ -16,26 +16,6 @@ struct sockaddr_in address;
 int opt = 1;
 int addrlen = sizeof(address);
 char buffer[999999] = {0};
-
-void prueba(){
-
-    int a;
-
-    VSPointer<int> ptr = VSPointer<int>::New();
-    *ptr = 5;
-
-    VSPointer<int> ptr1 = VSPointer<int>::New();
-    *ptr1 = 51;
-
-    VSPointer<int> ptr2 = VSPointer<int>::New();
-    ptr2 = ptr;
-
-    garbageCollector::getInstance()->printElements();
-
-    cin >>  a;
-
-}
-
 
 void limpiarBuffer(){
 
@@ -125,7 +105,7 @@ void enviar(string e){
 
 int main(int argc, char const *argv[])
 {
-
+    int i;
     //int puerto;
     //cout << "Ingrese el puerto: ";
     //cin >> puerto;
@@ -135,6 +115,21 @@ int main(int argc, char const *argv[])
     attributes();
     socketName();
     listen();
+
+    //createVSPTR("id0", "i", "555");
+    //createVSPTR("id1", "i", "666");
+    //createVSPTR("id2", "i", "777");
+
+    /*
+    VSPointer<int>  ptr =  VSPointer<int>::New("id0");
+    *ptr = 55;
+    VSPointer<int> * ptr1 = new VSPointer<int>("id1");
+    *ptr1 = 66;
+    VSPointer<int> * ptr2 = new VSPointer<int>("id2");
+    *ptr2 = 77;
+*/
+
+    garbageCollector::getInstance()->printElements();
 
     char *valor;
 
@@ -154,6 +149,9 @@ int main(int argc, char const *argv[])
                 enviar("Server: ready to get pointers"); //2
 
                 recibir(); //3
+                importPointerFromString(buffer);
+                cout << "printing al imported vspointers" << endl;
+                garbageCollector::getInstance()->printElements();
                 enviar("Server: The pointers has been reicived"); //4
 
 

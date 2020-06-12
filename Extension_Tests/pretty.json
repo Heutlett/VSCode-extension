@@ -1,3 +1,38 @@
 {
-    "listaPunteros": null
+    "listaPunteros": [
+        {
+            "id": "id0",
+            "listOfReferences": [
+                "0x7fffffffd880",
+                "0x7fffffffd970",
+                "0x7fffffffd9c0"
+            ],
+            "refAddress": "0x5555555735e0",
+            "refQuantity": 4,
+            "type": "i",
+            "value": "5",
+            "vsptrAdress": "0x7fffffffd830"
+        },
+        {
+            "id": "id1",
+            "listOfReferences": [
+                "0x7fffffffda10",
+                "0x7fffffffda60"
+            ],
+            "refAddress": "0x555555574050",
+            "refQuantity": 3,
+            "type": "i",
+            "value": "555",
+            "vsptrAdress": "0x7fffffffd8d0"
+        },
+        {
+            "id": "id2",
+            "listOfReferences": null,
+            "refAddress": "0x555555573c60",
+            "refQuantity": 1,
+            "type": "i",
+            "value": "666",
+            "vsptrAdress": "0x7fffffffd920"
+        }
+    ]
 }

@@ -3,7 +3,7 @@ project(VSPtr_Server)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(VSPtr_Server server.cpp)
+add_executable(VSPtr_Server server.cpp pointerParser.h)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
