@@ -9,6 +9,12 @@
 
 using json = nlohmann::json;
 
+void garbageCollector::SERVER_vsptrUpdateReference(int thisRemoteId, int otherRemoteId){
+
+    updateReferenceServer(thisRemoteId, otherRemoteId);
+
+}
+
 string garbageCollector::SERVER_vsptrGetValue(int remoteID){
 
     return getValue(remoteID);

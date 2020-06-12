@@ -112,8 +112,26 @@ string getValue(int remoteID){
 
     enviar(to_string(remoteID));//3
     recibir();//4
-
+    close(sock);
     return buffer;
+
+}
+
+void updateReferenceServer(int thisRemoteId, int otherRemoteId){
+
+    limpiarBuffer();
+    iniciarCliente();
+
+    enviar("4"); //1
+    recibir(); //2
+
+    enviar(to_string(thisRemoteId));//3
+    recibir();//4
+
+    enviar(to_string(otherRemoteId));//5
+
+    recibir();
+    close(sock);
 
 }
 /**

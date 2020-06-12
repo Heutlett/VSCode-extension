@@ -43,8 +43,31 @@ public:
     void clearGC();
     string generateStringJSON();
     string getValue(int remoteId);
+    garbageElement * getGarbageElement(int remoteId);
 
 };
+
+garbageElement * garbageCollector::getGarbageElement(int remoteId){
+
+    for(int i = 0; i < garbageList->size(); i++){
+
+        if(garbageList->at(i)->remoteId == remoteId){
+
+            return garbageList->at(i);
+
+        }
+
+        for(int e = 0; e < garbageList->at(i)->listOfReferences->size(); e++){
+
+            if(garbageList->at(i)->listOfReferences->at(e)->remoteId == remoteId){
+
+                return garbageList->at(i)->listOfReferences->at(e);
+            }
+        }
+    }
+    return nullptr;
+
+}
 
 string garbageCollector::getValue(int remoteId){
 
@@ -61,15 +84,10 @@ string garbageCollector::getValue(int remoteId){
             if(garbageList->at(i)->listOfReferences->at(e)->remoteId == remoteId){
 
                 return garbageList->at(i)->listOfReferences->at(e)->getValue();
-
             }
-
         }
-
-
     }
     return "";
-
 }
 
 void garbageCollector::clearGC(){

@@ -195,7 +195,6 @@ int main(int argc, char const *argv[])
         if(strcmp(buffer, "2") == 0){ //1
             garbageCollector::getInstance()->printElements();
 
-            cout << "Recibiendo tipo" << endl;
             enviar("recibido2"); //2
 
             recibir();//3
@@ -209,13 +208,39 @@ int main(int argc, char const *argv[])
         if(strcmp(buffer, "3") == 0){ //1
             garbageCollector::getInstance()->printElements();
 
-            cout << "Recibiendo tipo" << endl;
             enviar("recibido3"); //2
 
             recibir();//3
             string s = getValue(stoi(buffer));
 
             enviar(s);//4
+        }
+
+        if(strcmp(buffer, "4") == 0){ //1
+            garbageCollector::getInstance()->printElements();
+
+            enviar("recibido4"); //2
+
+            cout << "waiting for this remote id" << endl;
+            recibir();//3
+            int thisRemoteId = stoi(buffer);
+
+            enviar("request other remote id");//4
+
+            recibir();//5
+
+            int otherRemoteId = stoi(buffer);
+
+            garbageElement * thisG = garbageCollector::getInstance()->getGarbageElement(thisRemoteId);
+            garbageElement * otherG = garbageCollector::getInstance()->getGarbageElement(otherRemoteId);
+
+            thisG->ptrData = otherG->ptrData;
+            garbageCollector::getInstance()->updateReference(thisG->id, otherG->id, thisG->vsptrAdress);
+            thisG->id = otherG->id;
+
+            enviar("listo");//4
+
+            garbageCollector::getInstance()->printElements();
         }
 
         //}

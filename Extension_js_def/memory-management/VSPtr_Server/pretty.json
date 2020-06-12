@@ -5,68 +5,62 @@
             "idRemote": 0,
             "listOfReferences": [
                 {
-                    "address": "0x557b10148fc0",
+                    "address": "0x555a83810fc0",
                     "idRemote": 1
                 },
                 {
-                    "address": "0x557b101490e0",
+                    "address": "0x555a838110e0",
                     "idRemote": 4
                 },
                 {
-                    "address": "0x557b101491c0",
+                    "address": "0x555a838111c0",
                     "idRemote": 5
                 }
             ],
-            "refAddress": "0x557b10149380",
+            "refAddress": "0x555a83811380",
             "refQuantity": 4,
             "type": "i",
             "value": "666",
-            "vsptrAdress": "0x557b10148e80"
+            "vsptrAdress": "0x555a83810e80"
         },
         {
             "id": "id1",
             "idRemote": 2,
             "listOfReferences": [
                 {
-                    "address": "0x557b1014acb0",
+                    "address": "0x555a83812cb0",
                     "idRemote": 6
+                },
+                {
+                    "address": "0x555a83811820",
+                    "idRemote": 8
                 }
             ],
-            "refAddress": "0x557b101491a0",
-            "refQuantity": 2,
+            "refAddress": "0x555a838111a0",
+            "refQuantity": 3,
             "type": "i",
             "value": "777",
-            "vsptrAdress": "0x557b1014abb0"
+            "vsptrAdress": "0x555a83812bb0"
         },
         {
             "id": "id2",
             "idRemote": 3,
             "listOfReferences": null,
-            "refAddress": "0x557b1014ad90",
+            "refAddress": "0x555a83812d90",
             "refQuantity": 1,
             "type": "i",
             "value": "888",
-            "vsptrAdress": "0x557b1014adb0"
+            "vsptrAdress": "0x555a83812db0"
         },
         {
             "id": "id3",
             "idRemote": 7,
             "listOfReferences": null,
-            "refAddress": "0x557b1014ae90",
+            "refAddress": "0x555a83812e90",
             "refQuantity": 1,
             "type": "c",
             "value": "a",
-            "vsptrAdress": "0x557b1014aeb0"
-        },
-        {
-            "id": "id4",
-            "idRemote": 8,
-            "listOfReferences": null,
-            "refAddress": "0x557b10149680",
-            "refQuantity": 1,
-            "type": "i",
-            "value": "0",
-            "vsptrAdress": "0x557b10149820"
+            "vsptrAdress": "0x555a83812eb0"
         }
     ]
 }

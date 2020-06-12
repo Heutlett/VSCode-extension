@@ -50,6 +50,7 @@ public:
 
     int SERVER_vsptrConstructor(string type);
     string SERVER_vsptrGetValue(int remoteID);
+    void SERVER_vsptrUpdateReference(int thisRemoteId, int otherRemoteId);
 
 };
 

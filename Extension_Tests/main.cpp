@@ -51,7 +51,7 @@ int main(){
     cin >> i;
 
     VSPointer<int> myPtr8 = VSPointer<int>::New( );
-    //*myPtr8 = 500;
+    myPtr8 = myPtr6;
 
     garbageCollector::getInstance()->printElements();
     cout << "el valor de myPtr7 es " << &myPtr7 << endl;

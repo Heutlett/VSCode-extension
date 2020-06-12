@@ -61,12 +61,8 @@ public:
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
             string type = typeid(*ptr).name();
-
             string valor =garbageCollector::getInstance()->SERVER_vsptrGetValue(remoteId);
 
-            cout << "EL VALOR ES: " << valor << endl;
-            cout << "EL tipo ES: " << type << endl;
-            
             if(type.compare("i")==0){
                 *ptr = stoi(valor);
             }
@@ -78,7 +74,8 @@ public:
                 }
             }
             if(type.compare("c")==0){
-
+                char a = valor.at(0);
+                *ptr = a;
             }
             if(type.compare("s")==0){
                 *ptr = stoi(valor);
@@ -106,9 +103,6 @@ public:
             return *ptr;
 
         }
-
-
-
     }
 
     // Destructor
@@ -128,8 +122,6 @@ public:
             getGC()->generarJSON();
 
         }
-
-
     }
 
     // Overloading dereferncing operator
@@ -150,8 +142,6 @@ public:
 
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            cout << "no se sobrecarga -> porque remote es activa" << endl;
-            //return nullptr;
 
         }else{
 
@@ -160,6 +150,8 @@ public:
         }
 
     }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void validateType(string type, T newValue){
 
@@ -182,25 +174,28 @@ public:
 
     VSPointer& operator=(VSPointer<T> other){
 
-        if(garbageCollector::getInstance()->remoteMemoryIsActive){
+        string type = typeid(*ptr).name();
+        string type2 = typeid(T).name();
 
-            cout << "no se sobrecarga el operador = porque remote es activa" << endl;
+        if(type.compare(type2)==0){
 
-        }else{
+            if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
-            cout << "CREO REFERENCIAS" << endl;
+                //cout << "sobrecarga romota de = para dos vspointers" << endl;
 
-            string type = typeid(*ptr).name();
-            string type2 = typeid(T).name();
+                //cout << "this remote id: " << remoteId << endl;
+                //cout << "other remote id: " << other.remoteId << endl;
 
-            if(type.compare(type2)==0){
-                ptr = other.ptr;
-                getGC()->updateReference(id, other.id, reinterpret_cast<void**>(this));
-                id = other.id;
+                garbageCollector::getInstance()->SERVER_vsptrUpdateReference(remoteId, other.remoteId);
+
             }else{
-                cout << "Operation fail, the types dont match" << endl;
+                    ptr = other.ptr;
+                    getGC()->updateReference(id, other.id, reinterpret_cast<void**>(this));
+                    id = other.id;
             }
 
+        }else{
+            cout << "Operation fail, the types dont match" << endl;
         }
 
 
