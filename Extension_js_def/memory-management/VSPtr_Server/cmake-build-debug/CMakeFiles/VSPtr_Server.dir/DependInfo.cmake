@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/manager.cpp" "/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles/VSPtr_Server.dir/manager.cpp.o"
   "/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/server.cpp" "/home/heutlett/VSCode-extension/Extension_js_def/memory-management/VSPtr_Server/cmake-build-debug/CMakeFiles/VSPtr_Server.dir/server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

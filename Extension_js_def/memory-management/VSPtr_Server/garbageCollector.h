@@ -47,8 +47,10 @@ public:
 
 
 void garbageCollector::clearGC(){
-    garbageList = new vector<garbageElement*>();
-    garbageTotalList = new vector<void*>() ;
+    garbageList->clear();
+    garbageTotalList->clear();
+    totalPtrCount = 0;
+    garbageElement::countRemoteId = 0;
 }
 
 string garbageCollector::generateStringJSON(){

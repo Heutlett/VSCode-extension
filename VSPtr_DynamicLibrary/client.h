@@ -42,6 +42,7 @@ void limpiarBuffer(){
  */
 void recibir(){
 
+    limpiarBuffer();
     valread = read( sock , buffer, SIZE);
     printf("Recibido: %s\n",buffer );
 
@@ -52,6 +53,7 @@ void recibir(){
  */
 void enviar(string msg){
 
+    limpiarBuffer();
     send(sock , msg.data() , msg.size() , 0 );
     printf("Enviado: %s\n",msg.c_str());
 
@@ -90,11 +92,13 @@ int createVSPTR(string type){
 
     enviar(type);//3
 
-    recibir();//4
 
+    recibir();//4
     close(sock);
 
-    return stoi(buffer);
+    int ia = buffer[0] - '0';
+
+    return ia;
 
 }
 /**

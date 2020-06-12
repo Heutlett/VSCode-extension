@@ -25,7 +25,6 @@ private:
     garbageCollector();
     void memoryLeakThread();
 
-
 public:
     bool remoteMemoryIsActive;
     vector<garbageElement*> * garbageList;

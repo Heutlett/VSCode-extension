@@ -13,14 +13,14 @@ using json = nlohmann::json;
 
 int garbageCollector::SERVER_vsptrConstructor(string type){
 
-    createVSPTR(type);
+    return createVSPTR(type);
 
 }
 
 void garbageCollector::clearGC(){
 
-    garbageList = new vector<garbageElement*>();
-    garbageTotalList = new vector<void*>() ;
+    garbageList->clear();
+    garbageTotalList->clear();
     totalPtrCount = 0;
     garbageElement::countRemoteId = 0;
 
@@ -158,7 +158,10 @@ void garbageCollector::checkRemoteThread(){
 void garbageCollector::memoryLeakThread(){
     while(1) {
         sleep(5);
-        checkMemoryLeaks();
+
+        if(!gcIsClear()){
+            checkMemoryLeaks();
+        }
     }
 }
 
@@ -176,13 +179,15 @@ garbageCollector* garbageCollector::getInstance(){
 }
 void garbageCollector::printElements(){
 
-    cout << "LIST OF VSPOINTERS" << endl;
+    if(!gcIsClear()){
+        cout << "LIST OF VSPOINTERS" << endl;
 
-    for(int i = 0; i < garbageList->size(); i++){
-        garbageList->at(i)->toString();
+        for(int i = 0; i < garbageList->size(); i++){
+            garbageList->at(i)->toString();
+        }
+
+        cout << endl;
     }
-
-    cout << endl;
 }
 
 garbageElement* garbageCollector::getGarbageElement(string id){

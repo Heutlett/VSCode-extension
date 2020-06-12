@@ -123,33 +123,6 @@ VSPtr_Server/fast:
 	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/build
 .PHONY : VSPtr_Server/fast
 
-manager.o: manager.cpp.o
-
-.PHONY : manager.o
-
-# target to build an object file
-manager.cpp.o:
-	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/manager.cpp.o
-.PHONY : manager.cpp.o
-
-manager.i: manager.cpp.i
-
-.PHONY : manager.i
-
-# target to preprocess a source file
-manager.cpp.i:
-	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/manager.cpp.i
-.PHONY : manager.cpp.i
-
-manager.s: manager.cpp.s
-
-.PHONY : manager.s
-
-# target to generate assembly for a file
-manager.cpp.s:
-	$(MAKE) -f CMakeFiles/VSPtr_Server.dir/build.make CMakeFiles/VSPtr_Server.dir/manager.cpp.s
-.PHONY : manager.cpp.s
-
 server.o: server.cpp.o
 
 .PHONY : server.o
@@ -186,9 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... VSPtr_Server"
-	@echo "... manager.o"
-	@echo "... manager.i"
-	@echo "... manager.s"
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"

@@ -91,14 +91,14 @@ void accept(){
 }
 
 void recibir(){
-
+    limpiarBuffer();
     valread = read( new_socket , buffer, SIZE);
     printf("Recibi: %s\n",buffer );
 
 }
 
 void enviar(string e){
-
+    limpiarBuffer();
     send(new_socket , e.data() , e.size() , 0 );
     printf("Mensaje enviado: %s\n",e.c_str());
 
@@ -168,37 +168,37 @@ int main(int argc, char const *argv[])
 
         //if(!fork()){
 
-            recibir();
+        recibir();
 
-            if(strcmp(buffer, "1") == 0){ //1
+        if(strcmp(buffer, "1") == 0){ //1
 
-                cout << "Receiving pointers..." << endl;
-                enviar("Server: ready to get pointers"); //2
+            cout << "Receiving pointers..." << endl;
+            enviar("Server: ready to get pointers"); //2
 
-                recibir(); //3
-                importPointerFromString(buffer);
-                cout << endl <<"Printing al imported vspointers" << endl << endl;
-                garbageCollector::getInstance()->printElements();
-                enviar("Server: The pointers has been reicived"); //4
-                cout << endl << "generating json" << endl;
-                cout << "el ultimo remote id sera: " << garbageElement::countRemoteId <<  endl;
-                //garbageCollector::getInstance()->generarJSON();
+            recibir(); //3
+            importPointerFromString(buffer);
+            cout << endl <<"Printing al imported vspointers" << endl << endl;
+            garbageCollector::getInstance()->printElements();
+            enviar("Server: The pointers has been reicived"); //4
+            cout << endl << "generating json" << endl;
+            cout << "el ultimo remote id sera: " << garbageElement::countRemoteId <<  endl;
+            //garbageCollector::getInstance()->generarJSON();
 
-            }
+        }
 
-            if(strcmp(buffer, "2") == 0){ //1
-                garbageCollector::getInstance()->printElements();
+        if(strcmp(buffer, "2") == 0){ //1
+            garbageCollector::getInstance()->printElements();
 
-                cout << "Recibiendo tipo" << endl;
-                enviar("recibido2"); //2
+            cout << "Recibiendo tipo" << endl;
+            enviar("recibido2"); //2
 
-                recibir();//3
-                int remoteId = createVSPTR(buffer);
+            recibir();//3
+            int remoteId = createVSPTR(buffer);
 
-                string s = to_string(remoteId);
-                enviar(s);//4
+            string s = to_string(remoteId);
+            enviar(s);//4
 
-            }
+        }
 
         //}
 

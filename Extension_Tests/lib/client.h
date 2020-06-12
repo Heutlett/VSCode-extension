@@ -14,10 +14,11 @@
 using namespace std;
 
 #define PORT 8080
+#define SIZE 100000
 //
 int sock = 0, valread;
 struct sockaddr_in serv_addr;
-char buffer[10000] = {0};
+char buffer[SIZE] = {0};
 
 /**
  * @brief
@@ -29,7 +30,7 @@ void iniciarCliente();
  */
 void limpiarBuffer(){
 
-    for(int i = 0; i < 10000; i++){
+    for(int i = 0; i < SIZE; i++){
 
         buffer[i] = NULL;
 
@@ -41,7 +42,8 @@ void limpiarBuffer(){
  */
 void recibir(){
 
-    valread = read( sock , buffer, 1024);
+    limpiarBuffer();
+    valread = read( sock , buffer, SIZE);
     printf("Recibido: %s\n",buffer );
 
 }
@@ -51,6 +53,7 @@ void recibir(){
  */
 void enviar(string msg){
 
+    limpiarBuffer();
     send(sock , msg.data() , msg.size() , 0 );
     printf("Enviado: %s\n",msg.c_str());
 
@@ -89,11 +92,13 @@ int createVSPTR(string type){
 
     enviar(type);//3
 
-    recibir();//4
 
+    recibir();//4
     close(sock);
 
-    return stoi(buffer);
+    int ia = buffer[0] - '0';
+
+    return ia;
 
 }
 /**

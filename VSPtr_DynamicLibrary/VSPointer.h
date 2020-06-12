@@ -35,6 +35,7 @@ public:
         if(garbageCollector::getInstance()->remoteMemoryIsActive){
 
             remoteId = garbageCollector::getInstance()->SERVER_vsptrConstructor(type);
+            cout << "Mi remote id es "<<remoteId << endl;
 
             //cout << "No se crea nada porque la remote esta activada" << endl;
 
