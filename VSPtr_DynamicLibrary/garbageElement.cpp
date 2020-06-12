@@ -6,7 +6,7 @@
 
 int garbageElement::countRemoteId = 0;
 
-garbageElement::garbageElement(void * dataPtr, string pType, string pId, void* pVsptrAdress){
+garbageElement::garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress){
     ptrData = dataPtr;
     listOfReferences = new vector<garbageElement*>;
     type = pType;
@@ -78,11 +78,11 @@ string garbageElement::getValue(){
     }
 }
 
-void garbageElement::deleteReference(void ** address){
+void garbageElement::deleteReference(string address){
 
     for(int i = 0; i < listOfReferences->size(); i++){
 
-        if(listOfReferences->at(i)->vsptrAdress == address){
+        if(listOfReferences->at(i)->vsptrAdress.compare(address) == 0){
 
             listOfReferences->erase(listOfReferences->begin() + i);
 
@@ -91,11 +91,11 @@ void garbageElement::deleteReference(void ** address){
 
 }
 
-garbageElement * garbageElement::getGarbageReference(void** address){
+garbageElement * garbageElement::getGarbageReference(string address){
 
     for(int i = 0; i < listOfReferences->size(); i++){
 
-        if(listOfReferences->at(i)->vsptrAdress == address){
+        if(listOfReferences->at(i)->vsptrAdress.compare(address) == 0){
 
             return listOfReferences->at(i);
 
@@ -121,4 +121,16 @@ void garbageElement::toString(){
     }
 
 
+}
+
+garbageElement::garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress, int pRemoteId){
+    ptrData = dataPtr;
+    listOfReferences = new vector<garbageElement*>;
+    type = pType;
+    id = pId;
+    vsptrAdress = pVsptrAdress;
+    remoteId = pRemoteId;
+
+
+    //cout << "GarbageElement has been created, VSPointerAddress: " << vsptrAdress << ", Value: " << getValue() << ", refTo: " << ptrData << endl <<endl;
 }

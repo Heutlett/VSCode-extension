@@ -5,7 +5,7 @@
 #ifndef VSPTR_DYNAMICLIBRARY_POINTERPARSER_H
 #define VSPTR_DYNAMICLIBRARY_POINTERPARSER_H
 
-/*
+
 #include "VSPointer.h"
 
 VSPointer<int>* createVSPTRint(string pId, string pValue, int remoteId){
@@ -101,9 +101,13 @@ void importPointerFromString(string pointers){
                 VSPointer<int> * nuevo = new VSPointer<int>(1, remoteId);
                 garbageElement::countRemoteId++;
 
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -121,11 +125,14 @@ void importPointerFromString(string pointers){
                 VSPointer<bool> * nuevo = new VSPointer<bool>(1, remoteId);
                 garbageElement::countRemoteId++;
 
-
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
 
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -143,11 +150,14 @@ void importPointerFromString(string pointers){
                 VSPointer<char> * nuevo = new VSPointer<char>(1, remoteId);
                 garbageElement::countRemoteId++;
 
-
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
 
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -165,11 +175,14 @@ void importPointerFromString(string pointers){
                 VSPointer<short> * nuevo = new VSPointer<short>(1, remoteId);
                 garbageElement::countRemoteId++;
 
-
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
 
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -187,10 +200,13 @@ void importPointerFromString(string pointers){
                 VSPointer<long> * nuevo = new VSPointer<long>(1, remoteId);
                 garbageElement::countRemoteId++;
 
-
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
                 garbageCollector::getInstance()->printElements();
             }
@@ -209,9 +225,13 @@ void importPointerFromString(string pointers){
                 VSPointer<long long> * nuevo = new VSPointer<long long>(1, remoteId);
                 garbageElement::countRemoteId++;
 
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -229,10 +249,13 @@ void importPointerFromString(string pointers){
                 VSPointer<float> * nuevo = new VSPointer<float>(1, remoteId);
                 garbageElement::countRemoteId++;
 
-
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -250,10 +273,13 @@ void importPointerFromString(string pointers){
                 VSPointer<double> * nuevo = new VSPointer<double>(1, remoteId);
                 garbageElement::countRemoteId++;
 
-
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -271,9 +297,13 @@ void importPointerFromString(string pointers){
                 VSPointer<long double> * nuevo = new VSPointer<long double>(1, remoteId);
                 garbageElement::countRemoteId++;
 
+                ostringstream get_the_address3;
+                string address3;
+                get_the_address3 << nuevo;
+                address3 = get_the_address3.str();
 
                 nuevo->ptr = ptr->ptr;
-                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, (void**)nuevo);
+                garbageCollector::getInstance()->updateReference(nuevo->id, ptr->id, address3);
                 nuevo->id = ptr->id;
             }
         }
@@ -281,5 +311,4 @@ void importPointerFromString(string pointers){
     }
 
 }
-*/
 #endif //VSPTR_DYNAMICLIBRARY_POINTERPARSER_H

@@ -33,11 +33,11 @@ public:
     static garbageCollector* getInstance();
     void printElements();
     garbageElement* getGarbageElement(string id);
-    garbageElement* getGarbageElement(string id, void** address);
-    void deleteGarbageElement(string id, void** address);
-    void updateReference(string id, string newId, void** address);
+    garbageElement* getGarbageElement(string id, string address);
+    void deleteGarbageElement(string id, string address);
+    void updateReference(string id, string newId, string address);
     void transferReferences(garbageElement * gOldElement, string newId, garbageElement * gNewElement);
-    bool deletePtr(string id, void ** address);
+    bool deletePtr(string id, string address);
     void checkMemoryLeaks();
     void generarJSON();
     void checkRemoteMemoryConf();

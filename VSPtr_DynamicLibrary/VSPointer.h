@@ -19,11 +19,8 @@ public:
     T* ptr; // Actual pointer
     string id;
     int remoteId;
-    garbageCollector* getGC(){
 
-        return garbageCollector::getInstance();
-    }
-    /*
+
     void * operator new(size_t size)
     {
         void * p = ::new VSPointer<int>();
@@ -40,7 +37,7 @@ public:
 
         ostringstream get_the_address3;
         string address3;
-        get_the_address3 << (void**)this;
+        get_the_address3 << this;
         address3 = get_the_address3.str();
 
         garbageCollector::getInstance()->garbageList->push_back(new garbageElement(ptr, type, id, address3, remoteId));
@@ -55,14 +52,14 @@ public:
 
         ostringstream get_the_address3;
         string address3;
-        get_the_address3 << (void**)this;
+        get_the_address3 << this;
         address3 = get_the_address3.str();
 
         garbageCollector::getInstance()->garbageList->push_back(new garbageElement(ptr, type, id, address3, remoteId));
         garbageCollector::getInstance()->totalPtrCount++;
     }
 
-    */
+
     VSPointer() {
 
     }
@@ -80,12 +77,21 @@ public:
         }else{
 
             ptr = (typeof(*ptr)*)malloc(sizeof(*ptr));
-            getGC()->garbageTotalList->push_back(ptr);
+            garbageCollector::getInstance()->garbageTotalList->push_back(ptr);
             //string type = typeid(*ptr).name();
-            id = "id" + to_string(getGC()->totalPtrCount);
-            getGC()->garbageList->push_back(new garbageElement(ptr, type, id, (void**)this));
-            getGC()->totalPtrCount++;
-            garbageElement * copia = getGC()->getGarbageElement(id, (void**)this);
+            id = "id" + to_string(garbageCollector::getInstance()->totalPtrCount);
+
+            ostringstream get_the_address3;
+            string address3;
+            get_the_address3 << this;
+            address3 = get_the_address3.str();
+
+            garbageCollector::getInstance()->garbageList->push_back(new garbageElement(ptr, type, id, address3));
+            garbageCollector::getInstance()->totalPtrCount++;
+
+
+
+            garbageElement * copia = garbageCollector::getInstance()->getGarbageElement(id, address3);
             remoteId = copia->remoteId;
 
         }
@@ -152,11 +158,16 @@ public:
 
         }else{
 
-            if(getGC()->deletePtr(id, reinterpret_cast<void**>(this))){
+            ostringstream get_the_address3;
+            string address3;
+            get_the_address3 << this;
+            address3 = get_the_address3.str();
+
+            if(garbageCollector::getInstance()->deletePtr(id, address3)){
                 free(ptr);
 
             }
-            getGC()->generarJSON();
+            garbageCollector::getInstance()->generarJSON();
 
         }
     }
@@ -230,7 +241,13 @@ public:
 
             }else{
                     ptr = other.ptr;
-                    getGC()->updateReference(id, other.id, reinterpret_cast<void**>(this));
+
+                    ostringstream get_the_address3;
+                    string address3;
+                    get_the_address3 << this;
+                    address3 = get_the_address3.str();
+
+                    garbageCollector::getInstance()->updateReference(id, other.id, address3);
                     id = other.id;
             }
 

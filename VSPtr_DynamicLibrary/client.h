@@ -158,7 +158,7 @@ void updateAssign(string type, string value, int remoteId){
 
 
 }
-/*
+
 void getPointers(){
 
     limpiarBuffer();
@@ -175,7 +175,7 @@ void getPointers(){
     importPointerFromString(json);
 
 }
-*/
+
 
 
 /**

@@ -219,20 +219,20 @@ garbageElement* garbageCollector::getGarbageElement(string id){
     return nullptr;
 }
 
-garbageElement* garbageCollector::getGarbageElement(string id, void** address){
+garbageElement* garbageCollector::getGarbageElement(string id, string address){
     for(int i = 0; i < garbageList->size(); i++){
 
-        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress == address){
+        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress.compare(address) == 0){
             return garbageList->at(i);
         }
     }
     return nullptr;
 }
 
-void garbageCollector::deleteGarbageElement(string id, void** address){
+void garbageCollector::deleteGarbageElement(string id, string address){
     for(int i = 0; i < garbageList->size(); i++){
 
-        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress == address){
+        if(garbageList->at(i)->id.compare(id) == 0 && garbageList->at(i)->vsptrAdress.compare(address) == 0){
 
             garbageList->erase(garbageList->begin() + i);
             totalPtrCount--;
@@ -241,7 +241,7 @@ void garbageCollector::deleteGarbageElement(string id, void** address){
     }
 }
 
-void garbageCollector::updateReference(string id, string newId, void** address){
+void garbageCollector::updateReference(string id, string newId, string address){
     garbageElement * gNewReference = getGarbageElement(id, address);
 
     if(gNewReference == nullptr){
@@ -280,7 +280,7 @@ void garbageCollector::transferReferences(garbageElement * gOldElement, string n
 }
 
 //Si es el ptr original devuelve true, sino false
-bool garbageCollector::deletePtr(string id, void ** address){
+bool garbageCollector::deletePtr(string id, string address){
     garbageElement * original = getGarbageElement(id, address);
     if(original != nullptr){
         deleteGarbageElement(id, address);
@@ -332,7 +332,7 @@ void garbageCollector::checkMemoryLeaks(){
 
 void garbageCollector::getPointersFromServer() {
 
-    //getPointers();
+    getPointers();
 
 }
 
