@@ -14,8 +14,6 @@ garbageElement::garbageElement(void * dataPtr, string pType, string pId, string 
     vsptrAdress = pVsptrAdress;
     remoteId = countRemoteId;
     countRemoteId++;
-
-    //cout << "GarbageElement has been created, VSPointerAddress: " << vsptrAdress << ", Value: " << getValue() << ", refTo: " << ptrData << endl <<endl;
 }
 
 string garbageElement::getValue(){
@@ -88,7 +86,6 @@ void garbageElement::deleteReference(string address){
 
         }
     }
-
 }
 
 garbageElement * garbageElement::getGarbageReference(string address){
@@ -111,7 +108,6 @@ void ** garbageElement::getAddress(){
 void garbageElement::toString(){
 
     cout << "id: " << id << " | " << "refAddress: " << getAddress() << " | Type: " << type << " | Value: " << getValue()  << " | refQuantity: " << listOfReferences->size()+1 << endl;
-
     cout << 0 << ": " << vsptrAdress  << " | remoteId: " << remoteId << endl;
 
     for(int i = 0; i < listOfReferences->size(); i++){
@@ -130,7 +126,4 @@ garbageElement::garbageElement(void * dataPtr, string pType, string pId, string 
     id = pId;
     vsptrAdress = pVsptrAdress;
     remoteId = pRemoteId;
-
-
-    //cout << "GarbageElement has been created, VSPointerAddress: " << vsptrAdress << ", Value: " << getValue() << ", refTo: " << ptrData << endl <<endl;
 }

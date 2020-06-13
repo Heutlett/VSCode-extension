@@ -9,6 +9,7 @@
 
 using json = nlohmann::json;
 
+
 void garbageCollector::SERVER_vsptrOverloadAssign(string newValueType, string newValue, int thisIdRemote){
 
     updateAssign(newValueType, newValue, thisIdRemote);
@@ -75,7 +76,6 @@ void garbageCollector::checkRemoteMemoryConf(){
         if(gcIsClear()){
             this->getPointersFromServer();
         }
-        //cout << "cadena es 0" << endl;
     }
     cout << "la memoria remota es: " << cadena << endl;
     fe.close();
@@ -279,7 +279,6 @@ void garbageCollector::transferReferences(garbageElement * gOldElement, string n
 
 }
 
-//Si es el ptr original devuelve true, sino false
 bool garbageCollector::deletePtr(string id, string address){
     garbageElement * original = getGarbageElement(id, address);
     if(original != nullptr){
@@ -298,9 +297,6 @@ bool garbageCollector::deletePtr(string id, string address){
 
 }
 
-/**
- * Busca los memory leaks y los libera
- */
 void garbageCollector::checkMemoryLeaks(){
 
     bool isMemoryLeaked = true;

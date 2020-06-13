@@ -2,7 +2,7 @@
 // Created by heutlett on 14/5/20.
 //
 
-#ifndef VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H __attribute__((visibility("default")));
+#ifndef VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H
 #define VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H
 
 #include <iostream>
@@ -16,9 +16,11 @@ class VSPTR_DYNAMICLIBRARY_GARBAGEELEMENT_H garbageElement{
 public:
 
     void* ptrData;
-    void* vsptrAdress;
+    string vsptrAdress;
     vector<garbageElement*> * listOfReferences;
     string id;
+    int remoteId;
+    static int countRemoteId;
     string type;
 
     /**
@@ -28,16 +30,20 @@ public:
      * @param pId
      * @param pVsptrAdress
      */
-    garbageElement(void * dataPtr, string pType, string pId, void* pVsptrAdress);
+    garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress);
     /**
      * Returns the value of the pointer in string
      * @return string
      */
+
+    garbageElement(void * dataPtr, string pType, string pId, string pVsptrAdress, int remoteId);
+
+
     string getValue();
 
-    void deleteReference(void ** address);
+    void deleteReference(string address);
 
-    garbageElement * getGarbageReference(void** address);
+    garbageElement * getGarbageReference(string address);
 
     /**
      * Return de memory address of the pointer

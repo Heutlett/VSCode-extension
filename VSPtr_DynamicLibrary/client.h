@@ -16,13 +16,13 @@ using namespace std;
 
 #define PORT 8080
 #define SIZE 100000
-//
+
 int sock = 0, valread;
 struct sockaddr_in serv_addr;
 char buffer[SIZE] = {0};
 
 /**
- * @brief
+ * @brief inicia el socket
  *
  */
 void iniciarCliente();
@@ -45,7 +45,6 @@ void recibir(){
 
     limpiarBuffer();
     valread = read( sock , buffer, SIZE);
-    //printf("Recibido: %s\n",buffer );
 
 }
 /**
@@ -56,12 +55,11 @@ void enviar(string msg){
 
     limpiarBuffer();
     send(sock , msg.data() , msg.size() , 0 );
-    //printf("Enviado: %s\n",msg.c_str());
 
 }
 /**
- * @brief Actualiza el grafo del servidor
- * @return Devuelve el grafo en modo string
+ * @brief Envia los punteros de la memoria local en un string al servidor
+ * @param pointers
  */
 void sendPointers(string pointers){
 
@@ -79,9 +77,9 @@ void sendPointers(string pointers){
 
 }
 /**
- * @brief Pide al servidor el algoritmo dijkstra de un nodo en especifico pasado por parametro
- * @param string que contiene el numero del vertice que se quiere analizar la ruta mas corta
- * @return Devuelve la ruta mas corta del vertice pasado por parametro
+ * @brief Usado como constructor vacio cuando se esta usando la remote memory
+ * @param type
+ * @return
  */
 int createVSPTR(string type){
 
@@ -102,7 +100,11 @@ int createVSPTR(string type){
     return ia;
 
 }
-
+/**
+ * @brief Obtiene el valor de un puntero cuando se esta usando la remote memory
+ * @param remoteID
+ * @return
+ */
 string getValue(int remoteID){
 
     limpiarBuffer();
@@ -117,7 +119,11 @@ string getValue(int remoteID){
     return buffer;
 
 }
-
+/**
+ * @brief Sobrecarga del operador (=) para cuando se esta usando la remote memory
+ * @param thisRemoteId
+ * @param otherRemoteId
+ */
 void updateReferenceServer(int thisRemoteId, int otherRemoteId){
 
     limpiarBuffer();
@@ -135,7 +141,12 @@ void updateReferenceServer(int thisRemoteId, int otherRemoteId){
     close(sock);
 
 }
-
+/**
+ * @brief Sobrecarga del operador (=) para cuando se esta usando la remote memory
+ * @param type
+ * @param value
+ * @param remoteId
+ */
 void updateAssign(string type, string value, int remoteId){
 
     limpiarBuffer();
@@ -145,20 +156,16 @@ void updateAssign(string type, string value, int remoteId){
     recibir(); //2
 
     enviar(type);//3
-
     recibir();//4
 
     enviar(value); //5
-
     recibir();//6
 
     enviar(to_string(remoteId));//7
-
-
-
-
 }
-
+/**
+ * @brief Obtiene los punteros del servidor en un string
+ */
 void getPointers(){
 
     limpiarBuffer();
@@ -173,7 +180,6 @@ void getPointers(){
     string json = buffer;
 
     importPointerFromString(json);
-
 }
 
 

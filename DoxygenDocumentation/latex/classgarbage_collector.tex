@@ -1,0 +1,323 @@
+\hypertarget{classgarbage_collector}{}\doxysection{garbage\+Collector Class Reference}
+\label{classgarbage_collector}\index{garbageCollector@{garbageCollector}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgarbage_collector_aba035dda966374b543b85130cdc29867}\label{classgarbage_collector_aba035dda966374b543b85130cdc29867}} 
+void \mbox{\hyperlink{classgarbage_collector_aba035dda966374b543b85130cdc29867}{print\+Elements}} ()
+\begin{DoxyCompactList}\small\item\em imprime todos los elementos del garbage collector \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$ \mbox{\hyperlink{classgarbage_collector_aacb5d4a898a59f36891f0a831aed6976}{get\+Garbage\+Element}} (string id)
+\begin{DoxyCompactList}\small\item\em devuelve un elemento del garbage collector \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$ \mbox{\hyperlink{classgarbage_collector_a4290c73811f4b490c606e2246753b557}{get\+Garbage\+Element}} (string id, string address)
+\begin{DoxyCompactList}\small\item\em devuelve un elemento del garbage collector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgarbage_collector_af380bfcca38b678afee82c58be9ba857}{delete\+Garbage\+Element}} (string id, string address)
+\begin{DoxyCompactList}\small\item\em elimina un elemento del garbage collector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgarbage_collector_af7daa5dcfefe94fa5eb70e7534730606}{update\+Reference}} (string id, string new\+Id, string address)
+\begin{DoxyCompactList}\small\item\em actualiza un elemento del garbage collector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgarbage_collector_acfc6076f5d1c273aac008b9e6a70557e}{transfer\+References}} (\mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$g\+Old\+Element, string new\+Id, \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$g\+New\+Element)
+\begin{DoxyCompactList}\small\item\em transfiere un elemento del garbage collector \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgarbage_collector_a850a2814593ed99c6c935d19d7f64c99}{delete\+Ptr}} (string id, string address)
+\begin{DoxyCompactList}\small\item\em elimina un puntero del garbage collector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgarbage_collector_a4a089498a793073b9fcefca0fcb022fd}\label{classgarbage_collector_a4a089498a793073b9fcefca0fcb022fd}} 
+void \mbox{\hyperlink{classgarbage_collector_a4a089498a793073b9fcefca0fcb022fd}{check\+Memory\+Leaks}} ()
+\begin{DoxyCompactList}\small\item\em checkea si hay memory leaks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgarbage_collector_a42000e33c5710bca1172d72b3d37f3bc}\label{classgarbage_collector_a42000e33c5710bca1172d72b3d37f3bc}} 
+void \mbox{\hyperlink{classgarbage_collector_a42000e33c5710bca1172d72b3d37f3bc}{generar\+J\+S\+ON}} ()
+\begin{DoxyCompactList}\small\item\em genera un json con todos los punteros que contiene el garbage collector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgarbage_collector_a55226e39c313ac052fc55a8ecdd7111c}\label{classgarbage_collector_a55226e39c313ac052fc55a8ecdd7111c}} 
+void \mbox{\hyperlink{classgarbage_collector_a55226e39c313ac052fc55a8ecdd7111c}{check\+Remote\+Memory\+Conf}} ()
+\begin{DoxyCompactList}\small\item\em verifica las configuraciones a ver si se activo la remote memory desde la extension \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgarbage_collector_a507ac16c4f75bd989c8e6af9957e28a3}\label{classgarbage_collector_a507ac16c4f75bd989c8e6af9957e28a3}} 
+void \mbox{\hyperlink{classgarbage_collector_a507ac16c4f75bd989c8e6af9957e28a3}{check\+Remote\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em procedimiento del thread \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classgarbage_collector_a92e5aedd9df88804f872fcd5c2567cab}{generate\+String\+J\+S\+ON}} ()
+\begin{DoxyCompactList}\small\item\em genera un json en formato string \end{DoxyCompactList}\item 
+json \mbox{\hyperlink{classgarbage_collector_adbd7f9596ff534961393af44a9117550}{Json\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em genera un json con todos los punteros del garbage collector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgarbage_collector_a8ce9dc00a880698866988e9a27ba6882}\label{classgarbage_collector_a8ce9dc00a880698866988e9a27ba6882}} 
+void \mbox{\hyperlink{classgarbage_collector_a8ce9dc00a880698866988e9a27ba6882}{send\+Pointers\+To\+Server}} ()
+\begin{DoxyCompactList}\small\item\em envia todos los punteros al servidor mediante un json \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgarbage_collector_a7c28b5da44e6a330d5db8c54ec620310}\label{classgarbage_collector_a7c28b5da44e6a330d5db8c54ec620310}} 
+void \mbox{\hyperlink{classgarbage_collector_a7c28b5da44e6a330d5db8c54ec620310}{clear\+GC}} ()
+\begin{DoxyCompactList}\small\item\em limpia las listas del garbage collector \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgarbage_collector_a5249032a492a1b21e084699044223b3b}{gc\+Is\+Clear}} ()
+\begin{DoxyCompactList}\small\item\em verifica si el garbage collector esta vacio \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classgarbage_collector_a81d316ee82dd5b872c3c6284579e74d3}{S\+E\+R\+V\+E\+R\+\_\+vsptr\+Constructor}} (string type)
+\begin{DoxyCompactList}\small\item\em sobrecarga del constructor cuando se usa la remote memory \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classgarbage_collector_aefb5c913a967b278ce7ac990ddc80304}{S\+E\+R\+V\+E\+R\+\_\+vsptr\+Get\+Value}} (int remote\+ID)
+\begin{DoxyCompactList}\small\item\em obtiene el valor de un vspointer cuando se esta usando la memoria remota \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgarbage_collector_aeb5c3cccb94f7208197f72df956afc1d}{S\+E\+R\+V\+E\+R\+\_\+vsptr\+Update\+Reference}} (int this\+Remote\+Id, int other\+Remote\+Id)
+\begin{DoxyCompactList}\small\item\em actualiza un puntero si se encuentra en el extranjero \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgarbage_collector_a461adca3d673767a227b6fb4b370be34}{S\+E\+R\+V\+E\+R\+\_\+vsptr\+Overload\+Assign}} (string new\+Value\+Type, string new\+Value, int this\+Id\+Remote)
+\begin{DoxyCompactList}\small\item\em sobrecarga del operador (=) cuando se utiliza la remote memory \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgarbage_collector_a6254df55c98df2d70f15dad15732f0fc}\label{classgarbage_collector_a6254df55c98df2d70f15dad15732f0fc}} 
+void \mbox{\hyperlink{classgarbage_collector_a6254df55c98df2d70f15dad15732f0fc}{get\+Pointers\+From\+Server}} ()
+\begin{DoxyCompactList}\small\item\em importa los punteros del servidor a la memoria local \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classgarbage_collector}{garbage\+Collector}} $\ast$ \mbox{\hyperlink{classgarbage_collector_aa5a02f8907c5008cb61240b3bb284b95}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em devuelve la instancia del garbage collector (singleton) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgarbage_collector_ae161ced7fadb64161c0f14b77804e199}\label{classgarbage_collector_ae161ced7fadb64161c0f14b77804e199}} 
+bool {\bfseries remote\+Memory\+Is\+Active}
+\item 
+\mbox{\Hypertarget{classgarbage_collector_a4c8c879ce9fb28b435225c8fb68287d4}\label{classgarbage_collector_a4c8c879ce9fb28b435225c8fb68287d4}} 
+vector$<$ \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$ $>$ $\ast$ {\bfseries garbage\+List}
+\item 
+\mbox{\Hypertarget{classgarbage_collector_a97117e832a1ed8e3f21444e3a4da1cdc}\label{classgarbage_collector_a97117e832a1ed8e3f21444e3a4da1cdc}} 
+vector$<$ void $\ast$ $>$ $\ast$ {\bfseries garbage\+Total\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgarbage_collector_ab2039f077f562b7080a4de943463e51b}\label{classgarbage_collector_ab2039f077f562b7080a4de943463e51b}} 
+static int {\bfseries total\+Ptr\+Count}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgarbage_collector_af380bfcca38b678afee82c58be9ba857}\label{classgarbage_collector_af380bfcca38b678afee82c58be9ba857}} 
+\index{garbageCollector@{garbageCollector}!deleteGarbageElement@{deleteGarbageElement}}
+\index{deleteGarbageElement@{deleteGarbageElement}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{deleteGarbageElement()}{deleteGarbageElement()}}
+{\footnotesize\ttfamily void garbage\+Collector\+::delete\+Garbage\+Element (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{address }\end{DoxyParamCaption})}
+
+
+
+elimina un elemento del garbage collector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em address} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgarbage_collector_a850a2814593ed99c6c935d19d7f64c99}\label{classgarbage_collector_a850a2814593ed99c6c935d19d7f64c99}} 
+\index{garbageCollector@{garbageCollector}!deletePtr@{deletePtr}}
+\index{deletePtr@{deletePtr}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{deletePtr()}{deletePtr()}}
+{\footnotesize\ttfamily bool garbage\+Collector\+::delete\+Ptr (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{address }\end{DoxyParamCaption})}
+
+
+
+elimina un puntero del garbage collector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em address} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_a5249032a492a1b21e084699044223b3b}\label{classgarbage_collector_a5249032a492a1b21e084699044223b3b}} 
+\index{garbageCollector@{garbageCollector}!gcIsClear@{gcIsClear}}
+\index{gcIsClear@{gcIsClear}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{gcIsClear()}{gcIsClear()}}
+{\footnotesize\ttfamily bool garbage\+Collector\+::gc\+Is\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+verifica si el garbage collector esta vacio 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_a92e5aedd9df88804f872fcd5c2567cab}\label{classgarbage_collector_a92e5aedd9df88804f872fcd5c2567cab}} 
+\index{garbageCollector@{garbageCollector}!generateStringJSON@{generateStringJSON}}
+\index{generateStringJSON@{generateStringJSON}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{generateStringJSON()}{generateStringJSON()}}
+{\footnotesize\ttfamily string garbage\+Collector\+::generate\+String\+J\+S\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+genera un json en formato string 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_aacb5d4a898a59f36891f0a831aed6976}\label{classgarbage_collector_aacb5d4a898a59f36891f0a831aed6976}} 
+\index{garbageCollector@{garbageCollector}!getGarbageElement@{getGarbageElement}}
+\index{getGarbageElement@{getGarbageElement}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{getGarbageElement()}{getGarbageElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgarbage_element}{garbage\+Element}}$\ast$ garbage\+Collector\+::get\+Garbage\+Element (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+devuelve un elemento del garbage collector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_a4290c73811f4b490c606e2246753b557}\label{classgarbage_collector_a4290c73811f4b490c606e2246753b557}} 
+\index{garbageCollector@{garbageCollector}!getGarbageElement@{getGarbageElement}}
+\index{getGarbageElement@{getGarbageElement}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{getGarbageElement()}{getGarbageElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgarbage_element}{garbage\+Element}}$\ast$ garbage\+Collector\+::get\+Garbage\+Element (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{address }\end{DoxyParamCaption})}
+
+
+
+devuelve un elemento del garbage collector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em address} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_aa5a02f8907c5008cb61240b3bb284b95}\label{classgarbage_collector_aa5a02f8907c5008cb61240b3bb284b95}} 
+\index{garbageCollector@{garbageCollector}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classgarbage_collector}{garbage\+Collector}}$\ast$ garbage\+Collector\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+devuelve la instancia del garbage collector (singleton) 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_adbd7f9596ff534961393af44a9117550}\label{classgarbage_collector_adbd7f9596ff534961393af44a9117550}} 
+\index{garbageCollector@{garbageCollector}!JsonGenerator@{JsonGenerator}}
+\index{JsonGenerator@{JsonGenerator}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{JsonGenerator()}{JsonGenerator()}}
+{\footnotesize\ttfamily json garbage\+Collector\+::\+Json\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+genera un json con todos los punteros del garbage collector 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_a81d316ee82dd5b872c3c6284579e74d3}\label{classgarbage_collector_a81d316ee82dd5b872c3c6284579e74d3}} 
+\index{garbageCollector@{garbageCollector}!SERVER\_vsptrConstructor@{SERVER\_vsptrConstructor}}
+\index{SERVER\_vsptrConstructor@{SERVER\_vsptrConstructor}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{SERVER\_vsptrConstructor()}{SERVER\_vsptrConstructor()}}
+{\footnotesize\ttfamily int garbage\+Collector\+::\+S\+E\+R\+V\+E\+R\+\_\+vsptr\+Constructor (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+
+
+sobrecarga del constructor cuando se usa la remote memory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_aefb5c913a967b278ce7ac990ddc80304}\label{classgarbage_collector_aefb5c913a967b278ce7ac990ddc80304}} 
+\index{garbageCollector@{garbageCollector}!SERVER\_vsptrGetValue@{SERVER\_vsptrGetValue}}
+\index{SERVER\_vsptrGetValue@{SERVER\_vsptrGetValue}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{SERVER\_vsptrGetValue()}{SERVER\_vsptrGetValue()}}
+{\footnotesize\ttfamily string garbage\+Collector\+::\+S\+E\+R\+V\+E\+R\+\_\+vsptr\+Get\+Value (\begin{DoxyParamCaption}\item[{int}]{remote\+ID }\end{DoxyParamCaption})}
+
+
+
+obtiene el valor de un vspointer cuando se esta usando la memoria remota 
+
+
+\begin{DoxyParams}{Parameters}
+{\em remote\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_collector_a461adca3d673767a227b6fb4b370be34}\label{classgarbage_collector_a461adca3d673767a227b6fb4b370be34}} 
+\index{garbageCollector@{garbageCollector}!SERVER\_vsptrOverloadAssign@{SERVER\_vsptrOverloadAssign}}
+\index{SERVER\_vsptrOverloadAssign@{SERVER\_vsptrOverloadAssign}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{SERVER\_vsptrOverloadAssign()}{SERVER\_vsptrOverloadAssign()}}
+{\footnotesize\ttfamily void garbage\+Collector\+::\+S\+E\+R\+V\+E\+R\+\_\+vsptr\+Overload\+Assign (\begin{DoxyParamCaption}\item[{string}]{new\+Value\+Type,  }\item[{string}]{new\+Value,  }\item[{int}]{this\+Id\+Remote }\end{DoxyParamCaption})}
+
+
+
+sobrecarga del operador (=) cuando se utiliza la remote memory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Value\+Type} & \\
+\hline
+{\em new\+Value} & \\
+\hline
+{\em this\+Id\+Remote} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgarbage_collector_aeb5c3cccb94f7208197f72df956afc1d}\label{classgarbage_collector_aeb5c3cccb94f7208197f72df956afc1d}} 
+\index{garbageCollector@{garbageCollector}!SERVER\_vsptrUpdateReference@{SERVER\_vsptrUpdateReference}}
+\index{SERVER\_vsptrUpdateReference@{SERVER\_vsptrUpdateReference}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{SERVER\_vsptrUpdateReference()}{SERVER\_vsptrUpdateReference()}}
+{\footnotesize\ttfamily void garbage\+Collector\+::\+S\+E\+R\+V\+E\+R\+\_\+vsptr\+Update\+Reference (\begin{DoxyParamCaption}\item[{int}]{this\+Remote\+Id,  }\item[{int}]{other\+Remote\+Id }\end{DoxyParamCaption})}
+
+
+
+actualiza un puntero si se encuentra en el extranjero 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this\+Remote\+Id} & \\
+\hline
+{\em other\+Remote\+Id} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgarbage_collector_acfc6076f5d1c273aac008b9e6a70557e}\label{classgarbage_collector_acfc6076f5d1c273aac008b9e6a70557e}} 
+\index{garbageCollector@{garbageCollector}!transferReferences@{transferReferences}}
+\index{transferReferences@{transferReferences}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{transferReferences()}{transferReferences()}}
+{\footnotesize\ttfamily void garbage\+Collector\+::transfer\+References (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$}]{g\+Old\+Element,  }\item[{string}]{new\+Id,  }\item[{\mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$}]{g\+New\+Element }\end{DoxyParamCaption})}
+
+
+
+transfiere un elemento del garbage collector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g\+Old\+Element} & \\
+\hline
+{\em new\+Id} & \\
+\hline
+{\em g\+New\+Element} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgarbage_collector_af7daa5dcfefe94fa5eb70e7534730606}\label{classgarbage_collector_af7daa5dcfefe94fa5eb70e7534730606}} 
+\index{garbageCollector@{garbageCollector}!updateReference@{updateReference}}
+\index{updateReference@{updateReference}!garbageCollector@{garbageCollector}}
+\doxysubsubsection{\texorpdfstring{updateReference()}{updateReference()}}
+{\footnotesize\ttfamily void garbage\+Collector\+::update\+Reference (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{new\+Id,  }\item[{string}]{address }\end{DoxyParamCaption})}
+
+
+
+actualiza un elemento del garbage collector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em new\+Id} & \\
+\hline
+{\em address} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxi/garbage\+Collector.\+h\end{DoxyCompactItemize}

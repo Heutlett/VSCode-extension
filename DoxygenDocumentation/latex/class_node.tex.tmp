@@ -1,0 +1,20 @@
+\hypertarget{class_node}{}\doxysection{Node$<$ T $>$ Class Template Reference}
+\label{class_node}\index{Node$<$ T $>$@{Node$<$ T $>$}}
+
+
+Collaboration diagram for Node$<$ T $>$\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_node_ac450c71a8677a38d306361f9ced518d3}\label{class_node_ac450c71a8677a38d306361f9ced518d3}} 
+T {\bfseries data}
+\item 
+\mbox{\Hypertarget{class_node_ac1c0563946c59c36bddde431b4adb00b}\label{class_node_ac1c0563946c59c36bddde431b4adb00b}} 
+\mbox{\hyperlink{class_node}{Node}} $\ast$ {\bfseries next}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxi/Node.\+h\end{DoxyCompactItemize}

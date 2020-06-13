@@ -1,0 +1,156 @@
+\hypertarget{classgarbage_element}{}\doxysection{garbage\+Element Class Reference}
+\label{classgarbage_element}\index{garbageElement@{garbageElement}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgarbage_element_a31a60249c747907dd5f0ee74ea71f031}{garbage\+Element}} (void $\ast$data\+Ptr, string p\+Type, string p\+Id, string p\+Vsptr\+Adress)
+\begin{DoxyCompactList}\small\item\em construcor para \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgarbage_element_a7ad5fc46e016fb668fecd543201d091b}{garbage\+Element}} (void $\ast$data\+Ptr, string p\+Type, string p\+Id, string p\+Vsptr\+Adress, int remote\+Id)
+\begin{DoxyCompactList}\small\item\em construcor para \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} Returns the value of the pointer in string \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classgarbage_element_a2bd6f3f4c7c2106907e38a53918bf9a6}{get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em devuelve el valor del garbage element \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgarbage_element_a53a278fc97e77590082afa2beacc59ff}{delete\+Reference}} (string address)
+\begin{DoxyCompactList}\small\item\em devuelve el valor del \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$ \mbox{\hyperlink{classgarbage_element_a68e30fb353f116431b3213b03f7bff8a}{get\+Garbage\+Reference}} (string address)
+\begin{DoxyCompactList}\small\item\em elimina una referencia del garbage element \end{DoxyCompactList}\item 
+void $\ast$$\ast$ \mbox{\hyperlink{classgarbage_element_aa4b2555951f7d67e1cf61b03065481c7}{get\+Address}} ()
+\begin{DoxyCompactList}\small\item\em obtiene una referencia del garbage element Return de memory address of the pointer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgarbage_element_ac7c37a0f648f1e8b7c6eea0bf2ad41f8}{to\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgarbage_element_a6c392d8272a38108e2a7c3f0d373b078}\label{classgarbage_element_a6c392d8272a38108e2a7c3f0d373b078}} 
+void $\ast$ {\bfseries ptr\+Data}
+\item 
+\mbox{\Hypertarget{classgarbage_element_a1c0185f23515c58cf34befb6d93b36bf}\label{classgarbage_element_a1c0185f23515c58cf34befb6d93b36bf}} 
+string {\bfseries vsptr\+Adress}
+\item 
+\mbox{\Hypertarget{classgarbage_element_a0b10767e47b5b10077a8f6f15b88b671}\label{classgarbage_element_a0b10767e47b5b10077a8f6f15b88b671}} 
+vector$<$ \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} $\ast$ $>$ $\ast$ {\bfseries list\+Of\+References}
+\item 
+\mbox{\Hypertarget{classgarbage_element_a1f4152e9925ab26a0ffd26f8e577f688}\label{classgarbage_element_a1f4152e9925ab26a0ffd26f8e577f688}} 
+string {\bfseries id}
+\item 
+\mbox{\Hypertarget{classgarbage_element_af67c14cfc4c231fb748007642e939207}\label{classgarbage_element_af67c14cfc4c231fb748007642e939207}} 
+int {\bfseries remote\+Id}
+\item 
+\mbox{\Hypertarget{classgarbage_element_a08de8a2a4c13f7cff4e76b9c823b0bdb}\label{classgarbage_element_a08de8a2a4c13f7cff4e76b9c823b0bdb}} 
+string {\bfseries type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgarbage_element_a48458dd864c112b88bf8f58ba42dde3c}\label{classgarbage_element_a48458dd864c112b88bf8f58ba42dde3c}} 
+static int {\bfseries count\+Remote\+Id}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgarbage_element_a31a60249c747907dd5f0ee74ea71f031}\label{classgarbage_element_a31a60249c747907dd5f0ee74ea71f031}} 
+\index{garbageElement@{garbageElement}!garbageElement@{garbageElement}}
+\index{garbageElement@{garbageElement}!garbageElement@{garbageElement}}
+\doxysubsubsection{\texorpdfstring{garbageElement()}{garbageElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily garbage\+Element\+::garbage\+Element (\begin{DoxyParamCaption}\item[{void $\ast$}]{data\+Ptr,  }\item[{string}]{p\+Type,  }\item[{string}]{p\+Id,  }\item[{string}]{p\+Vsptr\+Adress }\end{DoxyParamCaption})}
+
+
+
+construcor para \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Ptr} & \\
+\hline
+{\em p\+Type} & \\
+\hline
+{\em p\+Id} & \\
+\hline
+{\em p\+Vsptr\+Adress} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgarbage_element_a7ad5fc46e016fb668fecd543201d091b}\label{classgarbage_element_a7ad5fc46e016fb668fecd543201d091b}} 
+\index{garbageElement@{garbageElement}!garbageElement@{garbageElement}}
+\index{garbageElement@{garbageElement}!garbageElement@{garbageElement}}
+\doxysubsubsection{\texorpdfstring{garbageElement()}{garbageElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily garbage\+Element\+::garbage\+Element (\begin{DoxyParamCaption}\item[{void $\ast$}]{data\+Ptr,  }\item[{string}]{p\+Type,  }\item[{string}]{p\+Id,  }\item[{string}]{p\+Vsptr\+Adress,  }\item[{int}]{remote\+Id }\end{DoxyParamCaption})}
+
+
+
+construcor para \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} Returns the value of the pointer in string 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgarbage_element_a53a278fc97e77590082afa2beacc59ff}\label{classgarbage_element_a53a278fc97e77590082afa2beacc59ff}} 
+\index{garbageElement@{garbageElement}!deleteReference@{deleteReference}}
+\index{deleteReference@{deleteReference}!garbageElement@{garbageElement}}
+\doxysubsubsection{\texorpdfstring{deleteReference()}{deleteReference()}}
+{\footnotesize\ttfamily void garbage\+Element\+::delete\+Reference (\begin{DoxyParamCaption}\item[{string}]{address }\end{DoxyParamCaption})}
+
+
+
+devuelve el valor del \mbox{\hyperlink{classgarbage_element}{garbage\+Element}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgarbage_element_aa4b2555951f7d67e1cf61b03065481c7}\label{classgarbage_element_aa4b2555951f7d67e1cf61b03065481c7}} 
+\index{garbageElement@{garbageElement}!getAddress@{getAddress}}
+\index{getAddress@{getAddress}!garbageElement@{garbageElement}}
+\doxysubsubsection{\texorpdfstring{getAddress()}{getAddress()}}
+{\footnotesize\ttfamily void$\ast$$\ast$ garbage\+Element\+::get\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+obtiene una referencia del garbage element Return de memory address of the pointer 
+
+\begin{DoxyReturn}{Returns}
+void$\ast$$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_element_a68e30fb353f116431b3213b03f7bff8a}\label{classgarbage_element_a68e30fb353f116431b3213b03f7bff8a}} 
+\index{garbageElement@{garbageElement}!getGarbageReference@{getGarbageReference}}
+\index{getGarbageReference@{getGarbageReference}!garbageElement@{garbageElement}}
+\doxysubsubsection{\texorpdfstring{getGarbageReference()}{getGarbageReference()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgarbage_element}{garbage\+Element}}$\ast$ garbage\+Element\+::get\+Garbage\+Reference (\begin{DoxyParamCaption}\item[{string}]{address }\end{DoxyParamCaption})}
+
+
+
+elimina una referencia del garbage element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_element_a2bd6f3f4c7c2106907e38a53918bf9a6}\label{classgarbage_element_a2bd6f3f4c7c2106907e38a53918bf9a6}} 
+\index{garbageElement@{garbageElement}!getValue@{getValue}}
+\index{getValue@{getValue}!garbageElement@{garbageElement}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily string garbage\+Element\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+devuelve el valor del garbage element 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgarbage_element_ac7c37a0f648f1e8b7c6eea0bf2ad41f8}\label{classgarbage_element_ac7c37a0f648f1e8b7c6eea0bf2ad41f8}} 
+\index{garbageElement@{garbageElement}!toString@{toString}}
+\index{toString@{toString}!garbageElement@{garbageElement}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily void garbage\+Element\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+convierte a string... 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doxi/garbage\+Element.\+h\end{DoxyCompactItemize}
