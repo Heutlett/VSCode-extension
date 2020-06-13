@@ -8,12 +8,21 @@
 
 #include "VSPointer.h"
 
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ */
 VSPointer<int>* createVSPTRint(string pId, string pValue, int remoteId){
     VSPointer<int> * ptr = new VSPointer<int>(pId, remoteId);
     *ptr = stoi(pValue);
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<bool>* createVSPTRbool(string pId, string pValue, int remoteId){
     VSPointer<bool> * ptr = new VSPointer<bool>(pId, remoteId);
     if(pValue.compare("1") == 0){
@@ -23,53 +32,98 @@ VSPointer<bool>* createVSPTRbool(string pId, string pValue, int remoteId){
     }
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<char>* createVSPTRchar(string pId, string pValue, int remoteId){
     VSPointer<char> * ptr = new VSPointer<char>(pId, remoteId);
     char a = pValue.at(0);
     *ptr = a;
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<short>* createVSPTRshort(string pId, string pValue, int remoteId){
     VSPointer<short> * ptr = new VSPointer<short>(pId, remoteId);
     short a = stoi(pValue);
     *ptr = a;
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<long>* createVSPTRlong(string pId, string pValue, int remoteId){
     VSPointer<long> * ptr = new VSPointer<long>(pId, remoteId);
     long a = stol(pValue);
     *ptr = a;
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<long long>* createVSPTRlonglong(string pId, string pValue, int remoteId){
     VSPointer<long long> * ptr = new VSPointer<long long>(pId, remoteId);
     long long a = stoll(pValue);
     *ptr = a;
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<float>* createVSPTRfloat(string pId, string pValue, int remoteId){
     VSPointer<float> * ptr = new VSPointer<float>(pId, remoteId);
     *ptr =stof(pValue);
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<double>* createVSPTRdouble(string pId, string pValue, int remoteId){
     VSPointer<double> * ptr = new VSPointer<double>(pId, remoteId);
     *ptr =stod(pValue);
     return ptr;
 }
-
+/**
+ * @brief crea un VSPointer para el parseo de json a local memory
+ * @param pId
+ * @param pValue
+ * @param remoteId
+ * @return
+ */
 VSPointer<long double>* createVSPTRlongdouble(string pId, string pValue, int remoteId){
     VSPointer<long double> * ptr = new VSPointer<long double>(pId, remoteId);
     *ptr =stold(pValue);
     return ptr;
 }
-
+/**
+ * @brief importa punteros desde un string al garbage collector de la memoria local
+ * @param pointers
+ */
 void importPointerFromString(string pointers){
 
     garbageCollector *g = garbageCollector::getInstance();

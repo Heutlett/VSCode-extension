@@ -12,31 +12,38 @@ using namespace std;
 
 template <class T> class CustomLinkedList
 {
+
     Node<T> *head, *tail;
 
 public:
-
+    /**
+     * @brief constructor de la lista enlazada
+     */
     CustomLinkedList()
     {
         head = NULL;
         tail = NULL;
     }
-
+    /**
+     * @brief destructor de la lista enlazada
+     */
     ~CustomLinkedList()
     {
 
     }
-
-    //Method adds info to the end of the list
+    /**
+     * @brief agrega un elemento a la lista
+     * @param info
+     */
     void push_back(T info)
     {
-        if(head == NULL) //if our list is currently empty
+        if(head == NULL)
         {
-            head = new Node<T>; //Create new node of type T
+            head = new Node<T>;
             head->data = info;
             tail = head;
         }
-        else //if not empty push_back to the end and move the tail
+        else
         {
             Node<T>* temp = new Node<T>;
             temp->data = info;
@@ -45,42 +52,44 @@ public:
             tail = tail->next;
         }
     }
-
+    /**
+     * @brief retorna el inicio de la lista;
+     * @return
+     */
     int begin(){
         return 0;
     }
-
+    /**
+     * @brief elimina un elemento de la lista
+     * @param position
+     */
     void erase(int position){
 
         Node<T>* temp = head;
 
-        // If head needs to be removed
         if (position == 0)
         {
-            head = temp->next;   // Change head
-            free(temp);               // free old head
+            head = temp->next;
+            free(temp);
             return;
         }
 
-
-        // Find previous node of the node to be deleted
         for (int i=0; temp!=NULL && i<position-1; i++)
             temp = temp->next;
 
-        // If position is more than number of ndoes
+
         if (temp == NULL || temp->next == NULL)
             return;
 
-        // Node temp->next is the node to be deleted
-        // Store pointer to the next of node to be deleted
         Node<T> *next = temp->next->next;
-
-        // Unlink the node from linked list
-        free(temp->next);  // Free memory
-
-        temp->next = next;  // Unlink the deleted node from list
+        free(temp->next);
+        temp->next = next;
     }
-
+    /**
+     * @brief devuelve el elemento que se encuentra en el indice pasado por paramatero
+     * @param position
+     * @return
+     */
     T at(int position){
 
         Node<T>* temp = head;
@@ -92,11 +101,14 @@ public:
         return temp->data;
 
     }
-
+    /**
+     * @brief retorna el tamano de la lista
+     * @return
+     */
     int size()
     {
-        int count = 0; // Initialize count
-        Node<T>* current = head; // Initialize current
+        int count = 0;
+        Node<T>* current = head;
         while (current != NULL)
         {
             count++;
@@ -104,8 +116,9 @@ public:
         }
         return count;
     }
-
-
+    /**
+     * @brief imprimite todos los ementtos.
+     */
     void printlist(){
 
         Node<T>* temp = head;
@@ -117,8 +130,6 @@ public:
 
         }
     }
-
-    //print method omitted
 };
 
 
