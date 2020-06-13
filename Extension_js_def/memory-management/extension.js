@@ -1,6 +1,8 @@
 const vscode = require('vscode');
 const { Console } = require('console');
 
+const crypto = require('crypto-js')
+
 /*
 var ref = require('ref-napi');
 
@@ -94,11 +96,12 @@ function createLoginJSON(text){
 
 	const fs = require('fs');
 
-	//var md5 = $.md5('value');
+	var passmd5 = crypto.MD5(data[1]).toString();
      
 	let objectToSave = {
 						ip:data[0],
-						password:data[1],
+						password:passmd5,
+						passwordComplete:crypto.MD5(data[1]),
 						port:data[2],
 						user:data[3]
 					   }
@@ -106,7 +109,7 @@ function createLoginJSON(text){
 	var fecha = new Date();
 	var fechaF = ""+fecha.getDate()+"-"+(fecha.getMonth()+1)+"-"+fecha.getFullYear() + "_"+fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds();
 
-	var texto = folderPath + "/conection_logs/conexion_" + fechaF + ".json";
+	var texto = folderPath + "/conexion_" + fechaF + ".json";
 
     fs.writeFile(texto, JSON.stringify(objectToSave),'utf8', (err) => {
       if (err) throw err;
